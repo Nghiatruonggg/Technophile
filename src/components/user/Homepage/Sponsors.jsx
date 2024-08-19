@@ -1,10 +1,10 @@
 import React from "react";
 
 // Import Images
-import AppleLogo from "../../assets/common/images/Sponsor Logo/Apple-Logo-2048x1152.png"
-import AsusLogo from "../../assets/common/images/Sponsor Logo/AsusTek-black-logo.png"
-import LGLogo from "../../assets/common/images/Sponsor Logo/LG Logo.png"
-import SamsungLogo from "../../assets/common/images/Sponsor Logo/Samsung Logo.png"
+import AppleLogo from "../../../assets/common/images/Sponsor Logo/Apple-Logo-2048x1152.png"
+import AsusLogo from "../../../assets/common/images/Sponsor Logo/AsusTek-black-logo.png"
+import LGLogo from "../../../assets/common/images/Sponsor Logo/LG Logo.png"
+import SamsungLogo from "../../../assets/common/images/Sponsor Logo/Samsung Logo.png"
 
 
 const Sponsors = () => {
