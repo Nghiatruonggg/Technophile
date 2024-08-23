@@ -5,24 +5,20 @@ import BelowButtons from "./BodySection/BelowButtons";
 import Pagination from "../../common/Pagination";
 import useCallAPI from "../../../hooks/useCallAPI";
 import { mobile_categories } from "../../../untils/variable";
+import useCallAPIwithPagination from "../../../hooks/useCallAPIwithPagination";
 
 const BodySection = () => {
-  const { data } = useCallAPI(mobile_categories);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [productPerPage, setProductPerPage] = useState(6);
+  const {data, isLoading, totalPages, currentPage, setCurrentPage} = useCallAPIwithPagination(mobile_categories)
   return (
     <>
       <div className="body-section">
         <div className="container">
           <FilterInfo />
-          <ProductRow
-            currentPage={currentPage}
-            productPerPage={productPerPage}
-          />
+          <ProductRow data={data} isLoading={isLoading}/>
         </div>
       </div>
 
-      <Pagination totalProducts = {data.length} productPerPage = {productPerPage} setCurrentPage={setCurrentPage} />
+      <Pagination currentPage={currentPage} totalPages={totalPages} setCurrentPage={setCurrentPage} />
     </>
   );
 };

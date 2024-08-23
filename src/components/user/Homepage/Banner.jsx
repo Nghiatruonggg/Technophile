@@ -16,9 +16,9 @@ const Banner = () => {
       {/* Banner */}
       <div className="banner ">
         <OwlCarousel className="owl-theme" items={1} nav={true}>
-          {bannerGroup.map((banner) => {
+          {bannerGroup.map((banner, index) => {
             return (
-              <div className="item">
+              <div key={index} className="item">
                 <img src={banner} alt="Banner1" />
               </div>
             );

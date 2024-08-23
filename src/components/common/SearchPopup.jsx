@@ -48,7 +48,7 @@ const SearchPopup = () => {
                       </div>
                     </div>
                   </a>
-                  <div className="add-to-cart-button">
+                  <div className="add-to-cart-button-shopping">
                     <button type="button">Add To Cart</button>
                   </div>
                 </div>
