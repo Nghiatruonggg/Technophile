@@ -1,6 +1,7 @@
 import React from "react";
+import titleImage from "../../assets/common/images/Title Image/Samsung-Galaxy-S24-Ultra-Violet-PNG.png";
 
-const MainTitle = ({titleImage}) => {
+const MainTitle = ({pageSubName, pageName}) => {
   return (
     <>
       <div className="main-title-section">
@@ -10,8 +11,8 @@ const MainTitle = ({titleImage}) => {
               <div className="wrap-main-title">
                 <div className="main-sub-title">
                   <p>Home |</p>
-                  <span>Product</span>
-                  <h1>Mobile</h1>
+                  <span>{pageSubName}</span>
+                  <h1>{pageName}</h1>
                 </div>
                 <div className="title-image">
                   <img src={titleImage} alt="title-image" />

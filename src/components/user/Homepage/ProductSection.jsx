@@ -4,35 +4,11 @@ import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import useCallAPI from "../../../hooks/useCallAPI";
+import { options } from "../../../untils/third-lib";
+import { Link } from "react-router-dom";
 
 const ProductSection = () => {
   const { data, isLoading } = useCallAPI(mobile_categories);
-
-  const options = {
-    margin: 30,
-    responsiveClass: true,
-    nav: true,
-    dots: false,
-    autoplay: false,
-    smartSpeed: 1000,
-    responsive: {
-      0: {
-        items: 1,
-      },
-      400: {
-        items: 1,
-      },
-      600: {
-        items: 2,
-      },
-      700: {
-        items: 3,
-      },
-      1000: {
-        items: 4,
-      },
-    },
-  };
 
   if (isLoading) {
     return <p>Data Loading</p>;
@@ -70,7 +46,7 @@ const ProductSection = () => {
                 return (
                   <div key={product.id} className="item">
                     <div className="product-item">
-                      <a href="#">
+                      <Link to={`/mobile-categories/${product.id}`}>
                         <div className="product-image">
                           <img src={product.mainImage} alt="Iphone 15" />
                         </div>
@@ -82,7 +58,7 @@ const ProductSection = () => {
                             <p>{product.price}</p>
                           </div>
                         </div>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 );

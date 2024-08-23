@@ -1,21 +1,21 @@
 import React from "react";
 
-const Pagination = ({ totalProducts, productPerPage, setCurrentPage }) => {
-  const pages = [];
+const Pagination = ({ totalPages, currentPage, setCurrentPage }) => {
+  let pageNumbers = [];
 
-  for (let i = 1; i <= Math.ceil(totalProducts / productPerPage); i++) {
-    pages.push(i);
+  for (let i = 1; i <= totalPages; i++) {
+    pageNumbers.push(i);
   }
 
   return (
     <>
       <div className="pagination" style={{ justifyContent: "center" }}>
         <div className="btn-group" role="group">
-          {pages.map((page) => {
-            return <button onClick={() => setCurrentPage(page)} key={page} type="button" className="btn btn-primary">
-                {page}
-            </button>;
-          })}
+          {pageNumbers.map((page) => (
+            <button key={page} type="button" className={currentPage === page ? "active btn btn-primary" : "btn btn-primary"} onClick={() => setCurrentPage(page)}>
+              {page}
+            </button>
+          ))}
         </div>
       </div>
     </>
