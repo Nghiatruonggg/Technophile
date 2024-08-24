@@ -6,6 +6,7 @@ import MobileCategories from './pages/user/MobileCategories'
 import ProductDetails from './pages/user/ProductDetails'
 import AboutUs from './pages/user/AboutUs'
 import ContactUs from './pages/user/ContactUs'
+import DesktopCategories from './pages/user/DesktopCategories'
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route index element={<Homepage/>}/>
         <Route path='/mobile-categories' element={<MobileCategories/>}/>
         <Route path='/mobile-categories/:id' element={<ProductDetails/>}/>
+        <Route path='/desktop-categories' element={<DesktopCategories/>}/>
         <Route path='/about-us' element={<AboutUs/>}/>
         <Route path='/contact-us' element={<ContactUs/>}/>
       </Route>

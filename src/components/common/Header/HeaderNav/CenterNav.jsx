@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
-const CenterNav = ({TechnophileLogo}) => {
-    const [isActive, setIsActive] = useState(false);
+const CenterNav = ({ TechnophileLogo }) => {
+  const [isActive, setIsActive] = useState(false);
 
-    const handleActive = () => {
-        setIsActive(true);
-    }
+  const handleActive = () => {
+    setIsActive(true);
+  };
 
-    
   return (
     <>
       <div className="main-section">
@@ -19,10 +18,11 @@ const CenterNav = ({TechnophileLogo}) => {
           </span>
         </div>
 
-
         <ul className="menu-list">
-          <li >
-            <NavLink className="LinkHover" activeClassName="active" to="/">Home</NavLink>
+          <li>
+            <NavLink className="LinkHover" activeClassName="active" to="/">
+              Home
+            </NavLink>
           </li>
           <li className="product-menu">
             <a href="#">
@@ -31,46 +31,82 @@ const CenterNav = ({TechnophileLogo}) => {
             <div className="sub-menu sub-menu-1 sub-menu-mobile">
               <ul>
                 <li className="sub-item">
-                  <NavLink activeClassName="active" to="/mobile-categories">
-                    <p className="LinkHover">Mobile</p>
+                  <NavLink
+                    className="LinkHover"
+                    activeClassName="active"
+                    to="/mobile-categories"
+                  >
+                    Mobile
                   </NavLink>
                 </li>
                 <li className="sub-item">
-                  <a href="#">
-                    <p>Desktop</p>
-                  </a>
+                  <NavLink
+                    className="LinkHover"
+                    activeClassName="active"
+                    to="/desktop-categories"
+                  >
+                    Desktop
+                  </NavLink>
                 </li>
                 <li className="sub-item">
-                  <a href="#">
-                    <p>Laptop</p>
-                  </a>
+                  <NavLink
+                    className="LinkHover"
+                    activeClassName="active"
+                    to="#"
+                  >
+                    Laptop
+                  </NavLink>
                 </li>
                 <li className="sub-item">
-                  <a href="#">
-                    <p>Monitors</p>
-                  </a>
+                  <NavLink
+                    className="LinkHover"
+                    activeClassName="active"
+                    to="#"
+                  >
+                    Monitor
+                  </NavLink>
                 </li>
                 <li className="sub-item">
-                  <a href="#">
-                    <p>Networking</p>
-                  </a>
+                  <NavLink
+                    className="LinkHover"
+                    activeClassName="active"
+                    to="#"
+                  >
+                    Networking
+                  </NavLink>
                 </li>
                 <li className="sub-item">
-                  <a href="#">
-                    <p>Accesories</p>
-                  </a>
+                  <NavLink
+                    className="LinkHover"
+                    activeClassName="active"
+                    to="#"
+                  >
+                    Accessories
+                  </NavLink>
                 </li>
               </ul>
             </div>
           </li>
-          <li >
-            <NavLink className="LinkHover" activeClassName="active" to="/about-us">About Us</NavLink>
+          <li>
+            <NavLink
+              className="LinkHover"
+              activeClassName="active"
+              to="/about-us"
+            >
+              About Us
+            </NavLink>
           </li>
           <li>
             <a href="#">News</a>
           </li>
           <li>
-            <NavLink className="LinkHover" activeClassName="active"  to="/contact-us">Contact</NavLink>
+            <NavLink
+              className="LinkHover"
+              activeClassName="active"
+              to="/contact-us"
+            >
+              Contact
+            </NavLink>
           </li>
         </ul>
       </div>

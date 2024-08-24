@@ -1,9 +1,20 @@
-import React from 'react'
+import React from "react";
+import Subbanner from "../../components/common/Subbanner";
+import MainTitle from "../../components/common/MainTitle";
+import ContactSection from "../../components/user/contact-us/ContactSection";
+import AddressSection from "../../components/user/contact-us/AddressSection";
+import ServiceSection from "../../components/user/contact-us/ServiceSection";
 
 const ContactUs = () => {
   return (
-    <div>ContactUs</div>
-  )
-}
+    <>
+      <Subbanner />
+      <MainTitle pageSubName="Contact" pageName="Contact With Us" />
+      <ContactSection/>
+      <AddressSection/>
+      <ServiceSection/>
+    </>
+  );
+};
 
-export default ContactUs
+export default ContactUs;
