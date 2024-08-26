@@ -2,11 +2,7 @@ import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 const CenterNav = ({ TechnophileLogo }) => {
-  const [isActive, setIsActive] = useState(false);
 
-  const handleActive = () => {
-    setIsActive(true);
-  };
 
   return (
     <>
@@ -20,7 +16,7 @@ const CenterNav = ({ TechnophileLogo }) => {
 
         <ul className="menu-list">
           <li>
-            <NavLink className="LinkHover" activeClassName="active" to="/">
+            <NavLink className="LinkHover" activeclassname="active" to="/">
               Home
             </NavLink>
           </li>
@@ -33,7 +29,7 @@ const CenterNav = ({ TechnophileLogo }) => {
                 <li className="sub-item">
                   <NavLink
                     className="LinkHover"
-                    activeClassName="active"
+                    activeclassname="active"
                     to="/mobile-categories"
                   >
                     Mobile
@@ -42,7 +38,7 @@ const CenterNav = ({ TechnophileLogo }) => {
                 <li className="sub-item">
                   <NavLink
                     className="LinkHover"
-                    activeClassName="active"
+                    activeclassname="active"
                     to="/desktop-categories"
                   >
                     Desktop
@@ -51,7 +47,7 @@ const CenterNav = ({ TechnophileLogo }) => {
                 <li className="sub-item">
                   <NavLink
                     className="LinkHover"
-                    activeClassName="active"
+                    activeclassname="active"
                     to="#"
                   >
                     Laptop
@@ -60,7 +56,7 @@ const CenterNav = ({ TechnophileLogo }) => {
                 <li className="sub-item">
                   <NavLink
                     className="LinkHover"
-                    activeClassName="active"
+                    activeclassname="active"
                     to="#"
                   >
                     Monitor
@@ -69,7 +65,7 @@ const CenterNav = ({ TechnophileLogo }) => {
                 <li className="sub-item">
                   <NavLink
                     className="LinkHover"
-                    activeClassName="active"
+                    activeclassname="active"
                     to="#"
                   >
                     Networking
@@ -78,7 +74,7 @@ const CenterNav = ({ TechnophileLogo }) => {
                 <li className="sub-item">
                   <NavLink
                     className="LinkHover"
-                    activeClassName="active"
+                    activeclassname="active"
                     to="#"
                   >
                     Accessories
@@ -90,7 +86,7 @@ const CenterNav = ({ TechnophileLogo }) => {
           <li>
             <NavLink
               className="LinkHover"
-              activeClassName="active"
+              activeclassname="active"
               to="/about-us"
             >
               About Us
@@ -102,7 +98,7 @@ const CenterNav = ({ TechnophileLogo }) => {
           <li>
             <NavLink
               className="LinkHover"
-              activeClassName="active"
+              activeclassname="active"
               to="/contact-us"
             >
               Contact

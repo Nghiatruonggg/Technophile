@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
+import { searchContext } from "../../contexts/Contexts";
 
-const SearchPopup = () => {
+const SearchPopup = ({searchBoxRef}) => {
+  const searchFunction = useContext(searchContext);
+  const {isSearchClicked, handleSearchClicked} = searchFunction;
+
+
+
   return (
     <>
       {/* Search Popup */}
-      <div className="search-box">
+      <div ref={searchBoxRef} className={isSearchClicked == true ? "search-box active" : "search-box"}>
         <div className="container">
           <div className="wrap-overflow">
-            <div className="search-close-ic">
+            <div className={isSearchClicked == true ? "search-close-ic active" : "search-close-ic"} onClick={handleSearchClicked}>
               <i className="fa-solid fa-xmark" />
             </div>
             <div className="row" id="search-input">
