@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
+import { cartContext } from "../../contexts/Contexts";
 
-const ShoppingCart = () => {
+const ShoppingCart = ({cartBoxRef}) => {
+  const cartFunction = useContext(cartContext);
+
+  const {isCartClicked, handleCartClicked} = cartFunction
   return (
     <>
       {/* Shopping cart */}
-      <div className="shopping-cart shopping-cart-js">
+      <div ref={cartBoxRef} className={isCartClicked == true ? "shopping-cart active" : "shopping-cart"}>
         <div className="container">
           <div className="row">
             <div className="col-12 col-sm-12 col-md-12">
               <div className="cart-review">
                 <h2>Cart Review</h2>
-                <i className="fa-solid fa-xmark" id="cart-close-ic" />
+                <i className="fa-solid fa-xmark" onClick={handleCartClicked} />
               </div>
             </div>
           </div>
