@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import useCallAPI from "../../../../hooks/useCallAPI";
 import { mobile_categories } from "../../../../untils/variable";
 import Pagination from "../../../common/Pagination";
 import { Link } from "react-router-dom";
 import useCallAPIwithPagination from "../../../../hooks/useCallAPIwithPagination";
 
-const ProductRow = ({data, isLoading}) => {
-
-
+const ProductRow = ({ data, isLoading }) => {
   if (isLoading) return <p>Data is Loading</p>;
 
   return (
@@ -17,7 +15,9 @@ const ProductRow = ({data, isLoading}) => {
           {data.map((product) => {
             return (
               <div key={product.id} className="column column-3 column-2">
-                <Link to={`/mobile-categories/${product.id}`}>
+                <Link
+                  to={`/mobile-categories/${product.id}`}
+                >
                   <div className="wrap-product">
                     <div className="product-image">
                       <img src={product.mainImage} alt={product.name} />

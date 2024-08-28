@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import useCallAPI from "../../../../hooks/useCallAPI";
 import { mobile_categories } from "../../../../untils/variable";
 import OwlCarousel from "react-owl-carousel";
@@ -9,6 +9,18 @@ import { Link } from "react-router-dom";
 
 const ViewedRecently = () => {
   const { data } = useCallAPI(mobile_categories);
+  const [storedData, setStoredData] = useState([]);
+
+  useEffect(() => {
+    const storedData = JSON.parse(localStorage.getItem("viewedProducts"));
+
+    if (Array.isArray(storedData) && storedData[0].length == 0 && storedData.length > 0) {
+      storedData.shift();
+    }
+
+    setStoredData(storedData)
+  }, [])
+
 
   return (
     <>
@@ -20,7 +32,7 @@ const ViewedRecently = () => {
           items={4}
           {...options}
         >
-          {data.map((product) => {
+          {storedData.map((product) => {
             return (
               <>
                 <div className="item">

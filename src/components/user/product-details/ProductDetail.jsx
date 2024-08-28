@@ -6,8 +6,6 @@ import ProductInfo from "./product-detail/ProductInfo";
 
 const ProductDetail = ({data}) => {
 
-
-
   return (
     <>
       <div className="product-detail">
