@@ -19,7 +19,7 @@ const ViewedRecently = () => {
     }
 
     setStoredData(storedData)
-  }, [])
+  }, [storedData])
 
 
   return (
