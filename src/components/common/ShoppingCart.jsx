@@ -1,10 +1,15 @@
 import React, { useContext } from "react";
 import { cartContext } from "../../contexts/Contexts";
+import { useSelector } from "react-redux";
 
 const ShoppingCart = ({cartBoxRef}) => {
   const cartFunction = useContext(cartContext);
 
   const {isCartClicked, handleCartClicked} = cartFunction
+
+  const cartState = useSelector(state => state.cart)
+
+  console.log(cartState.productList);
   return (
     <>
       {/* Shopping cart */}

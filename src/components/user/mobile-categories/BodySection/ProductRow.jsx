@@ -4,11 +4,19 @@ import { mobile_categories } from "../../../../untils/variable";
 import Pagination from "../../../common/Pagination";
 import { Link } from "react-router-dom";
 import useCallAPIwithPagination from "../../../../hooks/useCallAPIwithPagination";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../../../reducers/cartReducerSlice";
 
 const ProductRow = ({data, isLoading}) => {
 
 
   if (isLoading) return <p>Data is Loading</p>;
+
+  const dispatch = useDispatch()
+
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product));
+  }
 
   return (
     <>
@@ -29,7 +37,7 @@ const ProductRow = ({data, isLoading}) => {
                     </div>
 
                     <div className="cart-product-button">
-                      <button>
+                      <button onClick={() => handleAddToCart(product)}>
                         <i className="fa-solid fa-plus"></i>
                       </button>
                     </div>
