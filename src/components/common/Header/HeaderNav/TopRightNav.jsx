@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { cartContext, searchContext } from "../../../../contexts/Contexts";
+import { useSelector } from "react-redux";
 
 const TopRightNav = () => {
   const searchFunction = useContext(searchContext);
@@ -7,6 +8,14 @@ const TopRightNav = () => {
 
   const cartFunction = useContext(cartContext);
   const {handleCartClicked} = cartFunction;
+
+  const cartStore = useSelector(state => state.cart)
+  const {productList} = cartStore;
+
+  let totalQuantity = 0;
+  productList.forEach(({quantity}) => {
+    totalQuantity += quantity
+  })
 
 
   return (
@@ -17,7 +26,7 @@ const TopRightNav = () => {
             className="fa-solid fa-magnifying-glass search-desktop" onClick={handleSearchClicked}
           />
           <i className="fa-solid fa-cart-shopping cart-ic" onClick={handleCartClicked}>
-            <span>0</span>
+            <span>{totalQuantity}</span>
           </i>
 
           <i className="fa-solid fa-user user-desktop" />

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const useCartClicked = (icon) => {
   const [isCartClicked, setIsCartClicked] = useState(false);

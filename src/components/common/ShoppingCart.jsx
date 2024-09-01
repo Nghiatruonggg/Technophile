@@ -1,19 +1,46 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { cartContext } from "../../contexts/Contexts";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addQuantity, minusQuantity } from "../../reducers/cartReducerSlice";
 
-const ShoppingCart = ({cartBoxRef}) => {
+const ShoppingCart = ({ cartBoxRef }) => {
+
+  const [totalCalculate, setTotalCalculate] = useState(0);
+
+  // Popup/Close Function
   const cartFunction = useContext(cartContext);
 
-  const {isCartClicked, handleCartClicked} = cartFunction
+  const { isCartClicked, handleCartClicked } = cartFunction;
 
-  const cartState = useSelector(state => state.cart)
+  // Redux Functions
+  const cartState = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+  const { productList, total } = cartState;
 
-  console.log(cartState.productList);
+  const handleAddQuantity = (id) => {
+    dispatch(addQuantity(id));
+  }
+
+  const handleMinusQuantity = (id) => {
+    dispatch(minusQuantity(id));
+  }
+
+  useEffect(() => {
+    setTotalCalculate(total);
+  }, [total])
+
+
+
+
   return (
     <>
       {/* Shopping cart */}
-      <div ref={cartBoxRef} className={isCartClicked == true ? "shopping-cart active" : "shopping-cart"}>
+      <div
+        ref={cartBoxRef}
+        className={
+          isCartClicked === true ? "shopping-cart active" : "shopping-cart"
+        }
+      >
         <div className="container">
           <div className="row">
             <div className="col-12 col-sm-12 col-md-12">
@@ -24,16 +51,46 @@ const ShoppingCart = ({cartBoxRef}) => {
             </div>
           </div>
           <div className="row" id="wrap-product-section">
-            <div
-              className="col-12 col-sm-12 col-md-12"
-              id="product-row-js"
-            ></div>
+            <div className="col-12 col-sm-12 col-md-12" id="product-row-js">
+              {productList.length == 0 && <p>Cart Empty</p>}
+              {productList.length > 0 &&
+                productList.map((product) => {
+                  return (
+                    <>
+                      <div className="product-wrap" key={product.id} >
+                        <div className="product-cart">
+                          <div className="product-cart-image">
+                            <img src={product.mainImage} alt={product.name} />
+                            <i
+                              id="remove-btn"
+                              className="fa-solid fa-xmark"
+                            ></i>
+                          </div>
+                          <div className="product-cart-text">
+                            <p className="product-name">{product.name}</p>
+                            <p className="product-price">{product.price}</p>
+                          </div>
+                        </div>
+                        <div className="product-quantity">
+                          <button onClick={() => handleMinusQuantity(product.id)} className="minus-button" type="button">
+                            <i className="fa-solid fa-minus"></i>
+                          </button>
+                          <span>{product.quantity}</span>
+                          <button onClick={() => handleAddQuantity(product.id)} className="plus-button" type="button">
+                            <i className="fa-solid fa-plus"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </>
+                  );
+                })}
+            </div>
           </div>
           <div className="row" id="wrap-cart-checkout">
             <div className="col-12 col-sm-12 col-md-12">
               <div className="cart-subtotal">
                 <h2>Subtotal</h2>
-                <span>0$</span>
+                <span>{totalCalculate}$</span>
               </div>
             </div>
             <div className="col-12 col-sm-12 col-md-12">

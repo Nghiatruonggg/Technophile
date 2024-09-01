@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import useCallAPI from "../../../../hooks/useCallAPI";
 import { mobile_categories } from "../../../../untils/variable";
 import Pagination from "../../../common/Pagination";
@@ -6,17 +6,19 @@ import { Link } from "react-router-dom";
 import useCallAPIwithPagination from "../../../../hooks/useCallAPIwithPagination";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../../../reducers/cartReducerSlice";
+import { cartContext } from "../../../../contexts/Contexts";
 
-const ProductRow = ({data, isLoading}) => {
-
-
+const ProductRow = ({ data, isLoading }) => {
   if (isLoading) return <p>Data is Loading</p>;
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const handleAddToCart = (product) => {
-    dispatch(addToCart(product));
-  }
+    dispatch(addToCart({
+      ...product,
+      quantity : 1
+    }));
+  };
 
   return (
     <>
@@ -24,7 +26,7 @@ const ProductRow = ({data, isLoading}) => {
         <div className="row-custom row-js">
           {data.map((product) => {
             return (
-              <div key={product.id} className="column column-3 column-2">
+              <div key={product.id} className="column column-3 column-2 column-relative">
                 <Link to={`/mobile-categories/${product.id}`}>
                   <div className="wrap-product">
                     <div className="product-image">
@@ -35,14 +37,13 @@ const ProductRow = ({data, isLoading}) => {
                       <p className="product-name">{product.name}</p>
                       <p className="product-price">{product.price}</p>
                     </div>
-
-                    <div className="cart-product-button">
-                      <button onClick={() => handleAddToCart(product)}>
-                        <i className="fa-solid fa-plus"></i>
-                      </button>
-                    </div>
                   </div>
                 </Link>
+                <div className="cart-product-button">
+                  <button onClick={() => handleAddToCart(product)}>
+                    <i className="fa-solid fa-plus"></i>
+                  </button>
+                </div>
               </div>
             );
           })}
