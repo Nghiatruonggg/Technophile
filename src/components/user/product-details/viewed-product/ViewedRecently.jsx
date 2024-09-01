@@ -5,7 +5,7 @@ import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import { options } from "../../../../untils/third-lib";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const ViewedRecently = () => {
   // const { data } = useCallAPI(mobile_categories);
@@ -25,6 +25,10 @@ const ViewedRecently = () => {
     setStoredData(storedData);
   }, []);
 
+  const redirectProduct = (id) => {
+    window.location.href = `/mobile-categories/${id}`;
+  };
+
   return (
     <>
       <div className="viewed-product">
@@ -40,7 +44,7 @@ const ViewedRecently = () => {
               <>
                 <div
                   onClick={() => {
-                    window.location.href = `/mobile-categories/${product.id}`;
+                    redirectProduct(product.id);
                   }}
                 >
                   <div className="item">
