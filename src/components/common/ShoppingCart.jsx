@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { cartContext } from "../../contexts/Contexts";
 import { useDispatch, useSelector } from "react-redux";
-import { addQuantity, minusQuantity } from "../../reducers/cartReducerSlice";
+import { addQuantity, deleteProduct, minusQuantity } from "../../reducers/cartReducerSlice";
 
 const ShoppingCart = ({ cartBoxRef }) => {
 
@@ -23,6 +23,10 @@ const ShoppingCart = ({ cartBoxRef }) => {
 
   const handleMinusQuantity = (id) => {
     dispatch(minusQuantity(id));
+  }
+
+  const removeProduct = (id) => {
+    dispatch(deleteProduct(id));
   }
 
   useEffect(() => {
@@ -64,6 +68,7 @@ const ShoppingCart = ({ cartBoxRef }) => {
                             <i
                               id="remove-btn"
                               className="fa-solid fa-xmark"
+                              onClick={() => removeProduct(product.id)}
                             ></i>
                           </div>
                           <div className="product-cart-text">

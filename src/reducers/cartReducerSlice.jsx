@@ -4,8 +4,8 @@ import React from "react";
 const cartReducerSlice = createSlice({
   name: "cart",
   initialState: {
-    productList: [],
-    total: 0,
+    productList: JSON.parse(localStorage.getItem("cartProducts")) || [],
+    total: JSON.parse(localStorage.getItem("cartTotal")) || 0,
   },
   reducers: {
     addToCart(state, action) {
@@ -14,7 +14,6 @@ const cartReducerSlice = createSlice({
         (product) => product.id === action.payload.id
       );
 
-      
       if (index !== -1) {
         state.productList[index].quantity += action.payload.quantity;
       } else {
@@ -32,6 +31,10 @@ const cartReducerSlice = createSlice({
       });
 
       state.total = newTotal;
+
+      // Save into localStorage
+      localStorage.setItem("cartProducts", JSON.stringify(state.productList));
+      localStorage.setItem("cartTotal", JSON.stringify(state.total));
     },
 
     addQuantity(state, action) {
@@ -50,6 +53,10 @@ const cartReducerSlice = createSlice({
       });
 
       state.total = newTotal;
+
+      // Save into localStorage
+      localStorage.setItem("cartProducts", JSON.stringify(state.productList));
+      localStorage.setItem("cartTotal", JSON.stringify(state.total));
     },
 
     minusQuantity(state, action) {
@@ -68,10 +75,32 @@ const cartReducerSlice = createSlice({
       });
 
       state.total = newTotal;
+
+      // Save into localStorage
+      localStorage.setItem("cartProducts", JSON.stringify(state.productList));
+      localStorage.setItem("cartTotal", JSON.stringify(state.total));
+    },
+
+    deleteProduct(state, action) {
+      state.productList = state.productList.filter(
+        (product) => product.id !== action.payload
+      );
+
+      // Recalculate total
+      let newTotal = 0;
+      state.productList.forEach(({ price, quantity }) => {
+        newTotal += parseInt(price) * quantity;
+      });
+
+      state.total = newTotal;
+
+      // Save into localStorage
+      localStorage.setItem("cartProducts", JSON.stringify(state.productList));
+      localStorage.setItem("cartTotal", JSON.stringify(state.total));
     },
   },
 });
 
-export const { addToCart, addQuantity, minusQuantity } =
+export const { addToCart, addQuantity, minusQuantity, deleteProduct } =
   cartReducerSlice.actions;
 export default cartReducerSlice.reducer;
