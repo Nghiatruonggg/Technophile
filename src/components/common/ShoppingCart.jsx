@@ -1,10 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import { cartContext } from "../../contexts/Contexts";
 import { useDispatch, useSelector } from "react-redux";
-import { addQuantity, deleteProduct, minusQuantity } from "../../reducers/cartReducerSlice";
+import {
+  addQuantity,
+  deleteProduct,
+  minusQuantity,
+} from "../../reducers/cartReducerSlice";
+import { Link } from "react-router-dom";
 
 const ShoppingCart = ({ cartBoxRef }) => {
-
   const [totalCalculate, setTotalCalculate] = useState(0);
 
   // Popup/Close Function
@@ -19,22 +23,19 @@ const ShoppingCart = ({ cartBoxRef }) => {
 
   const handleAddQuantity = (id) => {
     dispatch(addQuantity(id));
-  }
+  };
 
   const handleMinusQuantity = (id) => {
     dispatch(minusQuantity(id));
-  }
+  };
 
   const removeProduct = (id) => {
     dispatch(deleteProduct(id));
-  }
+  };
 
   useEffect(() => {
     setTotalCalculate(total);
-  }, [total])
-
-
-
+  }, [total]);
 
   return (
     <>
@@ -60,8 +61,7 @@ const ShoppingCart = ({ cartBoxRef }) => {
               {productList.length > 0 &&
                 productList.map((product) => {
                   return (
-                    <>
-                      <div className="product-wrap" key={product.id} >
+                      <div key={product.id} className="product-wrap" >
                         <div className="product-cart">
                           <div className="product-cart-image">
                             <img src={product.mainImage} alt={product.name} />
@@ -77,16 +77,23 @@ const ShoppingCart = ({ cartBoxRef }) => {
                           </div>
                         </div>
                         <div className="product-quantity">
-                          <button onClick={() => handleMinusQuantity(product.id)} className="minus-button" type="button">
+                          <button
+                            onClick={() => handleMinusQuantity(product.id)}
+                            className="minus-button"
+                            type="button"
+                          >
                             <i className="fa-solid fa-minus"></i>
                           </button>
                           <span>{product.quantity}</span>
-                          <button onClick={() => handleAddQuantity(product.id)} className="plus-button" type="button">
+                          <button
+                            onClick={() => handleAddQuantity(product.id)}
+                            className="plus-button"
+                            type="button"
+                          >
                             <i className="fa-solid fa-plus"></i>
                           </button>
                         </div>
                       </div>
-                    </>
                   );
                 })}
             </div>
@@ -100,10 +107,12 @@ const ShoppingCart = ({ cartBoxRef }) => {
             </div>
             <div className="col-12 col-sm-12 col-md-12">
               <div className="cart-button">
-                <button type="submit">
-                  <a href="./cart-page.html">Cart View</a>
-                </button>
-                <button type="submit">Checkout</button>
+                <Link to="/cart-view">
+                  <button className="cart-view-button">Cart View</button>
+                </Link>
+                <Link to="#">
+                  <button className="checkout-cart">Checkout</button>
+                </Link>
               </div>
             </div>
           </div>

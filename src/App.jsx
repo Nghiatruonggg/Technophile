@@ -7,6 +7,7 @@ import ProductDetails from './pages/user/ProductDetails'
 import AboutUs from './pages/user/AboutUs'
 import ContactUs from './pages/user/ContactUs'
 import DesktopCategories from './pages/user/DesktopCategories'
+import CartView from './pages/user/CartView'
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route path='/desktop-categories' element={<DesktopCategories/>}/>
         <Route path='/about-us' element={<AboutUs/>}/>
         <Route path='/contact-us' element={<ContactUs/>}/>
+        <Route path='/cart-view' element={<CartView/>}/>
       </Route>
 
 
