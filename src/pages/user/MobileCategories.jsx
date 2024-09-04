@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Subbanner from "../../components/common/Subbanner";
 import MainTitle from "../../components/common/MainTitle";
 import BodySection from "../../components/user/mobile-categories/BodySection";
 
 const MobileCategories = () => {
+
+
+
   return (
     <>
       <Subbanner />

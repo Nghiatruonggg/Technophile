@@ -14,7 +14,6 @@ import "./assets/common/lib/fontawesome/css/solid.css";
 import "./assets/user/css/user.css";
 
 // Import common JS
-import "./assets/common/lib/axios.min.js";
 import "./assets/common/lib/bootstrap/js/bootstrap.bundle.min.js";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";

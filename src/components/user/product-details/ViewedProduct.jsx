@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import ViewedRecently from "./viewed-product/ViewedRecently";
 
 const ViewedProduct = () => {
+
   return (
     <>
       <div className="viewed-product-section">
@@ -21,7 +22,7 @@ const ViewedProduct = () => {
             </div>
           </div>
 
-          <ViewedRecently/>
+          <ViewedRecently />
         </div>
       </div>
     </>

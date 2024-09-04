@@ -1,43 +1,84 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import FilterInfo from "./BodySection/FilterInfo";
 import ProductRow from "./BodySection/ProductRow";
-import BelowButtons from "./BodySection/BelowButtons";
 import Pagination from "../../common/Pagination";
-import useCallAPI from "../../../hooks/useCallAPI";
 import { mobile_categories } from "../../../untils/variable";
-import useCallAPIwithPagination from "../../../hooks/useCallAPIwithPagination";
-import { cartContext } from "../../../contexts/Contexts";
-import useCartClicked from "../../../hooks/useCartClicked";
+
+import useCallAPI from "../../../hooks/useCallAPI";
 
 const BodySection = () => {
-  const { data, isLoading, totalPages, currentPage, setCurrentPage } =
-    useCallAPIwithPagination(mobile_categories);
+  const { data, isLoading } = useCallAPI(mobile_categories);
 
-  // const { isCartClicked, setIsCartClicked, handleCartClicked } =
-  //   useCartClicked();
-    
+  const [selectedCategories, setSelectedCategories] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [productPerPage, setProductPerPage] = useState(6);
+
+  const lastProductIndex = currentPage * productPerPage;
+  const firstProductIndex = lastProductIndex - productPerPage;
+
+  const productSlice = filteredProducts.slice(
+    firstProductIndex,
+    lastProductIndex
+  );
+
+  const handleCategoriesChecked = (event) => {
+    const { id, checked } = event.target;
+
+    // Update selected categories
+    setSelectedCategories((prevCategories) => {
+      if (checked) {
+        return [...prevCategories, id];
+      } else {
+        return prevCategories.filter((category) => category !== id);
+      }
+    });
+  };
+
+  // Use `useEffect` to update filtered products whenever `selectedCategories` changes
+  useEffect(() => {
+    let filteredData = data;
+
+    if (selectedCategories.length > 0) {
+      filteredData = filteredData.filter(({ phone_type, price_range }) => {
+        const isSmartphonesSelected =
+          selectedCategories.includes("Smartphones");
+        const isFeaturePhonesSelected =
+          selectedCategories.includes("Feature Phones");
+
+        if (
+          isSmartphonesSelected === true &&
+          isFeaturePhonesSelected === true
+        ) {
+          return null;
+        }
+
+        return (
+          selectedCategories.includes(phone_type) ||
+          selectedCategories.includes(price_range)
+        );
+      });
+    }
+
+    setFilteredProducts(filteredData);
+  }, [selectedCategories, data]);
+
   return (
     <>
       <div className="body-section">
         <div className="container">
-          <FilterInfo />
-          {/* <cartContext.Provider
-            value={{
-              isCartClicked,
-              setIsCartClicked,
-              handleCartClicked,
-            }}
-          > */}
-            <ProductRow data={data} isLoading={isLoading} />
-          {/* </cartContext.Provider> */}
+
+            <FilterInfo handleCategoriesChecked={handleCategoriesChecked} />
+          <ProductRow
+            data={data}
+            isLoading={isLoading}
+            productSlice={productSlice}
+          />
         </div>
       </div>
 
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        setCurrentPage={setCurrentPage}
-      />
+      <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} totalPage={filteredProducts.length} productPerPage={productPerPage} />
     </>
   );
 };

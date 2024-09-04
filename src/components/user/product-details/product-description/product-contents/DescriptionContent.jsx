@@ -28,20 +28,20 @@ const DescriptionContent = ({data, activeTab}) => {
                 <div className="description-image">
                   <img src={data.description_image_1} alt={data.name} />
                 </div>
-                <p class="description-text">{data.description_text_4}</p>
+                <p className="description-text">{data.description_text_4}</p>
               </div>
             </div>
 
-            <div class="col-12 col-sm-12 col-md-12">
-              <div class="wrap-description-section">
-                <h5 class="description-sub-title">
+            <div className="col-12 col-sm-12 col-md-12">
+              <div className="wrap-description-section">
+                <h5 className="description-sub-title">
                   {data.description_sub_title_2}
                 </h5>
-                <p class="description-text">{data.description_text_5}</p>
-                <div class="description-image">
+                <p className="description-text">{data.description_text_5}</p>
+                <div className="description-image">
                   <img src={data.description_image_2} alt={data.name} />
                 </div>
-                <p class="description-text">{data.description_text_6}</p>
+                <p className="description-text">{data.description_text_6}</p>
               </div>
             </div>
           </>
