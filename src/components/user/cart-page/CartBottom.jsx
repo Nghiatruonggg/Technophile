@@ -1,11 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-const CartBottom = ({total}) => {
+const CartBottom = ({ total }) => {
+  const [newTotal, setNewTotal] = useState(total);
 
-  const [shippingMethod, setShippingMethod] = useState();
-  const handleShippingClicked = (event) => {
+  const handleShippingClicked = (method) => {
+    let newTotal;
+    if (method === "free") {
+      newTotal = total;
+    } else if (method === "local") {
+      newTotal = total + 35;
+    } else if (method === "flat-rate") {
+      newTotal = total + 12;
+    }
+    setNewTotal(newTotal);
+  };
 
-  }
+  useEffect(() => {
+    setNewTotal(total)
+  }, [total]);
 
   return (
     <>
@@ -23,15 +35,30 @@ const CartBottom = ({total}) => {
                 <td>Shipping</td>
                 <td>
                   <div className="input-group">
-                    <input onChange={handleShippingClicked} id="radio1" type="radio" name="shipping" />
+                    <input
+                      onChange={() => handleShippingClicked("free")}
+                      id="radio1"
+                      type="radio"
+                      name="shipping"
+                    />
                     <label htmlFor="radio1">Free Shipping</label>
                   </div>
                   <div className="input-group">
-                    <input onChange={handleShippingClicked} id="radio2" type="radio" name="shipping" />
+                    <input
+                      onChange={() => handleShippingClicked("local")}
+                      id="radio2"
+                      type="radio"
+                      name="shipping"
+                    />
                     <label htmlFor="radio2">Local: 35$</label>
                   </div>
                   <div className="input-group">
-                    <input onChange={handleShippingClicked} id="radio3" type="radio" name="shipping" />
+                    <input
+                      onChange={() => handleShippingClicked("flat-rate")}
+                      id="radio3"
+                      type="radio"
+                      name="shipping"
+                    />
                     <label htmlFor="radio3">Flat rate: 12$</label>
                   </div>
                 </td>
@@ -39,7 +66,7 @@ const CartBottom = ({total}) => {
 
               <tr className="order-total">
                 <td>Total</td>
-                <td className="total-amount">400$</td>
+                <td className="total-amount">{newTotal}$</td>
               </tr>
             </tbody>
           </table>
