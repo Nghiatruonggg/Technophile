@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 const CartBottom = ({total}) => {
-  const handleShippingClicked = () => {
-    const {id, checked} = event.target
-    console.log(checked)
+
+  const [shippingMethod, setShippingMethod] = useState();
+  const handleShippingClicked = (event) => {
+
   }
 
   return (
@@ -22,15 +23,15 @@ const CartBottom = ({total}) => {
                 <td>Shipping</td>
                 <td>
                   <div className="input-group">
-                    <input onChange={() => handleShippingClicked} id="radio1" type="radio" name="shipping" />
+                    <input onChange={handleShippingClicked} id="radio1" type="radio" name="shipping" />
                     <label htmlFor="radio1">Free Shipping</label>
                   </div>
                   <div className="input-group">
-                    <input onChange={() => handleShippingClicked} id="radio2" type="radio" name="shipping" />
+                    <input onChange={handleShippingClicked} id="radio2" type="radio" name="shipping" />
                     <label htmlFor="radio2">Local: 35$</label>
                   </div>
                   <div className="input-group">
-                    <input onChange={() => handleShippingClicked} id="radio3" type="radio" name="shipping" />
+                    <input onChange={handleShippingClicked} id="radio3" type="radio" name="shipping" />
                     <label htmlFor="radio3">Flat rate: 12$</label>
                   </div>
                 </td>
