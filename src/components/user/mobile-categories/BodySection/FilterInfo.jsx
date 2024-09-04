@@ -9,10 +9,8 @@ import oneplusLogo from "../../../../assets/common/images/Mobile-Categories/onep
 import oppoLogo from "../../../../assets/common/images/Mobile-Categories/oppo logo.png";
 import huaweiLogo from "../../../../assets/common/images/Mobile-Categories/huawei logo.png";
 
-import { filterCategoriesContext } from "../../../../contexts/Contexts";
 
-const FilterInfo = () => {
-  const {handleCategoriesChecked}= useContext(filterCategoriesContext);
+const FilterInfo = ({handleCategoriesChecked}) => {
 
   return (
     <>

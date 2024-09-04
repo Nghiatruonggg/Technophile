@@ -3,8 +3,6 @@ import FilterInfo from "./BodySection/FilterInfo";
 import ProductRow from "./BodySection/ProductRow";
 import Pagination from "../../common/Pagination";
 import { mobile_categories } from "../../../untils/variable";
-import useCallAPIwithPagination from "../../../hooks/useCallAPIwithPagination";
-import { filterCategoriesContext } from "../../../contexts/Contexts";
 import useCallAPI from "../../../hooks/useCallAPI";
 
 const BodySection = () => {
@@ -71,9 +69,7 @@ const BodySection = () => {
     <>
       <div className="body-section">
         <div className="container">
-          <filterCategoriesContext.Provider value={{ handleCategoriesChecked }}>
-            <FilterInfo />
-          </filterCategoriesContext.Provider>
+            <FilterInfo handleCategoriesChecked={handleCategoriesChecked} />
           <ProductRow
             data={data}
             isLoading={isLoading}
