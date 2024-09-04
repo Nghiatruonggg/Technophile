@@ -3,6 +3,7 @@ import FilterInfo from "./BodySection/FilterInfo";
 import ProductRow from "./BodySection/ProductRow";
 import Pagination from "../../common/Pagination";
 import { mobile_categories } from "../../../untils/variable";
+
 import useCallAPI from "../../../hooks/useCallAPI";
 
 const BodySection = () => {
@@ -63,12 +64,11 @@ const BodySection = () => {
     setFilteredProducts(filteredData);
   }, [selectedCategories, data]);
 
-
-
   return (
     <>
       <div className="body-section">
         <div className="container">
+
             <FilterInfo handleCategoriesChecked={handleCategoriesChecked} />
           <ProductRow
             data={data}

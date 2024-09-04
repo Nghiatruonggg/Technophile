@@ -30,6 +30,7 @@ const ProductDetails = () => {
     }
   }, [data]);
 
+
   return (
     <>
       <Subbanner />
