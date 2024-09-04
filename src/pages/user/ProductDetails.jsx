@@ -14,6 +14,7 @@ const ProductDetails = () => {
   const {data, isLoading} = useCallAPI(mobile_categories + `/${id}`)
 
 
+
   return (
     <>
       <Subbanner />
