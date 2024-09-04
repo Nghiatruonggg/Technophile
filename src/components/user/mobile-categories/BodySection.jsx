@@ -5,13 +5,24 @@ import Pagination from "../../common/Pagination";
 import { mobile_categories } from "../../../untils/variable";
 import useCallAPIwithPagination from "../../../hooks/useCallAPIwithPagination";
 import { filterCategoriesContext } from "../../../contexts/Contexts";
+import useCallAPI from "../../../hooks/useCallAPI";
 
 const BodySection = () => {
-  const { data, isLoading, totalPages, currentPage, setCurrentPage } =
-    useCallAPIwithPagination(mobile_categories);
+  const { data, isLoading } = useCallAPI(mobile_categories);
 
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [productPerPage, setProductPerPage] = useState(6);
+
+  const lastProductIndex = currentPage * productPerPage;
+  const firstProductIndex = lastProductIndex - productPerPage;
+
+  const productSlice = filteredProducts.slice(
+    firstProductIndex,
+    lastProductIndex
+  );
 
   const handleCategoriesChecked = (event) => {
     const { id, checked } = event.target;
@@ -32,14 +43,16 @@ const BodySection = () => {
 
     if (selectedCategories.length > 0) {
       filteredData = filteredData.filter(({ phone_type, price_range }) => {
-        const isSmartphonesSelected = selectedCategories.includes("Smartphones");
-        const isFeaturePhonesSelected = selectedCategories.includes("Feature Phones")
+        const isSmartphonesSelected =
+          selectedCategories.includes("Smartphones");
+        const isFeaturePhonesSelected =
+          selectedCategories.includes("Feature Phones");
 
         if (
-          isSmartphonesSelected == true &&
-          isFeaturePhonesSelected == true
+          isSmartphonesSelected === true &&
+          isFeaturePhonesSelected === true
         ) {
-          return false;
+          return null;
         }
 
         return (
@@ -52,6 +65,8 @@ const BodySection = () => {
     setFilteredProducts(filteredData);
   }, [selectedCategories, data]);
 
+
+
   return (
     <>
       <div className="body-section">
@@ -62,16 +77,12 @@ const BodySection = () => {
           <ProductRow
             data={data}
             isLoading={isLoading}
-            filteredProducts={filteredProducts}
+            productSlice={productSlice}
           />
         </div>
       </div>
 
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        setCurrentPage={setCurrentPage}
-      />
+      <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} totalPage={filteredProducts.length} productPerPage={productPerPage} />
     </>
   );
 };

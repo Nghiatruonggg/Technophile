@@ -5,7 +5,7 @@ import Pagination from "../../../common/Pagination";
 import { Link } from "react-router-dom";
 import useCallAPIwithPagination from "../../../../hooks/useCallAPIwithPagination";
 
-const ProductRow = ({ data, isLoading, filteredProducts }) => {
+const ProductRow = ({ data, isLoading, productSlice }) => {
   if (isLoading) return <p>Data is Loading</p>;
 
 
@@ -13,7 +13,7 @@ const ProductRow = ({ data, isLoading, filteredProducts }) => {
     <>
       <div className="product-row">
         <div className="row-custom row-js">
-        {filteredProducts.length == 0 && data.map((product) => {
+        {productSlice.length == 0 && productSlice.map((product) => {
             return (
               <div key={product.id} className="column column-3 column-2">
                 <Link
@@ -39,7 +39,7 @@ const ProductRow = ({ data, isLoading, filteredProducts }) => {
               </div>
             );
           })}
-          {filteredProducts.length > 0 && filteredProducts.map((product) => {
+          {productSlice.length > 0 && productSlice.map((product) => {
             return (
               <div key={product.id} className="column column-3 column-2">
                 <Link

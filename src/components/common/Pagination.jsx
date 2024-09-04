@@ -1,9 +1,13 @@
 import React from "react";
 
-const Pagination = ({ totalPages, currentPage, setCurrentPage }) => {
+const Pagination = ({
+  currentPage,
+  setCurrentPage,
+  totalPage,
+  productPerPage,
+}) => {
   let pageNumbers = [];
-
-  for (let i = 1; i <= totalPages; i++) {
+  for (let i = 1; i <= Math.ceil(totalPage / productPerPage); i++) {
     pageNumbers.push(i);
   }
 
@@ -11,11 +15,9 @@ const Pagination = ({ totalPages, currentPage, setCurrentPage }) => {
     <>
       <div className="pagination" style={{ justifyContent: "center" }}>
         <div className="btn-group" role="group">
-          {pageNumbers.map((page) => (
-            <button key={page} type="button" className={currentPage === page ? "active btn btn-primary" : "btn btn-primary"} onClick={() => setCurrentPage(page)}>
-              {page}
-            </button>
-          ))}
+          {pageNumbers.map((page) => {
+            return <button key={page} onClick={() => setCurrentPage(page)} className={currentPage == page ? "btn btn-primary active" : "btn btn-primary"}>{page}</button>
+          })}
         </div>
       </div>
     </>
