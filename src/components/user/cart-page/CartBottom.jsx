@@ -2,22 +2,27 @@ import React, { useEffect, useState } from "react";
 
 const CartBottom = ({ total }) => {
   const [newTotal, setNewTotal] = useState(total);
+  const [shippingCost, setShippingCost] = useState(0);
+  const [defaultMethod, setDefaultMethod] = useState("free");
 
   const handleShippingClicked = (method) => {
-    let newTotal;
-    if (method === "free") {
-      newTotal = total;
-    } else if (method === "local") {
-      newTotal = total + 35;
+    let cost = 0;
+
+    if (method === "local") {
+      cost = 35;
     } else if (method === "flat-rate") {
-      newTotal = total + 12;
+      cost = 12;
     }
-    setNewTotal(newTotal);
+
+    setShippingCost(cost);
+    setDefaultMethod(method);
   };
 
+  // Recalculate newTotal whenever total or shippingCost changes
   useEffect(() => {
-    setNewTotal(total)
-  }, [total]);
+    setNewTotal(total + shippingCost);
+  }, [total, shippingCost]);
+
 
   return (
     <>
@@ -36,28 +41,31 @@ const CartBottom = ({ total }) => {
                 <td>
                   <div className="input-group">
                     <input
-                      onChange={() => handleShippingClicked("free")}
+                      onClick={() => handleShippingClicked("free")}
                       id="radio1"
                       type="radio"
                       name="shipping"
+                      checked={defaultMethod === "free"}
                     />
                     <label htmlFor="radio1">Free Shipping</label>
                   </div>
                   <div className="input-group">
                     <input
-                      onChange={() => handleShippingClicked("local")}
+                      onClick={() => handleShippingClicked("local")}
                       id="radio2"
                       type="radio"
                       name="shipping"
+                      checked={defaultMethod === "local"}
                     />
                     <label htmlFor="radio2">Local: 35$</label>
                   </div>
                   <div className="input-group">
                     <input
-                      onChange={() => handleShippingClicked("flat-rate")}
+                      onClick={() => handleShippingClicked("flat-rate")}
                       id="radio3"
                       type="radio"
                       name="shipping"
+                      checked={defaultMethod === "flat-rate"}
                     />
                     <label htmlFor="radio3">Flat rate: 12$</label>
                   </div>
