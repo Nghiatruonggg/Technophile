@@ -2155,6 +2155,19 @@ body.darken-2::before {
   font-size: 24px;
 }
 
+/* Login Interface */
+.wrap-user-logo {
+  position: relative;
+}
+
+.login-interface {
+  position: absolute;
+}
+
+.user-desktop {
+  color: #000;
+}
+
 /* Mobile Menu */
 .menu-mobile {
   display: none;

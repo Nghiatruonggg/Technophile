@@ -8,6 +8,7 @@ import AboutUs from './pages/user/AboutUs'
 import ContactUs from './pages/user/ContactUs'
 import DesktopCategories from './pages/user/DesktopCategories'
 import CartView from './pages/user/CartView'
+import Login from './pages/auth/Login'
 
 const App = () => {
   return (
@@ -21,6 +22,8 @@ const App = () => {
         <Route path='/contact-us' element={<ContactUs/>}/>
         <Route path='/cart-view' element={<CartView/>}/>
       </Route>
+
+      <Route path='/login' element={<Login/>}/>
 
 
 
