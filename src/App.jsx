@@ -9,6 +9,7 @@ import ContactUs from './pages/user/ContactUs'
 import DesktopCategories from './pages/user/DesktopCategories'
 import CartView from './pages/user/CartView'
 import Login from './pages/auth/Login'
+import Signup from './pages/auth/Signup'
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
       </Route>
 
       <Route path='/login' element={<Login/>}/>
+      <Route path='/register' element={<Signup/>}/>
 
 
 

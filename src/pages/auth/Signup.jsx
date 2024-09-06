@@ -6,20 +6,20 @@ import AuthHeader from "../../components/auth/common/AuthHeader";
 import AuthTitle from "../../components/auth/common/AuthTitle";
 import { authStructure } from "../../structures/AuthStructure";
 
-const Login = () => {
-  const loginInfo = authStructure[0];
+const Signup = () => {
+  const signupInfo = authStructure[1];
   return (
     <>
       <div className="auth-container">
-        <AuthImage loginImage={loginInfo.AuthImage} />
+        <AuthImage loginImage={signupInfo.AuthImage} />
 
         <div className="auth-section">
           <div className="container">
             <div className="row">
               <div className="col-12 col-sm-12 col-md-12">
                 <AuthHeader
-                  authSub1={loginInfo.authSub1}
-                  authButton={loginInfo.authButton}
+                  authSub1={signupInfo.authSub1}
+                  authButton={signupInfo.authButton}
                 />
               </div>
             </div>
@@ -29,8 +29,8 @@ const Login = () => {
                 <div className="auth-main">
                   <div className="auth-form">
                     <AuthTitle
-                      authSub2={loginInfo.authSub2}
-                      authTitle={loginInfo.authTitle}
+                      authSub2={signupInfo.authSub2}
+                      authTitle={signupInfo.authTitle}
                     />
 
                     <SigninForm />
@@ -45,4 +45,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;

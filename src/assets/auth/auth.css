@@ -1,4 +1,4 @@
-.login-container {
+.auth-container {
     display: flex;
 }
 
@@ -6,13 +6,13 @@
     height: 100vh;
 }
 
-.login-section {
+.auth-section {
     width: 100%;
     height: 100vh;
     /* background-color: antiquewhite; */
 }
 
-.login-header {
+.auth-header {
     width: 100%;
     height: 180px;
     /* background-color: aliceblue; */
@@ -22,17 +22,17 @@
 }
 
 
-.sign-up-button {
+.auth-button {
     display: flex;
     align-items: center;
     gap: 24px;
 }
-.sign-up-button p {
+.auth-button p {
     margin-bottom: 0;
     font-weight: 600;
 }
 
-.sign-up-button button {
+.auth-button button {
     padding: 15px 30px;
     border: none;
     border-radius: 5px;
@@ -47,13 +47,13 @@
 }
 
 /* Login main */
-.login-main {
+.auth-main {
     width: 100%;
     height: 475px;
     position: relative;
 }
 
-.login-form {
+.auth-form {
     width: 500px;
     height: 400px;
     /* background-color: aliceblue; */
