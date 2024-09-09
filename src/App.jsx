@@ -10,6 +10,7 @@ import DesktopCategories from './pages/user/DesktopCategories'
 import CartView from './pages/user/CartView'
 import Login from './pages/auth/Login'
 import Signup from './pages/auth/Signup'
+import Dashboard from './pages/admin/Dashboard'
 
 const App = () => {
   return (
@@ -22,10 +23,15 @@ const App = () => {
         <Route path='/about-us' element={<AboutUs/>}/>
         <Route path='/contact-us' element={<ContactUs/>}/>
         <Route path='/cart-view' element={<CartView/>}/>
+
+        {/* Admin Dashboard */}
+        <Route path='/dashboard' element={<Dashboard/>}/>
       </Route>
 
       <Route path='/login' element={<Login/>}/>
       <Route path='/register' element={<Signup/>}/>
+
+
 
 
 

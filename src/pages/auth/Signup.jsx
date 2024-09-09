@@ -5,6 +5,7 @@ import SigninForm from "../../components/auth/SigninForm";
 import AuthHeader from "../../components/auth/common/AuthHeader";
 import AuthTitle from "../../components/auth/common/AuthTitle";
 import { authStructure } from "../../structures/AuthStructure";
+import SignupForm from "../../components/auth/SignupForm";
 
 const Signup = () => {
   const signupInfo = authStructure[1];
@@ -33,7 +34,7 @@ const Signup = () => {
                       authTitle={signupInfo.authTitle}
                     />
 
-                    <SigninForm />
+                    <SignupForm/>
                   </div>
                 </div>
               </div>

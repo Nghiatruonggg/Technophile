@@ -1,4 +1,3 @@
-// Import Images
 import { Link, NavLink } from "react-router-dom";
 import HeaderNav from "./Header/HeaderNav";
 
