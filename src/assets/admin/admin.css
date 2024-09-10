@@ -37,11 +37,19 @@
     list-style: none;
     font-size: 1.1rem;
     margin-bottom: 16px;
-    color: #777777;
 }
 
 .nav-list li i {
     margin-right: 10px;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: #777777;
+}
+
+.nav-list li a.active {
+    color: #0084FC;
 }
 
 .fa-shop, .fa-gears {
@@ -117,4 +125,32 @@
     font-size: 1.5rem;
     font-weight: 600;
 }
+
+/* Product Listing */
+.product-listing {
+    border: 0.1px solid #777777;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.listing-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-product {
+    border: none;
+    padding: 10px 15px;
+    background-color: #0084FC;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: all .2s;
+}
+
+.add-product:hover {
+    transform: scale(1.05);
+}
+
+/* Product Manage */
 

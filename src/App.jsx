@@ -11,6 +11,8 @@ import CartView from './pages/user/CartView'
 import Login from './pages/auth/Login'
 import Signup from './pages/auth/Signup'
 import Dashboard from './pages/admin/Dashboard'
+import LayoutAdmin from './pages/admin/LayoutAdmin'
+import DashboardProducts from './pages/admin/DashboardProducts'
 
 const App = () => {
   return (
@@ -25,7 +27,10 @@ const App = () => {
         <Route path='/cart-view' element={<CartView/>}/>
 
         {/* Admin Dashboard */}
-        <Route path='/dashboard' element={<Dashboard/>}/>
+        <Route path='/dashboard' element={<LayoutAdmin/>}>
+          <Route index element={<Dashboard/>}/>
+          <Route path='/dashboard/products' element={<DashboardProducts/>}/>
+        </Route>
       </Route>
 
       <Route path='/login' element={<Login/>}/>
