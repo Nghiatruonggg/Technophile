@@ -2,17 +2,22 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { url_login } from "../../untils/variable";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { submitLogin } from "../../reducers/authReducerSlice";
 
 const SigninForm = () => {
   const authFunction = useSelector(state => state.auth)
-  
+  const {user_info, isLoading, error } = authFunction
+  console.log(user_info)
+
+
+
   // Acquire the account info of the user
   const redirect = useNavigate();
+  const dispatch = useDispatch();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
 
   const user = {
     email: email,
@@ -20,32 +25,19 @@ const SigninForm = () => {
   };
 
   // Send the data to the server
-  const handleLogin = async (event) => {
+  const handleLogin = (event) => {
     event.preventDefault();
 
     try {
-      setIsLoading(true);
-      const response = await axios.post(url_login, user);
+      dispatch(submitLogin(user))
 
-      setIsLoading(false);
-
-      // Save to localStorage
-      localStorage.setItem("USER_INFO", JSON.stringify(response.data.user))
-
-      // Redirect to localStorage
-      redirect("/dashboard");
-
+      redirect("/dashboard")
     } catch (error) {
-      setIsLoading(false);
-      throw new Error();
+      throw new error
     }
+
   };
 
-  // Check to see if user has loginned
-  useEffect(() => {
-    const isAuth = JSON.parse(localStorage.getItem("USER_INFO"))
-    if (isAuth) return redirect("/dashboard")
-  }, [])
 
   return (
     <form className="signin-form" onSubmit={handleLogin}>
@@ -59,6 +51,7 @@ const SigninForm = () => {
           id="InputEmail1"
           aria-describedby="emailHelp"
           onChange={(event) => setEmail(event.target.value)}
+          required={true}
         />
         <div id="emailHelp" className="form-text">
           We'll never share your email with anyone else.
@@ -73,6 +66,7 @@ const SigninForm = () => {
           className="form-control"
           id="exampleInputPassword1"
           onChange={(event) => setPassword(event.target.value)}
+          required={true}
         />
       </div>
 

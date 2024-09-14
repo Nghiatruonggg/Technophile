@@ -1,10 +1,17 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 
 const IsAuth = ({ component }) => {
-  let isAuth = JSON.parse(localStorage.getItem("USER_INFO"));
+  const authFunction = useSelector((state) => state.auth);
+  let { user_info } = authFunction;
 
-  return isAuth ? component : <Navigate to="/login" replace={true} />
+  if ((user_info = null)) {
+    <Navigate to="/login" replace={true} />;
+  }
+  {
+    return component;
+  }
 };
 
 export default IsAuth;

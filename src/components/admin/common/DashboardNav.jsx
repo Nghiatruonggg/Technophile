@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { logout } from "../../../reducers/authReducerSlice";
 
 const DashboardNav = () => {
   const location = useLocation();
   const redirect = useNavigate();
+  const dispatch = useDispatch()
+
+  const authFunction = useSelector(state => state.auth)
+  console.log(authFunction.user_info);
 
   const changeActive = (path) => {
    return (location.pathname == path) ? "active" : ""
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("USER_INFO");
+    dispatch(logout())
     redirect("/login")
   }
 
