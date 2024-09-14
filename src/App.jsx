@@ -13,6 +13,7 @@ import Signup from './pages/auth/Signup'
 import Dashboard from './pages/admin/Dashboard'
 import LayoutAdmin from './pages/admin/LayoutAdmin'
 import DashboardProducts from './pages/admin/DashboardProducts'
+import IsAuth from './components/auth/IsAuth'
 
 const App = () => {
   return (
@@ -27,7 +28,7 @@ const App = () => {
         <Route path='/cart-view' element={<CartView/>}/>
 
         {/* Admin Dashboard */}
-        <Route path='/dashboard' element={<LayoutAdmin/>}>
+        <Route path='/dashboard' element={<IsAuth component={<LayoutAdmin/>} />}>
           <Route index element={<Dashboard/>}/>
           <Route path='/dashboard/products' element={<DashboardProducts/>}/>
         </Route>

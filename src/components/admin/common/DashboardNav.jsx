@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const DashboardNav = () => {
   const location = useLocation();
+  const redirect = useNavigate();
 
   const changeActive = (path) => {
    return (location.pathname == path) ? "active" : ""
   };
+
+  const handleLogout = () => {
+    localStorage.removeItem("USER_INFO");
+    redirect("/login")
+  }
 
   return (
     <>
@@ -44,10 +50,10 @@ const DashboardNav = () => {
               </Link>
             </li>
             <li>
-              <Link>
+              <div onClick={handleLogout}>
                 <i className="fa-solid fa-right-from-bracket" />
                 Logout
-              </Link>
+              </div>
             </li>
           </ul>
         </div>
