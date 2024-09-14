@@ -9,7 +9,6 @@ const DashboardNav = () => {
   const dispatch = useDispatch()
 
   const authFunction = useSelector(state => state.auth)
-  console.log(authFunction.user_info);
 
   const changeActive = (path) => {
    return (location.pathname == path) ? "active" : ""

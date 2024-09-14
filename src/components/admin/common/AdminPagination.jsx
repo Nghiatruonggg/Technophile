@@ -11,22 +11,22 @@ const AdminPagination = ({ totalPages, currentPage, setCurrentPage }) => {
   return (
     <>
       <div className="admin-pagination">
-        <ul class="pagination">
-          <li class="page-item">
+        <ul className="pagination">
+          <li className="page-item">
             <button onClick={() => setCurrentPage(currentPage - 1)} className={currentPage == 1 ? "page-link disabled" : "page-link"} aria-label="Previous" >
               <span aria-hidden="true">&laquo;</span>
             </button>
           </li>
           {pageNumbers.map((page) => {
             return (
-              <li class="page-item">
+              <li className="page-item">
                 <button onClick={() => setCurrentPage(page)} className={currentPage == page ? "page-link active" : "page-link"} >
                   {page}
                 </button>
               </li>
             );
           })}
-          <li class="page-item">
+          <li className="page-item">
             <button onClick={() => setCurrentPage(currentPage + 1)} className={currentPage == totalPages ? "page-link disabled" : "page-link"} aria-label="Next">
               <span aria-hidden="true">&raquo;</span>
             </button>

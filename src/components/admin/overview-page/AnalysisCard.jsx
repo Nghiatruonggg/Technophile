@@ -14,7 +14,7 @@ const AnalysisCard = () => {
             <div className="analysis-detail">
               <h2 className="total-revenue">300K</h2>
               <p className="analysis-compare">
-                <i class="fa-solid fa-arrow-up-right-dots"></i>
+                <i className="fa-solid fa-arrow-up-right-dots"></i>
                 <span>32%</span> Balance
               </p>
             </div>
@@ -24,14 +24,14 @@ const AnalysisCard = () => {
         <div className="col-12 col-sm-6 col-md-4">
           <div className="analysis-card">
             <div className="analysis-logo">
-              <i class="fa-solid fa-trophy"></i>
+              <i className="fa-solid fa-trophy"></i>
               <p className="analysis-title">Total Campaign</p>
             </div>
 
             <div className="analysis-detail">
               <h2 className="total-revenue">1329</h2>
               <p className="analysis-compare">
-                <i class="fa-solid fa-equals"></i>
+                <i className="fa-solid fa-equals"></i>
                 <span className="equal-compare">0%</span> Balance
               </p>
             </div>
@@ -48,7 +48,7 @@ const AnalysisCard = () => {
             <div className="analysis-detail">
               <h2 className="total-revenue">766</h2>
               <p className="analysis-compare">
-                <i class="fa-solid fa-arrow-down-short-wide"></i>
+                <i className="fa-solid fa-arrow-down-short-wide"></i>
                 <span className="decrease-compare">-20%</span> Balance
               </p>
             </div>

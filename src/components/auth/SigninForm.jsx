@@ -1,16 +1,12 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { url_login } from "../../untils/variable";
 import { useDispatch, useSelector } from "react-redux";
 import { submitLogin } from "../../reducers/authReducerSlice";
 
 const SigninForm = () => {
-  const authFunction = useSelector(state => state.auth)
-  const {user_info, isLoading, error } = authFunction
+  const authFunction = useSelector((state) => state.auth);
+  const { user_info, isLoading, error } = authFunction;
   console.log(user_info)
-
-
 
   // Acquire the account info of the user
   const redirect = useNavigate();
@@ -25,18 +21,15 @@ const SigninForm = () => {
   };
 
   // Send the data to the server
-  const handleLogin = (event) => {
+  const handleLogin = async (event) => {
     event.preventDefault();
-
-    try {
-      dispatch(submitLogin(user))
-
-      redirect("/dashboard")
-    } catch (error) {
-      throw new error
-    }
-
+    dispatch(submitLogin(user));
   };
+
+  useEffect(() => {
+    if (user_info) return redirect("/dashboard")
+  }, [user_info])
+
 
 
   return (

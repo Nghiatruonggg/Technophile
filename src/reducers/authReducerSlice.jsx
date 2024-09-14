@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
 import React from 'react'
 import { url_login } from '../untils/variable'
+import { useNavigate } from 'react-router-dom'
 
 const submitLogin = createAsyncThunk(
     "submitLogin",
@@ -18,14 +19,13 @@ const submitLogin = createAsyncThunk(
 const authReducerSlice = createSlice({
     name: "auth",
     initialState: {
-        user_info: [],
+        user_info: null,
         isLoading: false, 
         error: null
     },
     reducers: {
         logout: (state) => {
             state.user_info = null
-            state.isLoading = false
         }
     },
     extraReducers: (builder) => {
