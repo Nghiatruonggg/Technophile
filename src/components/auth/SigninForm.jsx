@@ -3,10 +3,13 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { url_login } from "../../untils/variable";
 import { useSelector } from "react-redux";
+import { Bounce, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const SigninForm = () => {
-  const authFunction = useSelector(state => state.auth)
-  
+  const authFunction = useSelector((state) => state.auth);
+
   // Acquire the account info of the user
   const redirect = useNavigate();
 
@@ -30,11 +33,26 @@ const SigninForm = () => {
       setIsLoading(false);
 
       // Save to localStorage
-      localStorage.setItem("USER_INFO", JSON.stringify(response.data.user))
+      localStorage.setItem("USER_INFO", JSON.stringify(response.data.user));
+
+      // Login Popup
+      toast.success("🦄 Login Successfully!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
 
       // Redirect to localStorage
-      redirect("/dashboard");
 
+      setTimeout(() => {
+        redirect("/dashboard");
+      }, 2000);
     } catch (error) {
       setIsLoading(false);
       throw new Error();
@@ -43,9 +61,9 @@ const SigninForm = () => {
 
   // Check to see if user has loginned
   useEffect(() => {
-    const isAuth = JSON.parse(localStorage.getItem("USER_INFO"))
-    if (isAuth) return redirect("/dashboard")
-  }, [])
+    const isAuth = JSON.parse(localStorage.getItem("USER_INFO"));
+    if (isAuth) return redirect("/dashboard");
+  }, []);
 
   return (
     <form className="signin-form" onSubmit={handleLogin}>

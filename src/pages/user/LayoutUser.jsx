@@ -7,6 +7,7 @@ import { Outlet } from "react-router-dom";
 import { searchContext, cartContext } from "../../contexts/Contexts";
 import useSearchClicked from "../../hooks/useSearchClicked";
 import useCartClicked from "../../hooks/useCartClicked";
+import { Bounce, ToastContainer } from "react-toastify";
 
 const LayoutUser = () => {
   // const [isSearchClicked, setIsSearchClicked] = useState(false);
@@ -34,19 +35,13 @@ const LayoutUser = () => {
 
   const searchBoxRef = useRef();
 
-  const {
-    isSearchClicked,
-    setIsSearchClicked,
-    handleSearchClicked,
-  } = useSearchClicked(searchBoxRef);
+  const { isSearchClicked, setIsSearchClicked, handleSearchClicked } =
+    useSearchClicked(searchBoxRef);
 
   const cartBoxRef = useRef();
 
-  const {
-    isCartClicked,
-    setIsCartClicked,
-    handleCartClicked,
-  } = useCartClicked(cartBoxRef);
+  const { isCartClicked, setIsCartClicked, handleCartClicked } =
+    useCartClicked(cartBoxRef);
 
   return (
     <>
@@ -71,6 +66,7 @@ const LayoutUser = () => {
           <Footer />
           <SearchPopup searchBoxRef={searchBoxRef} />
           <ShoppingCart cartBoxRef={cartBoxRef} />
+
         </searchContext.Provider>
       </cartContext.Provider>
     </>

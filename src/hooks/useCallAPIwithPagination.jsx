@@ -8,8 +8,7 @@ const useCallAPIwithPagination = (url, itemsPerPage = 6) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
-  let param = `?_page=${currentPage}&_limit=${itemsPerPage}`
-
+  let param = `?_page=${currentPage}&_limit=${itemsPerPage}`;
 
   useEffect(() => {
     const getApi = async () => {
@@ -21,8 +20,7 @@ const useCallAPIwithPagination = (url, itemsPerPage = 6) => {
         setData(response.data);
 
         let totalItems = parseInt(response.headers["x-total-count"]);
-        setTotalPages(Math.ceil(totalItems / itemsPerPage))
-
+        setTotalPages(Math.ceil(totalItems / itemsPerPage));
       } catch (error) {
         setIsLoading(false);
         console.error(error);
@@ -30,9 +28,18 @@ const useCallAPIwithPagination = (url, itemsPerPage = 6) => {
     };
 
     getApi();
+
   }, [currentPage]);
 
-  return { data, isLoading, totalPages, currentPage, setCurrentPage };
+  const removeProduct = (id) => {
+    setData(
+      data.filter((oldData) => {
+        return oldData.id !== id
+      })
+    )
+  }
+
+  return { data, isLoading, totalPages, currentPage, setCurrentPage, removeProduct };
 };
 
 export default useCallAPIwithPagination;

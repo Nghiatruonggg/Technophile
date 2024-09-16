@@ -6,7 +6,7 @@ import Pagination from "../../components/common/UserPagination";
 import AdminPagination from "../../components/admin/common/AdminPagination";
 
 const DashboardProducts = () => {
-  const { data, isLoading, totalPages, currentPage, setCurrentPage } =
+  const { data, isLoading, totalPages, currentPage, setCurrentPage, removeProduct } =
     useCallAPIwithPagination(mobile_categories);
 
   return (
@@ -20,7 +20,7 @@ const DashboardProducts = () => {
             </div>
 
             <div className="product-manage">
-              <ProductTable data={data} isLoading={isLoading} />
+              <ProductTable data={data} isLoading={isLoading} removeProduct={removeProduct} />
             </div>
 
             <AdminPagination totalPages={totalPages} currentPage={currentPage} setCurrentPage={setCurrentPage}/>

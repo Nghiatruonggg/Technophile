@@ -5,6 +5,7 @@ import SigninForm from "../../components/auth/SigninForm";
 import AuthHeader from "../../components/auth/common/AuthHeader";
 import AuthTitle from "../../components/auth/common/AuthTitle";
 import { authStructure } from "../../structures/AuthStructure";
+import { Bounce, ToastContainer } from "react-toastify";
 
 const Login = () => {
   const loginInfo = authStructure[0];
@@ -41,6 +42,20 @@ const Login = () => {
           </div>
         </div>
       </div>
+
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        transition:Bounce
+      />
     </>
   );
 };

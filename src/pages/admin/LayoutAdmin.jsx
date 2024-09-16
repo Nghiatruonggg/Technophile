@@ -5,6 +5,7 @@ import MainTitle from "../../components/common/MainTitle";
 import DashboardHeader from "../../components/admin/common/DashboardHeader";
 import DashboardNav from "../../components/admin/common/DashboardNav";
 import { Outlet } from "react-router-dom";
+import { Bounce, ToastContainer } from "react-toastify";
 
 const LayoutAdmin = () => {
   return (
@@ -20,13 +21,27 @@ const LayoutAdmin = () => {
 
             <div className="col-12 col-sm-8 col-md-9">
               <div className="dashboard-detail">
-                <Outlet/>
-
+                <Outlet />
               </div>
             </div>
           </div>
         </div>
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        transition:Bounce
+      />
+      {/* Same as */}
+      <ToastContainer />
     </>
   );
 };
