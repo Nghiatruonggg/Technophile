@@ -124,9 +124,13 @@
 .chart-title {
     font-size: 1.5rem;
     font-weight: 600;
+    margin-bottom: 0;
 }
 
 /* Product Listing */
+.product-manage {
+    margin-top: 16px;
+}
 .product-listing {
     border: 0.1px solid #777777;
     border-radius: 8px;
@@ -143,10 +147,14 @@
     border: none;
     padding: 10px 15px;
     background-color: #0084FC;
-    color: #fff;
     font-weight: 600;
     border-radius: 6px;
     transition: all .2s;
+}
+
+.add-product a {
+    text-decoration: none;
+    color: #fff;
 }
 
 .add-product:hover {
@@ -176,4 +184,32 @@
     justify-content: center;
 }
 
+/* Modify Product */
+.category-section {
+    display: flex;
+    justify-content: center
+}
+
+.category-section button {
+    margin-right: 20px;
+    border: none;
+    background-color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.category-section button.active {
+    color: #0084FC;
+}
+
+.product-listing form button {
+    font-weight: 600;
+    transition: all .2s;
+    padding: 7px 25px;
+}
+
+.product-listing form button:hover {
+    font-weight: 600;
+    transform: scale(1.02);
+}
 

@@ -4,10 +4,17 @@ import useCallAPIwithPagination from "../../hooks/useCallAPIwithPagination";
 import { mobile_categories } from "../../untils/variable";
 import Pagination from "../../components/common/UserPagination";
 import AdminPagination from "../../components/admin/common/AdminPagination";
+import { Link } from "react-router-dom";
 
 const DashboardProducts = () => {
-  const { data, isLoading, totalPages, currentPage, setCurrentPage, removeProduct } =
-    useCallAPIwithPagination(mobile_categories);
+  const {
+    data,
+    isLoading,
+    totalPages,
+    currentPage,
+    setCurrentPage,
+    removeProduct,
+  } = useCallAPIwithPagination(mobile_categories);
 
   return (
     <>
@@ -16,14 +23,24 @@ const DashboardProducts = () => {
           <div className="product-listing">
             <div className="listing-header">
               <p className="chart-title">Product Listing</p>
-              <button className="add-product">Add New Product</button>
+              <button className="add-product">
+                <Link to="/dashboard/products/add">Add New Product</Link>
+              </button>
             </div>
 
             <div className="product-manage">
-              <ProductTable data={data} isLoading={isLoading} removeProduct={removeProduct} />
+              <ProductTable
+                data={data}
+                isLoading={isLoading}
+                removeProduct={removeProduct}
+              />
             </div>
 
-            <AdminPagination totalPages={totalPages} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
+            <AdminPagination
+              totalPages={totalPages}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+            />
           </div>
         </div>
       </div>

@@ -12,7 +12,7 @@ const ProductNavbar = ({activeTab, handleActive}) => {
                 id="description-navbar"
                 onClick={() => handleActive("description")}
               >
-                <a href="#wrap-product-description">Description</a>
+                <Link>Description</Link>
               </li>
 
               <li
@@ -20,14 +20,14 @@ const ProductNavbar = ({activeTab, handleActive}) => {
                 id="spec-navbar"
                 onClick={() => handleActive("specification")}
               >
-                <a href="#wrap-product-spec">Technical Specification</a>
+                <Link>Technical Specification</Link>
               </li>
               <li
                 className={activeTab === "reviews" ? "active" : ""}
                 id="review-navbar"
                 onClick={() => handleActive("reviews")}
               >
-                <a href="#wrap-product-review">Reviews</a>
+                <Link>Reviews</Link>
               </li>
             </ul>
           </div>

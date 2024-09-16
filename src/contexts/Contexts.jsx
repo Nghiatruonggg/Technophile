@@ -1,6 +1,7 @@
 import { createContext } from "react";
 
+const searchContext = createContext();
+const cartContext = createContext();
+const adminTabContext = createContext()
 
-export const searchContext = createContext();
-export const cartContext = createContext();
-export const filterCategoriesContext = createContext();
+export {searchContext, cartContext, adminTabContext}
