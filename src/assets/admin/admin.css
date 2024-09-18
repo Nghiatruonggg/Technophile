@@ -147,14 +147,10 @@
     border: none;
     padding: 10px 15px;
     background-color: #0084FC;
+    color: #fff;
     font-weight: 600;
     border-radius: 6px;
     transition: all .2s;
-}
-
-.add-product a {
-    text-decoration: none;
-    color: #fff;
 }
 
 .add-product:hover {

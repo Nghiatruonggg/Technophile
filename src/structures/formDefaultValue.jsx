@@ -1,0 +1,38 @@
+import { mobile_categories } from "../untils/variable";
+
+// Product Form Default Value
+
+export const formDefaultValue = (oldData) => ({
+  name: oldData ? oldData.name : "",
+  price: oldData ? oldData.price : "",
+  phone_type: oldData ? oldData.phone_type : "",
+  price_range: oldData ? oldData.price_range : "",
+  mainImage: oldData ? oldData.mainImage : "",
+  thumbnail_1: oldData ? oldData.thumbnail_1 : "",
+  thumbnail_2: oldData ? oldData.thumbnail_2 : "",
+  thumbnail_3: oldData ? oldData.thumbnail_3 : "",
+  rating_numbers: oldData ? oldData.rating_numbers : "",
+  product_brief_intro: oldData ? oldData.product_brief_intro : "",
+  description_title_1: oldData ? oldData.description_title_1 : "",
+  description_text_1: oldData ? oldData.description_text_1 : "",
+  description_title_2: oldData ? oldData.description_title_2 : "",
+  description_text_2: oldData ? oldData.description_text_2 : "",
+  description_sub_title_1: oldData ? oldData.description_sub_title_1 : "",
+  description_text_3: oldData ? oldData.description_text_3 : "",
+  description_image_1: oldData ? oldData.description_image_1 : "",
+  description_text_4: oldData ? oldData.description_text_4 : "",
+  description_sub_title_2: oldData ? oldData.description_sub_title_2 : "",
+  description_text_5: oldData ? oldData.description_text_5 : "",
+  description_image_2: oldData ? oldData.description_image_2 : "",
+  monitor_size: oldData ? oldData.monitor_size : "",
+  display_technology: oldData ? oldData.display_technology : "",
+  back_camera: oldData ? oldData.back_camera : "",
+  front_camera: oldData ? oldData.front_camera : "",
+  ram_size: oldData ? oldData.ram_size : "",
+  memory_capacity: oldData ? oldData.memory_capacity : "",
+  simcard_number: oldData ? oldData.simcard_number : "",
+  operating_system: oldData ? oldData.operating_system : "",
+  aspect_ratio: oldData ? oldData.aspect_ratio : "",
+  chipset_cpu: oldData ? oldData.chipset_cpu : "",
+  battery_size: oldData ? oldData.battery_size : "",
+});

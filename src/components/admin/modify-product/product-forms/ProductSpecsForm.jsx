@@ -1,34 +1,34 @@
 import React from "react";
+import ProductLabel from "./ProductLabel";
+import ErrorsRequired from "./ErrorsRequired";
 
-const ProductSpecsForm = ({ register }) => {
+const ProductSpecsForm = ({errors, register }) => {
   return (
     <div className="product-specs-form">
       <>
         <div className="row mb-4">
           <div className="col">
             <div data-mdb-input-init="" className="form-outline">
-              <label className="form-label" htmlFor="monitor-size">
-                Monitor Size
-              </label>
+            <ProductLabel name="Monitor Size" htmlFor="monitor-size" required={true}/>
               <input
                 type="text"
                 id="monitor-size"
                 className="form-control"
-                {...register("monitor_size")}
+                {...register("monitor_size", { required: true })}
               />
+              <ErrorsRequired errors={errors} field="monitor_size" />
             </div>
           </div>
           <div className="col">
             <div data-mdb-input-init="" className="form-outline">
-              <label className="form-label" htmlFor="display-tech">
-                Display Technology
-              </label>
+            <ProductLabel name="Display Technology" htmlFor="display-tech" required={true}/>
               <input
                 type="text"
                 id="display-tech"
                 className="form-control"
-                {...register("display_technology")}
+                {...register("display_technology", { required: true })}
               />
+              <ErrorsRequired errors={errors} field="display_technology" />
             </div>
           </div>
         </div>
@@ -36,28 +36,26 @@ const ProductSpecsForm = ({ register }) => {
         <div className="row mb-4">
           <div className="col">
             <div data-mdb-input-init="" className="form-outline">
-              <label className="form-label" htmlFor="back-camera">
-                Back Camera
-              </label>
+            <ProductLabel name="Back Camera" htmlFor="back-camera" required={true}/>
               <input
                 type="text"
                 id="back-camera"
                 className="form-control"
-                {...register("back_camera")}
+                {...register("back_camera", { required: true })}
               />
+              <ErrorsRequired errors={errors} field="back_camera" />
             </div>
           </div>
           <div className="col">
             <div data-mdb-input-init="" className="form-outline">
-              <label className="form-label" htmlFor="front-camera">
-                Front Camera
-              </label>
+            <ProductLabel name="Front Camera" htmlFor="front-camera" required={true}/>
               <input
                 type="text"
                 id="front-camera"
                 className="form-control"
-                {...register("front_camera")}
+                {...register("front_camera", { required: true })}
               />
+              <ErrorsRequired errors={errors} field="front_camera" />
             </div>
           </div>
         </div>
@@ -65,28 +63,26 @@ const ProductSpecsForm = ({ register }) => {
         <div className="row mb-4">
           <div className="col">
             <div data-mdb-input-init="" className="form-outline">
-              <label className="form-label" htmlFor="ram-size">
-                Ram size
-              </label>
+            <ProductLabel name="Ram Size" htmlFor="ram-size" required={true}/>
               <input
                 type="text"
                 id="ram-size"
                 className="form-control"
-                {...register("ram_size")}
+                {...register("ram_size", { required: true })}
               />
+              <ErrorsRequired errors={errors} field="ram_size" />
             </div>
           </div>
           <div className="col">
             <div data-mdb-input-init="" className="form-outline">
-              <label className="form-label" htmlFor="memory-capacity">
-                Memory Capacity
-              </label>
+            <ProductLabel name="Memory Capacity" htmlFor="memory-capacity" required={true}/>
               <input
                 type="text"
                 id="memory-capacity"
                 className="form-control"
-                {...register("memory_capacity")}
+                {...register("memory_capacity", { required: true })}
               />
+              <ErrorsRequired errors={errors} field="memory_capacity" />
             </div>
           </div>
         </div>
@@ -94,41 +90,38 @@ const ProductSpecsForm = ({ register }) => {
         <div className="row mb-4">
           <div className="col">
             <div data-mdb-input-init="" className="form-outline">
-              <label className="form-label" htmlFor="simcard-slots">
-                Simcard Slots
-              </label>
+            <ProductLabel name="Simcard Slots" htmlFor="simcard-slots" required={true}/>
               <input
                 type="text"
                 id="simcard-slots"
                 className="form-control"
-                {...register("simcard_number")}
+                {...register("simcard_number", { required: true })}
               />
+              <ErrorsRequired errors={errors} field="simcard_number" />
             </div>
           </div>
           <div className="col">
             <div data-mdb-input-init="" className="form-outline">
-              <label className="form-label" htmlFor="display-tech">
-                Operating System
-              </label>
+            <ProductLabel name="Operating System" htmlFor="operating-system" required={true}/>
               <input
                 type="text"
-                id="display-tech"
+                id="operating-system"
                 className="form-control"
-                {...register("operating_system")}
+                {...register("operating_system", { required: true })}
               />
+              <ErrorsRequired errors={errors} field="operating_system" />
             </div>
           </div>
           <div className="col">
             <div data-mdb-input-init="" className="form-outline">
-              <label className="form-label" htmlFor="aspect-ratio">
-                Aspect Ratio
-              </label>
+            <ProductLabel name="Aspect Ratio" htmlFor="aspect-ratio" required={true}/>
               <input
                 type="text"
                 id="aspect-ratio"
                 className="form-control"
-                {...register("aspect_ratio")}
+                {...register("aspect_ratio", { required: true })}
               />
+              <ErrorsRequired errors={errors} field="aspect_ratio" />
             </div>
           </div>
         </div>
@@ -136,28 +129,26 @@ const ProductSpecsForm = ({ register }) => {
         <div className="row mb-4">
           <div className="col">
             <div data-mdb-input-init="" className="form-outline">
-              <label className="form-label" htmlFor="chipset-cpu">
-                Chipset CPU
-              </label>
+            <ProductLabel name="Chipset CPU" htmlFor="chipset-cpu" required={true}/>
               <input
                 type="text"
                 id="chipset-cpu"
                 className="form-control"
-                {...register("chipset_cpu")}
+                {...register("chipset_cpu", { required: true })}
               />
+              <ErrorsRequired errors={errors} field="chipset_cpu" />
             </div>
           </div>
           <div className="col">
             <div data-mdb-input-init="" className="form-outline">
-              <label className="form-label" htmlFor="battery-size">
-                Battery Size
-              </label>
+            <ProductLabel name="Battery Size" htmlFor="battery-size" required={true}/>
               <input
                 type="text"
                 id="battery-size"
                 className="form-control"
-                {...register("battery_size")}
+                {...register("battery_size", { required: true })}
               />
+              <ErrorsRequired errors={errors} field="battery_size" />
             </div>
           </div>
         </div>

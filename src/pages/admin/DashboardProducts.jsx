@@ -23,9 +23,10 @@ const DashboardProducts = () => {
           <div className="product-listing">
             <div className="listing-header">
               <p className="chart-title">Product Listing</p>
-              <button className="add-product">
-                <Link to="/dashboard/products/add">Add New Product</Link>
-              </button>
+
+              <Link to="/dashboard/products/add">
+                <button className="add-product">Add New Product</button>
+              </Link>
             </div>
 
             <div className="product-manage">

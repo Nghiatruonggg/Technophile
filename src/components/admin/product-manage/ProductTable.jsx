@@ -4,8 +4,10 @@ import DeleteButton from "./DeleteButton";
 import { mobile_categories } from "../../../untils/variable";
 import axios from "axios";
 import { Bounce, toast } from "react-toastify";
+import { Link, useNavigate } from "react-router-dom";
 
 const ProductTable = ({ data, isLoading, removeProduct }) => {
+  const redirect = useNavigate();
   const deleteProduct = async (id) => {
     try {
       await axios.delete(`${mobile_categories}/${id}`);
@@ -23,6 +25,7 @@ const ProductTable = ({ data, isLoading, removeProduct }) => {
         theme: "light",
         transition: Bounce
       });
+
     } catch (error) {
       console.error(error);
     }
@@ -56,7 +59,7 @@ const ProductTable = ({ data, isLoading, removeProduct }) => {
                     <td>In Stock</td>
                     <td>{product.price}</td>
                     <td>
-                      <EditButton />
+                      <Link to={`/dashboard/products/edit/${product.id}`}><EditButton /></Link>
                     </td>
                     <td onClick={() => deleteProduct(product.id)}>
                       <DeleteButton />
