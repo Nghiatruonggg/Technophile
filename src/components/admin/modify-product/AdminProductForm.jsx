@@ -70,6 +70,35 @@ const AdminProductForm = ({ oldData, URL_DETAIL }) => {
         redirect("/dashboard/products");
       }, 1000);
     } catch (error) {
+      setIsLoading(false);
+
+      if (oldData) {
+        toast.error("Fixed Failed!", {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
+      }
+
+      if (!oldData) {
+        toast.error("Added Failed!", {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
+      }
       console.error(error);
     }
   };
