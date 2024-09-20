@@ -5,6 +5,7 @@ import MainTitle from "../../components/common/MainTitle";
 import DashboardHeader from "../../components/admin/common/DashboardHeader";
 import DashboardNav from "../../components/admin/common/DashboardNav";
 import { Outlet } from "react-router-dom";
+import ToastifyContainer from "../../components/popups/ToastifyContainer"
 
 const LayoutAdmin = () => {
   return (
@@ -27,6 +28,8 @@ const LayoutAdmin = () => {
           </div>
         </div>
       </div>
+
+      <ToastifyContainer/>
     </>
   );
 };

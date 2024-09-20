@@ -1,8 +1,8 @@
 import React from 'react'
 
-const DeleteButton = () => {
+const DeleteButton = ({deleteProduct, id}) => {
   return (
-    <button className='delete-button'>
+    <button onClick={() => deleteProduct(id)} className='delete-button'>
         Delete
     </button>
   )

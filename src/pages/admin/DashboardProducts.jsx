@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ProductTable from "../../components/admin/product-manage/ProductTable";
 import useCallAPIwithPagination from "../../hooks/useCallAPIwithPagination";
 import { mobile_categories } from "../../untils/variable";
 import Pagination from "../../components/common/UserPagination";
 import AdminPagination from "../../components/admin/common/AdminPagination";
+import { useDispatch } from "react-redux";
+import { getProduct } from "../../reducers/productCRUDSlice";
 
 const DashboardProducts = () => {
   const { data, isLoading, totalPages, currentPage, setCurrentPage } =
     useCallAPIwithPagination(mobile_categories);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getProduct(data));
+  }, [data]);
 
   return (
     <>
@@ -23,7 +31,11 @@ const DashboardProducts = () => {
               <ProductTable data={data} isLoading={isLoading} />
             </div>
 
-            <AdminPagination totalPages={totalPages} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
+            <AdminPagination
+              totalPages={totalPages}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+            />
           </div>
         </div>
       </div>

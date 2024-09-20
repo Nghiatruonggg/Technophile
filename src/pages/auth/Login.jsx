@@ -5,6 +5,7 @@ import SigninForm from "../../components/auth/SigninForm";
 import AuthHeader from "../../components/auth/common/AuthHeader";
 import AuthTitle from "../../components/auth/common/AuthTitle";
 import { authStructure } from "../../structures/AuthStructure";
+import ToastifyContainer from "../../components/popups/ToastifyContainer";
 
 const Login = () => {
   const loginInfo = authStructure[0];
@@ -41,6 +42,8 @@ const Login = () => {
           </div>
         </div>
       </div>
+
+      <ToastifyContainer />
     </>
   );
 };

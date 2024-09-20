@@ -19,7 +19,7 @@ const AdminPagination = ({ totalPages, currentPage, setCurrentPage }) => {
           </li>
           {pageNumbers.map((page) => {
             return (
-              <li className="page-item">
+              <li key={page} className="page-item">
                 <button onClick={() => setCurrentPage(page)} className={currentPage == page ? "page-link active" : "page-link"} >
                   {page}
                 </button>

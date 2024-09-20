@@ -6,12 +6,20 @@ import { useNavigate } from 'react-router-dom'
 
 const submitLogin = createAsyncThunk(
     "submitLogin",
-    async(user_info, {rejectedWithValue}) => {
+    async(user_info, {rejectWithValue}) => {
         try {
             const res = await axios.post(url_login, user_info)
+            // Update token on localStorage
+            localStorage.setItem("user_token", JSON.stringify(res.data.user.token))
             return res.data
         } catch (error) {
-            return rejectedWithValue(error)
+             // Extract only serializable values
+             const serializableError = {
+                message: error.message,
+                status: error.response?.status, // status code if available
+                data: error.response?.data // error data from server
+            };
+            return rejectWithValue(serializableError);
         }
     }
 );
@@ -20,12 +28,14 @@ const authReducerSlice = createSlice({
     name: "auth",
     initialState: {
         user_info: null,
+        token: localStorage.getItem("user_token") || null,
         isLoading: false, 
         error: null
     },
     reducers: {
         logout: (state) => {
             state.user_info = null
+            state.token = localStorage.removeItem("user_token")
         }
     },
     extraReducers: (builder) => {
@@ -36,6 +46,7 @@ const authReducerSlice = createSlice({
             })
             .addCase(submitLogin.fulfilled, (state,action) => {
                 state.user_info = action.payload
+                state.token = action.payload.user.token
                 state.isLoading = false
             })
             .addCase(submitLogin.rejected, (state, action) => {
