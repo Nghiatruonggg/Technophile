@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 
 import useCallAPI from "../../../../hooks/useCallAPI";
 import { mobile_categories } from "../../../../untils/variable";
-import Pagination from "../../../common/Pagination";
+import Pagination from "../../../common/UserPagination";
 import { Link } from "react-router-dom";
 import useCallAPIwithPagination from "../../../../hooks/useCallAPIwithPagination";
 import { useDispatch } from "react-redux";

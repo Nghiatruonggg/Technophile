@@ -21,7 +21,7 @@ const HeaderNav = () => {
                 <CenterNav TechnophileLogo={TechnophileLogo}/>
 
 
-                <TopRightNav/>
+                <TopRightNav />
               </div>
 
               

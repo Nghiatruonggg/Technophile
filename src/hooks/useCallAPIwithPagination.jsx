@@ -32,6 +32,7 @@ const useCallAPIwithPagination = (url, itemsPerPage = 6) => {
     getApi();
   }, [currentPage]);
 
+
   return { data, isLoading, totalPages, currentPage, setCurrentPage };
 };
 

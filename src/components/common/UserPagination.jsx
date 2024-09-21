@@ -1,10 +1,11 @@
 import React from "react";
 
-const Pagination = ({
+const UserPagination = ({
   currentPage,
   setCurrentPage,
   totalPage,
   productPerPage,
+  totalPages
 }) => {
   let pageNumbers = [];
   for (let i = 1; i <= Math.ceil(totalPage / productPerPage); i++) {
@@ -24,4 +25,4 @@ const Pagination = ({
   );
 };
 
-export default Pagination;
+export default UserPagination;

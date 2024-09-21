@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import FilterInfo from "./BodySection/FilterInfo";
 import ProductRow from "./BodySection/ProductRow";
-import Pagination from "../../common/Pagination";
+import Pagination from "../../common/UserPagination";
 import { mobile_categories } from "../../../untils/variable";
 
 import useCallAPI from "../../../hooks/useCallAPI";
