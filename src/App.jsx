@@ -14,6 +14,8 @@ import Dashboard from './pages/admin/Dashboard'
 import LayoutAdmin from './pages/admin/LayoutAdmin'
 import DashboardProducts from './pages/admin/DashboardProducts'
 import IsAuth from './components/auth/IsAuth'
+import CreateProduct from './pages/admin/CreateProduct'
+import EditProduct from './pages/admin/EditProduct'
 
 const App = () => {
   return (
@@ -31,6 +33,8 @@ const App = () => {
         <Route path='/dashboard' element={<IsAuth component={<LayoutAdmin/>} />}>
           <Route index element={<Dashboard/>}/>
           <Route path='/dashboard/products' element={<DashboardProducts/>}/>
+          <Route path='/dashboard/products/add' element={<CreateProduct/>}/>
+          <Route path='/dashboard/products/edit/:id' element={<EditProduct/>}/>
         </Route>
       </Route>
 

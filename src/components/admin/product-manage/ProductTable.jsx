@@ -1,41 +1,37 @@
-import React from "react";
+import React, { useEffect } from "react";
 import EditButton from "./EditButton";
 import DeleteButton from "./DeleteButton";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  removeProduct,
-  removeProductRender,
-} from "../../../reducers/productCRUDSlice";
-import { Bounce, toast } from "react-toastify";
-import ToastSuccessPopup from "../../popups/ToastPopup";
+import { getProduct, removeProduct } from "../../../reducers/productCRUDSlice";
 import ToastPopup from "../../popups/ToastPopup";
+import { Link } from "react-router-dom";
 
-const ProductTable = ({ isLoading }) => {
+const ProductTable = ({ isLoading, data, setCurrentPage }) => {
   const dispatch = useDispatch();
   const productCRUD = useSelector((state) => state.productCRUD);
 
-  const {productAdmin, error} = productCRUD
-  
+  const { productAdmin, error } = productCRUD;
 
   const deleteProduct = async (id) => {
     try {
       const result = await dispatch(removeProduct(id));
 
       if (removeProduct.fulfilled.match(result)) {
-        dispatch(removeProductRender(id));
-        
-        ToastPopup({message: "Delete Success!", type: "success"})
+        ToastPopup({ message: "Delete Success!", type: "success" });
       }
 
       if (removeProduct.rejected.match(result)) {
         let errorMessage = error.data?.error || "Try Again Later";
-        ToastPopup({message: `${errorMessage}`, type: "error"})
+        ToastPopup({ message: `${errorMessage}`, type: "error" });
       }
     } catch (error) {
-      ToastPopup({message: `${error}`, type: "error"})
+      ToastPopup({ message: `${error}`, type: "error" });
     }
   };
 
+  useEffect(() => {
+
+  }, [])
   return (
     <>
       <div className="table-responsive">
@@ -68,7 +64,9 @@ const ProductTable = ({ isLoading }) => {
                     <td>In Stock</td>
                     <td>${product.price}</td>
                     <td>
-                      <EditButton />
+                      <Link to={`/dashboard/products/edit/${[product.id]}`}>
+                        <EditButton />
+                      </Link>
                     </td>
                     <td>
                       <DeleteButton

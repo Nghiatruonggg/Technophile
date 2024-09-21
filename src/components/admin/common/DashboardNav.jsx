@@ -8,8 +8,6 @@ const DashboardNav = () => {
   const redirect = useNavigate();
   const dispatch = useDispatch()
 
-  const authFunction = useSelector(state => state.auth)
-
   const changeActive = (path) => {
    return (location.pathname == path) ? "active" : ""
   };

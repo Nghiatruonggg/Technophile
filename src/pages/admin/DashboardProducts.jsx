@@ -6,6 +6,7 @@ import Pagination from "../../components/common/UserPagination";
 import AdminPagination from "../../components/admin/common/AdminPagination";
 import { useDispatch } from "react-redux";
 import { getProduct } from "../../reducers/productCRUDSlice";
+import { Link } from "react-router-dom";
 
 const DashboardProducts = () => {
   const { data, isLoading, totalPages, currentPage, setCurrentPage } =
@@ -14,21 +15,25 @@ const DashboardProducts = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getProduct(data));
+    if (data) {
+      dispatch(getProduct(data));
+    }
   }, [data]);
 
   return (
     <>
       <div className="row">
         <div className="col-12 col-sm-12 col-md-12">
-          <div className="product-listing">
+          <div className="common-listing">
             <div className="listing-header">
               <p className="chart-title">Product Listing</p>
-              <button className="add-product">Add New Product</button>
+              <Link to="/dashboard/products/add">
+                <button className="add-product">Add New Product</button>
+              </Link>
             </div>
 
             <div className="product-manage">
-              <ProductTable data={data} isLoading={isLoading} />
+              <ProductTable data={data} isLoading={isLoading} setCurrentPage={setCurrentPage} />
             </div>
 
             <AdminPagination
