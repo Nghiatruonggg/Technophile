@@ -3,6 +3,8 @@ import { searchContext } from "../../contexts/Contexts";
 import useCallAPI from "../../hooks/useCallAPI";
 import { mobile_categories } from "../../untils/variable";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../reducers/cartReducerSlice";
 
 const SearchPopup = ({ searchBoxRef }) => {
   const searchFunction = useContext(searchContext);
@@ -11,6 +13,14 @@ const SearchPopup = ({ searchBoxRef }) => {
   const { data, isLoading } = useCallAPI(mobile_categories);
   const [valueInput, setValueInput] = useState("");
   const [searchData, setSearchData] = useState([]);
+
+  const dispatch = useDispatch();
+  const handleAdded = (product) => {
+    dispatch(addToCart({
+      ...product,
+      quantity: 1
+    }));
+  }
   
   useEffect(() => {
     if (!data) return;
@@ -29,8 +39,6 @@ const SearchPopup = ({ searchBoxRef }) => {
 
 
   }, [valueInput, data])
-
-    
 
 
   return (
@@ -94,7 +102,7 @@ const SearchPopup = ({ searchBoxRef }) => {
                         </div>
                       </Link>
                       <div className="add-to-cart-button-shopping">
-                        <button type="button">Add To Cart</button>
+                        <button onClick={() => handleAdded(product)} type="button">Add To Cart</button>
                       </div>
                     </div>
                   );
