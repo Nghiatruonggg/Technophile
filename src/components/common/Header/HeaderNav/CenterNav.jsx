@@ -1,16 +1,15 @@
-import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import React from "react";
+import { NavLink } from "react-router-dom";
 
-const CenterNav = ({ TechnophileLogo }) => {
-
+const CenterNav = ({ TechnophileLogo, isMenuClicked, setIsMenuClicked, menuBoxRef }) => {
 
   return (
     <>
-      <div className="main-section">
+      <div ref={menuBoxRef} className={isMenuClicked ? "main-section active" : "main-section"}>
         <div className="top-menu-mobile">
           <img src={TechnophileLogo} alt="LogoImg" />
           <span>
-            <i className="fa-solid fa-xmark" />
+            <i onClick={() => setIsMenuClicked(false)} className="fa-solid fa-xmark" />
           </span>
         </div>
 

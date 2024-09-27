@@ -2298,13 +2298,17 @@ body.darken-2::before {
     position: fixed;
     top: 0;
     left: 0;
-    width: 50%;
+    width: 40%;
     height: 100%;
     background-color: #fff;
     z-index: 99;
     transform: translateX(-100%);
     transition: all 0.3s;
     /* display: none; */
+  }
+
+  .main-section.active {
+    transform: translateX(0);
   }
 
   .main-section .menu-list {
