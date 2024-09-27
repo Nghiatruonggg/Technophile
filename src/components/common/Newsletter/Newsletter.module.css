@@ -11,6 +11,8 @@
 
 .newsImg {
   border-radius: 1.25rem;
+  max-width: 100%;
+  object-fit: cover;
 }
 
 .newsletterText {
