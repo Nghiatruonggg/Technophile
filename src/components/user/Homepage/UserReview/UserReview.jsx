@@ -1,48 +1,24 @@
 import React from "react";
-import useCallAPI from "../../../hooks/useCallAPI";
-import { user_reviews } from "../../../untils/variable";
+import useCallAPI from "../../../../hooks/useCallAPI";
+import { user_reviews } from "../../../../untils/variable";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
+import { options2 } from "../../../../untils/third-lib";
+import styles from "../UserReview/UserReview.module.css";
 
 const UserReview = () => {
   const { data, isLoading } = useCallAPI(user_reviews);
-  
-  const options = {
-    margin: 30,
-    responsiveClass: true,
-    nav: true,
-    dots: false,
-    autoplay: false,
-    smartSpeed: 1000,
-    responsive: {
-      0: {
-        items: 1,
-      },
-      400: {
-        items: 1,
-      },
-      600: {
-        items: 2,
-      },
-      700: {
-        items: 3,
-      },
-      1000: {
-        items: 3,
-      },
-    },
-  };
 
   return (
     <>
       {/* User Review */}
-      <div className="user-review">
+      <div className={styles.userReview}>
         {/* User Review Title */}
         <div className="container">
-          <div className="row" id="user-review-title">
+          <div className="row">
             <div className="col-12 col-sm-12 col-md-12">
-              <div className="sub-user-review-title sub-title">
+              <div className={`${styles.subUserReviewTitle} sub-title`}>
                 <p>
                   <i className="fa-solid fa-users" />
                   Community
@@ -53,29 +29,30 @@ const UserReview = () => {
           </div>
 
           {/* User Review Main */}
-          <div className="wrap-main-review">
-            <div className="user-review-main">
-              <OwlCarousel className="owl-theme" {...options}>
+          <div className={styles.wrapMainReview}>
+            <div className={styles.userReviewMain}>
+              <OwlCarousel className="owl-theme" {...options2}>
                 {data.map((user) => {
                   return (
                     <div key={user.id} className="item">
-                      <div className="wrap-user-review">
-                        <div className="wrap-review-image">
+                      <div className={styles.wrapUserReview}>
+                        <div>
                           <img
+                            className={styles.reviewImage}
                             src={user.image_url}
                             alt={user.user_name}
                           />
-                          <div className="user-review-name">
+                          <div className={styles.userReviewName}>
                             <p>
                               <b>{user.user_name}</b>
                             </p>
-                            <p>{user.job_role}</p>
+                            <p>
+                              <b>{user.job_role}</b>
+                            </p>
                           </div>
                         </div>
-                        <div className="wrap-review-text">
-                          <p>
-                            {user.review_description}
-                          </p>
+                        <div>
+                          <p>{user.review_description}</p>
                         </div>
                       </div>
                     </div>

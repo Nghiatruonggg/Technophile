@@ -1,54 +1,51 @@
-import React from "react";
-
 // Import Images
-import AppleLogo from "../../../assets/common/images/Sponsor Logo/Apple-Logo-2048x1152.png"
-import AsusLogo from "../../../assets/common/images/Sponsor Logo/AsusTek-black-logo.png"
-import LGLogo from "../../../assets/common/images/Sponsor Logo/LG Logo.png"
-import SamsungLogo from "../../../assets/common/images/Sponsor Logo/Samsung Logo.png"
+import { sponsorGroup } from "../../../../structures/UserStructure";
+import styles from "../SponsorsSection/sponsorsSection.module.css"
 
+console.log(styles);
 
 const Sponsors = () => {
   return (
     <>
       {/* Sponsors */}
-      <div className="sponsor-section">
+      <div className={styles.sponsorSection}>
         <div className="container">
           {/* Sponsor Title */}
           <div className="row">
             <div className="col-12 col-md-12 col-sm-12">
-              <h2 className="sponsor-title">Sponsored By</h2>
+              <h2 className={styles.sponsorTitle}>Sponsored By</h2>
             </div>
             {/* Sponsor Logo */}
-            <div className="wrap-sponsor-logo">
+            <div className={styles.wrapSponsorLogo}>
               <div className="row">
                 <div className="col-12 col-sm-6 col-md-3">
-                  <div className="logo-box">
+                  <div className={styles.logoBox}>
                     <img
-                      src={AppleLogo}
+                      src={sponsorGroup[0]}
                       alt="AppleLogo"
                     />
                   </div>
                 </div>
                 <div className="col-12 col-sm-6 col-md-3">
-                  <div className="logo-box asus-logo">
+                  <div className={`${styles.logoBox} ${styles.asusLogo}`}>
                     <img
-                      src={AsusLogo}
+                      src={sponsorGroup[1]}
                       alt="AsusLogo"
                     />
                   </div>
                 </div>
                 <div className="col-12 col-sm-6 col-md-3">
-                  <div className="logo-box">
+                  <div className={`${styles.logoBox}`}>
                     <img
-                      src={LGLogo}
+                      src={sponsorGroup[2]}
                       alt="LGLogo"
                     />
                   </div>
                 </div>
                 <div className="col-12 col-sm-6 col-md-3">
-                  <div className="logo-box">
+                  <div className={styles.logoBox}>
                     <img
-                      src={SamsungLogo}
+                      src={sponsorGroup[3]}
                       alt="SamsungLogo"
                     />
                   </div>

@@ -19,8 +19,37 @@ export const options = {
     700: {
       items: 3,
     },
-    1000: {
+    1100: {
+      items: 3
+    },
+    1400: {
       items: 4,
+    },
+  },
+};
+
+export const options2 = {
+  margin: 30,
+  responsiveClass: true,
+  nav: true,
+  dots: false,
+  autoplay: false,
+  smartSpeed: 1000,
+  responsive: {
+    0: {
+      items: 1,
+    },
+    400: {
+      items: 1,
+    },
+    600: {
+      items: 2,
+    },
+    700: {
+      items: 1,
+    },
+    1000: {
+      items: 3,
     },
   },
 };
@@ -145,71 +174,71 @@ export const data2024 = [369821, 382119, 293219];
 // Apex Zoomable Line chart
 export const lineChartOptions = {
   chart: {
-    type: 'area',
+    type: "area",
     stacked: false,
     height: 350,
     zoom: {
-      type: 'x',
+      type: "x",
       enabled: true,
-      autoScaleYaxis: true
+      autoScaleYaxis: true,
     },
     toolbar: {
-      autoSelected: 'zoom'
-    }
+      autoSelected: "zoom",
+    },
   },
   dataLabels: {
-    enabled: false
+    enabled: false,
   },
   markers: {
     size: 5,
     hover: {
-      size: 7
-    }
+      size: 7,
+    },
   },
   stroke: {
-    width: 10
+    width: 10,
   },
   title: {
-    text: 'September sales',
-    align: 'left'
+    text: "September sales",
+    align: "left",
   },
   fill: {
-    type: 'gradient',
+    type: "gradient",
     gradient: {
       shadeIntensity: 0,
       inverseColors: false,
       opacityFrom: 1,
       opacityTo: 0.5,
-      stops: [0, 50, 100]
+      stops: [0, 50, 100],
     },
   },
   yaxis: {
     labels: {
       formatter: function (val) {
-        return val.toFixed(0);  // Adjust as needed
+        return val.toFixed(0); // Adjust as needed
       },
     },
     title: {
-      text: 'Price'
+      text: "Price",
     },
   },
   xaxis: {
-    type: 'datetime',
+    type: "datetime",
   },
   tooltip: {
     shared: false,
     x: {
-      format: 'dd MMM yyyy'  // Format date as needed
+      format: "dd MMM yyyy", // Format date as needed
     },
     y: {
       formatter: function (val) {
-        return `$${val.toFixed(2)}`;  // Customize the value formatting
+        return `$${val.toFixed(2)}`; // Customize the value formatting
       },
       title: {
-        formatter: (seriesName) => seriesName // This ensures the correct series name is shown
-      }
-    }
-  }
+        formatter: (seriesName) => seriesName, // This ensures the correct series name is shown
+      },
+    },
+  },
 };
 
 export const series = [

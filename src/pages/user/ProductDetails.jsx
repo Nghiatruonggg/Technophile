@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Subbanner from "../../components/common/Subbanner";
-import Newsletter from "../../components/common/Newsletter";
+import Newsletter from "../../components/common/Newsletter/Newsletter";
 import ProductDetail from "../../components/user/product-details/ProductDetail";
 import ProductDescription from "../../components/user/product-details/ProductDescription";
 import ViewedProduct from "../../components/user/product-details/ViewedProduct";

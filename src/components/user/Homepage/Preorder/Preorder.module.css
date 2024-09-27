@@ -1,0 +1,76 @@
+/* Preorder Section */
+.preorderSection {
+  margin-top: 100px;
+}
+
+.wrapPreorder {
+  background-color: #f2f6f9;
+  border-radius: 20px;
+  padding-top: 40px;
+}
+
+.preorderText {
+  padding: 0 50px;
+}
+
+.preorderSubtitle {
+  display: flex;
+  font-size: 20px;
+  color: #fe6d7d;
+}
+
+.preorderLogo {
+  margin-right: 8px;
+  padding-top: 3px;
+}
+
+.smallTitle {
+  font-weight: 600;
+}
+
+.preorderTitle{
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 60px;
+}
+
+.preorderTimer {
+  margin-top: 40px;
+}
+
+.timer {
+  font-size: 36px;
+  margin-right: 25px;
+  padding: 10px;
+  background-color: #ffdcb9;
+  border-radius: 50%;
+}
+
+.preorderButton {
+  margin-top: 40px;
+  font-size: 20px;
+  padding: 15px 30px;
+  background-color: #0487ff;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+}
+
+.wrapPreorderImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preorderImageSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -40px;
+}
+
+.preorderImage {
+  width: 80%;
+  object-fit: cover;
+}
