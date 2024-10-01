@@ -1,11 +1,12 @@
 import React from "react";
-import AboutUs3 from "../../../assets/common/images/About Us Section/AU-3.jpg"
+import AboutUs3 from "../../../../assets/common/images/About Us Section/AU-3.jpg"
+import styles from "../CommitmentSection/CommitmentSection.module.css"
 
-const CommitentSection = () => {
+const CommitmentSection = () => {
   return (
     <>
       {/* Commitment Section */}
-      <div className="commitment-section">
+      <div className={styles.commitmentSection}>
         <div className="container">
           <div className="row" id="wrap-info-section">
             <div className="col-12 col-sm-12 col-md-5">
@@ -43,4 +44,4 @@ const CommitentSection = () => {
   );
 };
 
-export default CommitentSection;
+export default CommitmentSection;

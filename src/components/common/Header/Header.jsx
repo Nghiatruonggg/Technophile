@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import HeaderNav from "./Header/HeaderNav";
+import HeaderNav from "./HeaderNav/HeaderNav";
 
 const Header = () => {
   return (

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import EditButton from "./EditButton";
 import DeleteButton from "./DeleteButton";
 import { useDispatch, useSelector } from "react-redux";
-import { getProduct, removeProduct } from "../../../reducers/productCRUDSlice";
+import { getProduct, removeProduct, removeProductRender } from "../../../reducers/productCRUDSlice";
 import ToastPopup from "../../popups/ToastPopup";
 import { Link } from "react-router-dom";
 
@@ -15,8 +15,9 @@ const ProductTable = ({ isLoading, data, setCurrentPage }) => {
   const deleteProduct = async (id) => {
     try {
       const result = await dispatch(removeProduct(id));
-
+      
       if (removeProduct.fulfilled.match(result)) {
+        dispatch(removeProductRender(id));
         ToastPopup({ message: "Delete Success!", type: "success" });
       }
 
@@ -29,9 +30,6 @@ const ProductTable = ({ isLoading, data, setCurrentPage }) => {
     }
   };
 
-  useEffect(() => {
-
-  }, [])
   return (
     <>
       <div className="table-responsive">

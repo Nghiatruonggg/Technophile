@@ -61,6 +61,89 @@ export const categoryLogo = [
 ];
 
 // Preorder
-import preorderImage from "../assets/common/images/Preorder image/Preorder Keyboard.png"
+import preorderImage from "../assets/common/images/Preorder image/Preorder Keyboard.png";
 
-export const orderImage = preorderImage
+export const orderImage = preorderImage;
+
+// Achievement Section
+import AUGraphic1 from "../assets/common/images/Achievement Section/graphic-1.webp";
+import AUGraphic2 from "../assets/common/images/Achievement Section/graphic-2.webp";
+import AUGraphic3 from "../assets/common/images/Achievement Section/graphic-3.webp";
+
+export const AUGraphics = [
+  {
+    graphic: AUGraphic1,
+    mainTitle: "40,000+ Happy Customer",
+    content:
+      "Our expert team is always ready to assist, ensuring a seamless and satisfying shopping experience.",
+    alt: "Happy Customer",
+  },
+  {
+    graphic: AUGraphic2,
+    mainTitle: "100,000+ Products Sold",
+    content:
+      "We've proudly sold over <b>100,000+</b> products to tech enthusiasts worldwide over the last year and we want to sell more!.",
+    alt: "Product Selling",
+  },
+  {
+    graphic: AUGraphic3,
+    mainTitle: "+5 years of selling",
+    content:
+      "During this time, we've curated an extensive selection of the latest gadgets, cutting-edge electronics, and top-tier accessories.",
+    alt: "High Experience",
+  },
+];
+
+// Brand Filtering
+import appleLogo from "../assets/common/images/Sponsor Logo/Apple-Logo-2048x1152.png"
+import samsungLogo from "../assets/common/images/Sponsor Logo/Samsung Logo.png";
+import nokiaLogo from "../assets/common/images/Mobile-Categories/Nokia 2023 New Logo.png";
+import viettelLogo from "../assets/common/images/Mobile-Categories/Viettel_logo_2021.svg.png";
+import xiaomiLogo from "../assets/common/images/Mobile-Categories/Xiaomi_logo_(2021-).svg.png";
+import oneplusLogo from "../assets/common/images/Mobile-Categories/oneplus logo.png";
+import oppoLogo from "../assets/common/images/Mobile-Categories/oppo logo.png";
+import huaweiLogo from "../assets/common/images/Mobile-Categories/huawei logo.png";
+
+export const brandFiltering = [
+  {
+    brand: appleLogo,
+    alt: "appleLogo",
+    newClassName: ""
+  },
+  {
+    brand: samsungLogo,
+    alt: "samsungLogo",
+    newClassName: ""
+  },
+  {
+    brand: nokiaLogo,
+    alt: "nokiaLogo",
+    newClassName: ""
+  },
+  {
+    brand: viettelLogo,
+    alt: "viettelLogo",
+    newClassName: ""
+  },
+  {
+    brand: xiaomiLogo,
+    alt: "xiaomiLogo",
+    newClassName: "xiaomiLogo"
+  },
+  {
+    brand: huaweiLogo,
+    alt: "huaweiLogo",
+    newClassName: "huaweiLogo"
+  },
+  {
+    brand: oneplusLogo,
+    alt: "oneplusLogo",
+    newClassName: "oneplusLogo"
+  },
+  {
+    brand: oppoLogo,
+    alt: "oppoLogo",
+    newClassName: ""
+  },
+
+]

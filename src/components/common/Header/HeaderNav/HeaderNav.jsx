@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import TechnophileLogo from "../../../assets/common/images/Technophile Logo/Transparent V2/Logo LM V2.png";
-import TopLeftNav from "./HeaderNav/TopLeftNav";
-import CenterNav from "./HeaderNav/CenterNav";
-import TopRightNav from "./HeaderNav/TopRightNav";
+import TechnophileLogo from "../../../../assets/common/images/Technophile Logo/Transparent V2/Logo LM V2.png";
+import TopLeftNav from "./TopLeftNav";
+import CenterNav from "./CenterNav";
+import TopRightNav from "./TopRightNav";
 
 const HeaderNav = () => {
   const [isMenuClicked, setIsMenuClicked] = useState(false);
@@ -18,6 +18,9 @@ const HeaderNav = () => {
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickedOutside);
+    return (
+      document.removeEventListener("mousedown", handleClickedOutside)
+    )
   }, [])
 
   return (

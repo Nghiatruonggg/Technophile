@@ -363,6 +363,36 @@ body.darken-2::before {
   font-size: 40px !important ;
 }
 
+/* About Us */
+/* Overview */
+.overview-section {
+  width: 100%;
+  margin-top: 80px;
+}
+
+/* Mission Section */
+.mission-section {
+  margin-top: 100px;
+  width: 100%;
+}
+
+.mission-section .wrap-info-text {
+  padding-left: 55px;
+}
+
+/* Mobile Categories */
+/* Body Section */
+.body-section {
+  margin-top: 50px;
+}
+
+.body-section .container {
+  /* height: 1000px; */
+  /* background-color: pink; */
+  display: flex;
+  justify-content: space-between;
+}
+
 
 /* Footer */
 .footer {

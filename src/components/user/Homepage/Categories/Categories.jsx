@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { categoryLogo } from "../../../../structures/UserStructure";
-import styles from "../Categories/Categories.module.css"
+import styles from "./Categories.module.css"
 
 const Categories = () => {
   

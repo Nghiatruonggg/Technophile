@@ -1,5 +1,5 @@
 import React from "react";
-import Subbanner from "../../components/common/Subbanner";
+import Subbanner from "../../components/common/Subbanner/Subbanner";
 import CartTop from "../../components/user/cart-page/CartTop";
 import CartCenter from "../../components/user/cart-page/CartCenter";
 import CartBottom from "../../components/user/cart-page/CartBottom";

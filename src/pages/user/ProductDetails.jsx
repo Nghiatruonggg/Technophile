@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Subbanner from "../../components/common/Subbanner";
+import Subbanner from "../../components/common/Subbanner/Subbanner";
 import Newsletter from "../../components/common/Newsletter/Newsletter";
 import ProductDetail from "../../components/user/product-details/ProductDetail";
 import ProductDescription from "../../components/user/product-details/ProductDescription";

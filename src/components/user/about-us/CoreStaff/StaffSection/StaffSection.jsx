@@ -2,9 +2,9 @@ import React from "react";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
-import { options } from "../../../../untils/third-lib";
+import { options } from "../../../../../untils/third-lib";
 
-const StaffSection = ({ data }) => {
+const StaffSection = ({ data, styles }) => {
   return (
     <>
       <OwlCarousel
@@ -17,13 +17,13 @@ const StaffSection = ({ data }) => {
         {data.map((staff) => {
           return (
             <div key={staff.id} className="item">
-              <div className="wrap-staff-info">
-                <div className="staff-image">
+              <div className={styles.wrapStaffInfo }>
+                <div className={styles.staffImage}>
                   <img src={staff.staff_image} alt={staff.staff_name} />
                 </div>
-                <div className="staff-info">
-                  <p className="staff-role">{staff.staff_role}</p>
-                  <p className="staff-name">{staff.staff_name}</p>
+                <div className={styles.staffInfo}>
+                  <p className={styles.staffRole}>{staff.staff_role}</p>
+                  <p className={styles.staffName}>{staff.staff_name}</p>
                 </div>
               </div>
             </div>

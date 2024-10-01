@@ -1,5 +1,5 @@
 import React from "react";
-import AboutUs1 from "../../../assets/common/images/About Us Section/AU-1.webp"
+import AboutUs1 from "../../../../assets/common/images/About Us Section/AU-1.webp"
 
 const Overview = () => {
   return (

@@ -1,5 +1,4 @@
-import React from "react";
-import AboutUs2 from "../../../assets/common/images/About Us Section/AU-2.jpg"
+import AboutUs2 from "../../../../assets/common/images/About Us Section/AU-2.jpg"
 
 const MissonSection = () => {
   return (

@@ -102,7 +102,7 @@ const ShoppingCart = ({ cartBoxRef }) => {
             <div className="col-12 col-sm-12 col-md-12">
               <div className="cart-subtotal">
                 <h2>Subtotal</h2>
-                <span>{totalCalculate}$</span>
+                <span>${totalCalculate}</span>
               </div>
             </div>
             <div className="col-12 col-sm-12 col-md-12">

@@ -1,16 +1,16 @@
-import React from "react";
+import styles from "../Subbanner/Subbanner.module.css"
 
 const Subbanner = () => {
   return (
     <>
       {/* Sub-Banner */}
-      <div className="sub-banner-section">
-        <div className="container">
+      <div className={styles.subBannerSection}>
+        <div className={styles.container}>
           <div className="row">
             <div className="col-12 col-sm-12 col-md-12">
-              <div className="wrap-sub-banner">
+              <div className={styles.wrapSubBanner}>
                 <p>
-                  <a href="">Get 10% off by subscribing to us!</a>
+                  Get 10% off by subscribing to us!
                 </p>
               </div>
             </div>

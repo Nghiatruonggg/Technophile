@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import ProductTable from "../../components/admin/product-manage/ProductTable";
 import useCallAPIwithPagination from "../../hooks/useCallAPIwithPagination";
 import { mobile_categories } from "../../untils/variable";
-import Pagination from "../../components/common/UserPagination";
 import AdminPagination from "../../components/admin/common/AdminPagination";
 import { useDispatch } from "react-redux";
 import { getProduct } from "../../reducers/productCRUDSlice";

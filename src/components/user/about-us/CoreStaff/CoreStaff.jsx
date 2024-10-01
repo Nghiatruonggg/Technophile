@@ -1,21 +1,20 @@
 import React from "react";
-import useCallAPI from "../../../hooks/useCallAPI";
-import { core_staffs } from "../../../untils/variable";
-import StaffSection from "./core-staff/StaffSection";
+import useCallAPI from "../../../../hooks/useCallAPI";
+import { core_staffs } from "../../../../untils/variable";
+import StaffSection from "./StaffSection/StaffSection";
+import styles from "./CoreStaff.module.css"
 
 const CoreStaff = () => {
-
-    const {data, isLoading} = useCallAPI(core_staffs);
-    console.log(data);
+  const { data, isLoading } = useCallAPI(core_staffs);
   return (
     <>
       {/* Core Staff  */}
-      <div className="core-staff-section">
+      <div className={styles.coreStaffSection}>
         <div className="container">
           <div className="row">
             <div className="col-12 col-sm-12 col-md-12">
-              <div className="wrap-staff-title">
-                <div className="sub-staff-title">
+              <div className={styles.wrapStaffTitle}>
+                <div className={styles.subStaffTitle}>
                   <p>
                     <i className="fa-solid fa-people-group" />
                     Core Staff
@@ -25,10 +24,8 @@ const CoreStaff = () => {
               </div>
             </div>
           </div>
-        
-        <StaffSection data={data}/>
 
-
+          <StaffSection data={data} styles={styles} />
         </div>
       </div>
     </>

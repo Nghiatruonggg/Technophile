@@ -3,12 +3,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { submitLogin } from "../../reducers/authReducerSlice";
 import { Bounce, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
-
+import "react-toastify/dist/ReactToastify.css";
+import ToastPopup from "../popups/ToastPopup";
 
 const SigninForm = () => {
   const authFunction = useSelector((state) => state.auth);
-  const { user_info, isLoading, error } = authFunction;
+  const { user_info, isLoading } = authFunction;
 
   // Acquire the account info of the user
   const redirect = useNavigate();
@@ -25,32 +25,38 @@ const SigninForm = () => {
   // Send the data to the server
   const handleLogin = async (event) => {
     event.preventDefault();
-    dispatch(submitLogin(user));
+
+    try {
+      const result = await dispatch(submitLogin(user));
+
+      if (submitLogin.fulfilled.match(result)) {
+        ToastPopup({
+          message: "Logged In Successfully",
+          type: "success",
+        });
+        setTimeout(() => {
+          redirect("/dashboard");
+        }, 2000);
+      }
+
+      if (submitLogin.rejected.match(result)) {
+        let errorMessage =
+          result.payload.data?.error || "Login failed! Try again";
+        ToastPopup({ message: `${errorMessage}`, type: "error" });
+      }
+    } catch (error) {
+      throw new Error(error);
+    }
   };
 
   useEffect(() => {
-    if (user_info || JSON.parse(localStorage.getItem("user_token"))) {
+    let userToken = JSON.parse(localStorage.getItem("user_token"));
+    if (user_info || userToken) {
       redirect("/dashboard");
     }
   }, [user_info]);
 
-  // Handle login errors
-  useEffect(() => {
-    if (error) {
-      let errorMessage = error.data?.error || "Login failed! Try again"; // Use a fallback error message
-      toast.error(`${errorMessage}`, {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        transition: Bounce,
-      });
-    }
-  }, [error]);
+
 
   return (
     <>
@@ -96,7 +102,6 @@ const SigninForm = () => {
           <Link>Forget your password?</Link>
         </div>
       </form>
-
     </>
   );
 };

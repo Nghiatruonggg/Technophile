@@ -8,7 +8,6 @@ import { options } from "../../../../untils/third-lib";
 import { Link, useNavigate } from "react-router-dom";
 
 const ViewedRecently = () => {
-  // const { data } = useCallAPI(mobile_categories);
   const [storedData, setStoredData] = useState([]);
 
   useEffect(() => {

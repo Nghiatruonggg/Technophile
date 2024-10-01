@@ -67,6 +67,11 @@ const productCRUDSlice = createSlice({
     getProduct: (state, action) => {
       state.productAdmin = action.payload;
     },
+    removeProductRender: (state, action) => {
+      state.productAdmin = state.productAdmin.filter((product) => {
+        return product.id !== action.payload;
+      })
+    }
   },
   extraReducers: (builder) => {
     builder
