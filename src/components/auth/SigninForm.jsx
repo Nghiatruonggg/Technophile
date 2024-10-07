@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { submitLogin } from "../../reducers/authReducerSlice";
-import { Bounce, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ToastPopup from "../popups/ToastPopup";
+import styles from "./AuthForm.module.css"
 
 const SigninForm = () => {
   const authFunction = useSelector((state) => state.auth);
@@ -60,7 +60,7 @@ const SigninForm = () => {
 
   return (
     <>
-      <form className="signin-form" onSubmit={handleLogin}>
+      <form className={styles.signinForm} onSubmit={handleLogin}>
         <div className="mb-3">
           <label htmlFor="InputEmail1" className="form-label">
             Email address
@@ -90,7 +90,7 @@ const SigninForm = () => {
           />
         </div>
 
-        <div className="signin-bottom">
+        <div className={styles.signinBottom}>
           <button
             type="submit"
             className="btn btn-primary"

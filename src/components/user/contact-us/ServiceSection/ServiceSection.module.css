@@ -1,0 +1,41 @@
+/* Service Section */
+.serviceSection {
+  margin-top: 50px;
+  padding: 16px;
+}
+
+.wrapService {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.serviceImage img {
+  width: 80%;
+}
+
+.serviceText p {
+  margin-bottom: 5px;
+}
+
+.serviceText .upperText {
+  font-weight: 600;
+}
+
+.serviceText .bottomText {
+  color: #b6b5b5;
+}
+
+.fix1 {
+  margin-left: -20px;
+  gap: 6px;
+}
+
+.fix2 .serviceText {
+  margin-left: -15px;
+}
+
+.fix2 {
+  margin-left: -34px;
+  gap: 6px;
+}

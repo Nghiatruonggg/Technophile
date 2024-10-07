@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import ProductTable from "../../components/admin/product-manage/ProductTable";
+import ProductTable from "../../components/admin/product-manage/ProductTable/ProductTable";
 import useCallAPIwithPagination from "../../hooks/useCallAPIwithPagination";
 import { mobile_categories } from "../../untils/variable";
-import AdminPagination from "../../components/admin/common/AdminPagination";
+import AdminPagination from "../../components/admin/common/AdminPagination/AdminPagination";
 import { useDispatch } from "react-redux";
 import { getProduct } from "../../reducers/productCRUDSlice";
 import { Link } from "react-router-dom";

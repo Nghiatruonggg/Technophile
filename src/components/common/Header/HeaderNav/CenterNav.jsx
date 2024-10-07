@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 const CenterNav = ({ TechnophileLogo, isMenuClicked, setIsMenuClicked, menuBoxRef }) => {
 
@@ -14,6 +14,9 @@ const CenterNav = ({ TechnophileLogo, isMenuClicked, setIsMenuClicked, menuBoxRe
         </div>
 
         <ul className="menu-list">
+          <li className="user-mobile">
+            <NavLink className="LinkHover" to="/login">Login</NavLink>
+          </li>
           <li>
             <NavLink className="LinkHover" activeclassname="active" to="/">
               Home
@@ -44,40 +47,36 @@ const CenterNav = ({ TechnophileLogo, isMenuClicked, setIsMenuClicked, menuBoxRe
                   </NavLink>
                 </li>
                 <li className="sub-item">
-                  <NavLink
+                  <Link
                     className="LinkHover"
-                    activeclassname="active"
                     to="#"
                   >
                     Laptop
-                  </NavLink>
+                  </Link>
                 </li>
                 <li className="sub-item">
-                  <NavLink
+                  <Link
                     className="LinkHover"
-                    activeclassname="active"
                     to="#"
                   >
                     Monitor
-                  </NavLink>
+                  </Link>
                 </li>
                 <li className="sub-item">
-                  <NavLink
+                  <Link
                     className="LinkHover"
-                    activeclassname="active"
                     to="#"
                   >
                     Networking
-                  </NavLink>
+                  </Link>
                 </li>
                 <li className="sub-item">
-                  <NavLink
+                  <Link
                     className="LinkHover"
-                    activeclassname="active"
                     to="#"
                   >
                     Accessories
-                  </NavLink>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -92,7 +91,7 @@ const CenterNav = ({ TechnophileLogo, isMenuClicked, setIsMenuClicked, menuBoxRe
             </NavLink>
           </li>
           <li>
-            <a href="#">News</a>
+            <Link className="LinkHover" to="#">News</Link>
           </li>
           <li>
             <NavLink

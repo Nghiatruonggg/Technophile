@@ -1,15 +1,15 @@
 import AboutUs2 from "../../../../assets/common/images/About Us Section/AU-2.jpg"
-
+import styles from "./MissionSection.module.css"
 const MissonSection = () => {
   return (
     <>
       {/* Mission Section */}
-      <div className="mission-section">
+      <div className={styles.missionSection}>
         <div className="container">
           <div className="row" id="wrap-info-section">
             <div className="col-12 col-sm-12 col-md-7">
-              <div className="info-text">
-                <div className="wrap-info-text">
+              <div className={styles.infoText}>
+                <div className={styles.wrapInfoText}>
                   <div className="sub-info-title">
                     <p>
                       <i className="fa-solid fa-users-line" />
@@ -17,7 +17,7 @@ const MissonSection = () => {
                     </p>
                     <h2>Connecting People Through Technology</h2>
                   </div>
-                  <div className="info-detail">
+                  <div className={styles.infoDetail}>
                     <p>
                       At Technophile, our mission is to connect people with the
                       latest in technology. We believe that tech has the power
@@ -30,7 +30,7 @@ const MissonSection = () => {
               </div>
             </div>
             <div className="col-12 col-sm-12 col-md-5">
-              <div className="info-image">
+              <div className={styles.infoImage}>
                 <img src={AboutUs2} alt="Technophile Mission" />
               </div>
             </div>

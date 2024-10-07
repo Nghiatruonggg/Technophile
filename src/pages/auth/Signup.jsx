@@ -1,9 +1,7 @@
-import React from "react";
-import "../../assets/auth/auth.css";
-import AuthImage from "../../components/auth/common/AuthImage";
-import SigninForm from "../../components/auth/SigninForm";
-import AuthHeader from "../../components/auth/common/AuthHeader";
-import AuthTitle from "../../components/auth/common/AuthTitle";
+import "../../assets/auth/authGlobal.css";
+import AuthImage from "../../components/auth/common/AuthImage/AuthImage";
+import AuthHeader from "../../components/auth/common/AuthHeader/AuthHeader";
+import AuthTitle from "../../components/auth/common/AuthTitle/AuthTitle";
 import { authStructure } from "../../structures/AuthStructure";
 import SignupForm from "../../components/auth/SignupForm";
 

@@ -1,0 +1,119 @@
+.wrapProductDescription {
+  margin-top: 2rem;
+  padding: 1rem 0;
+}
+
+.wrapDescriptionSection {
+  margin-bottom: 2rem;
+  line-height: 1.8rem;
+}
+
+.descriptionTitle,
+.descriptionSubtitle {
+  font-weight: 600;
+}
+
+.descriptionImage {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.descriptionImage img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Product Specification */
+.specificationTitle {
+  margin-bottom: 2rem;
+}
+.specTable {
+  margin: auto;
+}
+.specTable table th {
+  width: 10%;
+}
+
+/* Product Review */
+.reviewTitle {
+  margin-top: 2rem;
+}
+
+.sectionTitle {
+    font-weight: 600;
+}
+
+.showReviewSection,
+.fillReviewSection {
+  margin-top: 1.5rem;
+  /* background-color: pink; */
+}
+
+.showUserReview {
+  margin-top: 30px;
+  display: flex;
+}
+
+.userAvatar {
+  width: 20%;
+}
+
+.userAvatar img {
+  width: 80%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.userInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.userInfo p {
+  margin-bottom: 0;
+}
+
+.reviewText p {
+  color: #8d8c8c;
+}
+
+.fillReviewSection {
+  margin-left: 2rem;
+}
+
+.fillReviewSection p {
+  color: #8d8c8c;
+  margin-top: 30px;
+}
+
+.inputReviewInfo {
+  margin-top: 1.5rem;
+}
+
+.infoInput {
+  display: flex;
+  gap: 1rem;
+}
+
+.customFormFloating {
+  width: 50%;
+}
+
+.customFormFloating label span {
+  color: rgb(244, 85, 85);
+}
+
+.submitButton {
+  margin-top: 1rem;
+}
+
+.submitButton button {
+  width: 200px;
+  height: 50px;
+  color: #fff;
+  background-color: #0487ff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+}

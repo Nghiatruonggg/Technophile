@@ -1,0 +1,27 @@
+/* Product Navbar */
+.wrapProductNavbar ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 3rem;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.wrapProductNavbar ul li {
+  transition: all 0.1s;
+  font-size: 24px;
+}
+
+.wrapProductNavbar ul li p:hover {
+  border-bottom: 2px solid #0487ff;
+  color: #0487ff;
+  cursor: pointer;
+}
+
+.wrapProductNavbar ul .active p {
+  border-bottom: 2px solid #0487ff;
+  color: #0487ff;
+}
+
+

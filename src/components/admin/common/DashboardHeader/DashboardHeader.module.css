@@ -1,0 +1,15 @@
+.dashboardHeader img {
+  width: 100px;
+  border-radius: 50%;
+}
+
+.userName {
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.userRole {
+  color: #777777;
+}

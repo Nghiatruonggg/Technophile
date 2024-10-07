@@ -223,6 +223,11 @@ body.darken-2::before {
   position: relative;
 }
 
+
+.user-desktop {
+  color: #000;
+}
+
 .product-menu {
   font-weight: 600;
 }
@@ -387,16 +392,83 @@ body.darken-2::before {
 }
 
 .body-section .container {
-  /* height: 1000px; */
-  /* background-color: pink; */
   display: flex;
   justify-content: space-between;
+}
+
+/* Product Image (Swiper Default) */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper {
+  width: 100%;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+
+.mySwiper2 {
+  height: 80%;
+  width: 100%;
+}
+
+.mySwiper {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.mySwiper .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+.mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Cart Page */
+.cart-view {
+  margin-top: 80px !important;
 }
 
 
 /* Footer */
 .footer {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .footer .container {
@@ -790,7 +862,11 @@ body.darken-2::before {
   display: none;
 }
 
-@media screen and (max-width: 898px) {
+.user-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 993px) {
   /* Menu Mobile */
   .main-menu {
     height: 80px;
@@ -877,7 +953,7 @@ body.darken-2::before {
   }
 
   .top-menu-mobile img {
-    width: 70%;
+    width: 200px;
     object-fit: cover;
   }
 
@@ -915,6 +991,16 @@ body.darken-2::before {
     opacity: 0;
     transform: translateY(15%);
     filter: none;
+  }
+
+  .user-mobile {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .main-section {
+    width: 60%;
   }
 }
 

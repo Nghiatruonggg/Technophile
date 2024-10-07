@@ -82,7 +82,7 @@ export const AUGraphics = [
     graphic: AUGraphic2,
     mainTitle: "100,000+ Products Sold",
     content:
-      "We've proudly sold over <b>100,000+</b> products to tech enthusiasts worldwide over the last year and we want to sell more!.",
+      "We've proudly sold over 100,000+ products to tech enthusiasts worldwide over the last year and we want to sell more!.",
     alt: "Product Selling",
   },
   {
@@ -145,5 +145,37 @@ export const brandFiltering = [
     alt: "oppoLogo",
     newClassName: ""
   },
+]
 
+// Service Graphic
+import Service1 from "../assets/common/images/Service Graphic/service1.webp"
+import Service2 from "../assets/common/images/Service Graphic/service2.webp"
+import Service3 from "../assets/common/images/Service Graphic/service3.webp"
+import Service4 from "../assets/common/images/Service Graphic/service4.webp"
+
+export const serviceGraphic = [
+  {
+    graphic: Service1,
+    title: "Fast And Secure Delivery",
+    subText: "Always be on time",
+    addedClassname: "wrapService"
+  },
+  {
+    graphic: Service2,
+    title: "Money Back Guarantee",
+    subText: "Within 14 days",
+    addedClassname: "wrapService"
+  },
+  {
+    graphic: Service3,
+    title: "48 Hours Return Policy",
+    subText: "Assist the best we can",
+    addedClassname: "wrapService fix1"
+  },
+  {
+    graphic: Service4,
+    title: "Pro Quality Support",
+    subText: "24/7 Live Support",
+    addedClassname: "wrapService fix2"
+  },
 ]

@@ -1,0 +1,10 @@
+.loginImage img {
+    width: 112%;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 922px) {
+    .loginImage {
+        display: none;
+    }
+}

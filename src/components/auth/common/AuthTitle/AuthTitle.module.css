@@ -1,0 +1,12 @@
+.loginFormTitle {
+    width: 100%;
+}
+
+.loginFormTitle h2 {
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.loginFormTitle p {
+    color: #b2b1b1;
+}

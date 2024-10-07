@@ -10,13 +10,13 @@ const CommitmentSection = () => {
         <div className="container">
           <div className="row" id="wrap-info-section">
             <div className="col-12 col-sm-12 col-md-5">
-              <div className="info-image">
+              <div className={styles.infoImage}>
                 <img src={AboutUs3} alt="Technophile Commitment" />
               </div>
             </div>
             <div className="col-12 col-sm-12 col-md-7">
-              <div className="info-text">
-                <div className="wrap-info-text">
+              <div className={styles.infoText}>
+                <div className={styles.wrapInfoText}>
                   <div className="sub-info-title">
                     <p>
                       <i className="fa-solid fa-code-commit" />
@@ -24,7 +24,7 @@ const CommitmentSection = () => {
                     </p>
                     <h2>Committed to Excellence in Customer Service</h2>
                   </div>
-                  <div className="info-detail ">
+                  <div className={styles.infoDetail}>
                     <p>
                       At Technophile, we are dedicated to providing the best
                       service to our customers. Our commitment to excellence

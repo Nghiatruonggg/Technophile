@@ -1,0 +1,96 @@
+import { useEffect, useState } from "react";
+import styles from "./CartBottom.module.css"
+
+const CartBottom = ({ total }) => {
+  const [newTotal, setNewTotal] = useState(total);
+  const [shippingCost, setShippingCost] = useState(0);
+  const [defaultMethod, setDefaultMethod] = useState("free");
+
+  const handleShippingClicked = (method) => {
+    let cost = 0;
+
+    if (method === "local") {
+      cost = 35;
+    } else if (method === "flat-rate") {
+      cost = 12;
+    }
+
+    setShippingCost(cost);
+    setDefaultMethod(method);
+  };
+
+  // Recalculate newTotal whenever total or shippingCost changes
+  useEffect(() => {
+    setNewTotal(total + shippingCost);
+  }, [total, shippingCost]);
+
+  return (
+    <>
+      <div className="row">
+        <div className="col-12 col-sm-12 col-md-12">
+          <div className={styles.cartBottom}>
+            <div className={styles.orderSummary}>
+              <p className={styles.orderTitle}>Order Summary</p>
+
+                <table className={`table mb-30 bg-transparent ${styles.table}`}>
+                  <tbody>
+                    <tr className="order-subtotal">
+                      <td>Subtotal</td>
+                      <td>${total}</td>
+                    </tr>
+
+                    <tr className="order-shipping">
+                      <td>Shipping</td>
+                      <td>
+                        <div className={styles.inputGroup}>
+                          <input
+                            onClick={() => handleShippingClicked("free")}
+                            id="radio1"
+                            type="radio"
+                            name="shipping"
+                            checked={defaultMethod == "free" ? true : false}
+                          />
+                          <label htmlFor="radio1">Free Shipping</label>
+                        </div>
+                        <div className={styles.inputGroup}>
+                          <input
+                            onClick={() => handleShippingClicked("local")}
+                            id="radio2"
+                            type="radio"
+                            name="shipping"
+                            checked={defaultMethod == "local" ? true : false}
+                          />
+                          <label htmlFor="radio2">Local: $35</label>
+                        </div>
+                        <div className={styles.inputGroup}>
+                          <input
+                            onClick={() => handleShippingClicked("flat-rate")}
+                            id="radio3"
+                            type="radio"
+                            name="shipping"
+                            checked={defaultMethod == "flat-rate" ? true : false}
+                          />
+                          <label htmlFor="radio3">Flat rate: $12</label>
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr className="order-total">
+                      <td>Total</td>
+                      <td className="total-amount">${newTotal}</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+              <div className={styles.checkoutButton}>
+                <button type="submit">Process To Checkout</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default CartBottom;

@@ -1,0 +1,49 @@
+.dashboardNav {
+  border: 0.1px solid #777777;
+  padding: 40px 30px;
+  border-radius: 8px;
+}
+
+.navList {
+    margin-left: -32px;
+}
+
+.navList li {
+  list-style: none;
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+}
+
+.navList li i {
+  margin-right: 10px;
+}
+
+.navList li a {
+  text-decoration: none;
+  color: #777777;
+}
+
+.navList li a.active {
+  color: #0084fc;
+}
+
+.logOut {
+    cursor: pointer;
+    color: #777777;
+}
+
+.faShopCustom,
+.faGearsCustom {
+  margin-right: 8px !important;
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width: 992px) {
+    .navList li a {
+        font-size: 14px;
+    }
+
+    .logOut {
+        font-size: 14px;
+    }
+}

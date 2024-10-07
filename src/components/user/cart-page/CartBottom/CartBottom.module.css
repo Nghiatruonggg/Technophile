@@ -1,0 +1,126 @@
+.cartBottom {
+  margin-top: 20px;
+  display: flex;
+  justify-content: end;
+}
+
+.orderSummary {
+  width: 40%;
+  background-color: #fbe5da;
+  padding: 25px;
+  font-size: 20px;
+}
+
+.orderTitle {
+  font-size: 22px;
+  margin-bottom: 32px;
+}
+
+.cartBottom .orderSummary .table {
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+
+.cartBottom .orderSummary .table tbody tr,
+.cartBottom .orderSummary .table tbody td {
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+
+.cartBottom .orderSummary .inputGroup {
+  background-color: transparent !important;
+}
+
+.cartBottom .orderSummary .inputGroup label {
+  background-color: transparent !important;
+}
+
+.inputGroup input {
+  margin-right: 10px;
+}
+
+.cartBottom .orderSummary .table tbody tr td {
+  border-bottom: 20px solid #9f9e9e; /* Adds a transparent border to simulate spacing */
+}
+
+.cartBottom .orderSummary .table {
+  border-spacing: 0 30px; /* Adds space between rows */
+}
+
+.cartBottom .orderSummary .table tbody td {
+  padding-right: 80px;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.table td {
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden;
+}
+
+.checkoutButton {
+  display: flex;
+  justify-content: center;
+}
+
+.checkoutButton button {
+  padding: 15px 120px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0487ff;
+  color: #fff;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.checkoutButton button:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive */
+/* Desktop */
+@media screen and (max-width: 1151px) {
+  /* Cart View */
+  .cartBottom {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .orderSummary {
+    width: 60%;
+    background-color: #fbe5da;
+    padding: 25px;
+    font-size: 20px;
+  }
+
+  .orderTitle {
+    display: flex;
+    justify-content: center;
+  }
+
+  .orderSummary table {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .orderSummary {
+    width: 400px;
+    background-color: #fbe5da;
+    padding: 25px;
+    font-size: 14px;
+  }
+
+  .orderTitle {
+    font-size: 16px;
+  }
+
+  .checkoutButton button {
+    padding: 15px 30px;
+  }
+}

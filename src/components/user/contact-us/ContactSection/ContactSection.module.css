@@ -1,0 +1,53 @@
+/* Contact Section */
+.contactSection {
+  margin-top: 30px;
+}
+
+.wrapContactInput,
+.wrapContactInfo {
+  padding: 20px;
+}
+
+.contactTitle h3 {
+  font-weight: 600;
+}
+
+.subContactTitle {
+  color: #b6b5b5;
+}
+
+.contactInput {
+  display: flex;
+  gap: 1rem;
+}
+
+.customFormFloating {
+  width: 50%;
+}
+
+.customFormFloating label, .thoughtInput::placeholder {
+  font-size: 12px;
+}
+
+.customFormFloating label span {
+  color: rgb(244, 85, 85);
+}
+
+.sendButton {
+  margin-top: 1rem;
+}
+
+.sendButton button {
+  width: 200px;
+  height: 50px;
+  color: #fff;
+  background-color: #0487ff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.contactForHire {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import CategoryNav from '../../components/admin/admin-product-forms/CategoryNav'
+import CategoryNav from '../../components/admin/admin-product-forms/CategoryNav/CategoryNav'
 import AdminProductForm from '../../components/admin/admin-product-forms/AdminProductForm'
 import { Link, useParams } from 'react-router-dom'
 import useCallAPI from '../../hooks/useCallAPI'

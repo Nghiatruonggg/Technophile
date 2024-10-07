@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import Subbanner from "../../components/common/Subbanner/Subbanner";
 import Newsletter from "../../components/common/Newsletter/Newsletter";
-import ProductDetail from "../../components/user/product-details/ProductDetail";
-import ProductDescription from "../../components/user/product-details/ProductDescription";
-import ViewedProduct from "../../components/user/product-details/ViewedProduct";
+import ProductDetail from "../../components/user/product-details/ProductDetail/ProductDetail";
+import ProductDescription from "../../components/user/product-details/ProductDescription/ProductDescription";
+import ViewedProduct from "../../components/user/product-details/ViewedProduct/ViewedProduct";
 import { useParams } from "react-router-dom";
 import useCallAPI from "../../hooks/useCallAPI";
 import { mobile_categories } from "../../untils/variable";

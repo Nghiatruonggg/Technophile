@@ -1,0 +1,16 @@
+/* Cart Page */
+.cartTop {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.cartTop p {
+  font-size: 28px;
+}
+
+.cartTop button {
+  background-color: transparent;
+  border: 0px;
+  color: #0487ff;
+}

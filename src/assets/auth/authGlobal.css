@@ -1,0 +1,26 @@
+.auth-container {
+    display: flex;
+}
+
+.auth-section {
+    width: 100%;
+    height: 100vh;
+}
+
+/* Login main */
+.auth-main {
+    width: 100%;
+    height: 475px;
+    position: relative;
+}
+
+.auth-form {
+    width: 500px;
+    height: 400px;
+    /* background-color: aliceblue; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+}

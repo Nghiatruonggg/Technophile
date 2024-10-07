@@ -10,7 +10,7 @@ const Achievement = () => {
           <div className="row justify-content-center">
             {AUGraphics.map((graphic) => {
               return (
-                <div className="col-12 col-sm-6 col-md-4">
+                <div key={graphic.graphic} className="col-12 col-sm-6 col-md-4">
                   <div className={styles.wrapAchievement}>
                     <div className={styles.achievementContent}>
                       <img src={graphic.graphic} alt={graphic.alt} />

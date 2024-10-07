@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import CategoryNav from "../../components/admin/admin-product-forms/CategoryNav";
+import CategoryNav from "../../components/admin/admin-product-forms/CategoryNav/CategoryNav";
 import AdminProductForm from "../../components/admin/admin-product-forms/AdminProductForm";
 
 const CreateProduct = () => {
