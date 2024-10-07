@@ -45,7 +45,7 @@ const authReducerSlice = createSlice({
                 state.error = null
             })
             .addCase(submitLogin.fulfilled, (state,action) => {
-                state.user_info = action.payload
+                state.user_info = action.payload.user
                 state.token = action.payload.user.token
                 state.isLoading = false
             })

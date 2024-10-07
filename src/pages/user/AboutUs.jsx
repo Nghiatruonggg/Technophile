@@ -1,11 +1,11 @@
 import React from "react";
-import Subbanner from "../../components/common/Subbanner";
-import MainTitle from "../../components/common/MainTitle";
-import Overview from "../../components/user/about-us/Overview";
-import Achievement from "../../components/user/about-us/Achievement";
-import CoreStaff from "../../components/user/about-us/CoreStaff";
-import MissonSection from "../../components/user/about-us/MissonSection";
-import CommitentSection from "../../components/user/about-us/CommitentSection";
+import Subbanner from "../../components/common/Subbanner/Subbanner";
+import MainTitle from "../../components/common/MainTitle/MainTitle";
+import Overview from "../../components/user/about-us/Overview/Overview";
+import Achievement from "../../components/user/about-us/Achievement/Achievement";
+import CoreStaff from "../../components/user/about-us/CoreStaff/CoreStaff";
+import MissonSection from "../../components/user/about-us/MissionSection/MissonSection";
+import CommitmentSection from "../../components/user/about-us/CommitmentSection/CommitmentSection";
 
 const AboutUs = () => {
   return (
@@ -17,7 +17,7 @@ const AboutUs = () => {
       <Achievement />
       <CoreStaff />
       <MissonSection />
-      <CommitentSection />
+      <CommitmentSection />
     </>
   );
 };

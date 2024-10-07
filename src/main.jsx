@@ -10,9 +10,6 @@ import "./assets/common/lib/fontawesome/css/fontawesome.css";
 import "./assets/common/lib/fontawesome/css/brands.css";
 import "./assets/common/lib/fontawesome/css/solid.css";
 
-// Import user.css
-import "./assets/user/css/user.css";
-
 // Import common JS
 import "./assets/common/lib/bootstrap/js/bootstrap.bundle.min.js";
 import { BrowserRouter } from "react-router-dom";

@@ -1,0 +1,39 @@
+import styles from "./AdminPagination.module.css"
+
+const AdminPagination = ({ totalPages, currentPage, setCurrentPage }) => {
+  let pageNumbers = [];
+  for (let i = 1; i <= totalPages; i++) {
+    pageNumbers.push(i);
+  }
+
+
+  return (
+    <>
+      <div className={styles.adminPagination}>
+        <ul className="pagination">
+          <li className="page-item">
+            <button onClick={() => setCurrentPage(currentPage - 1)} className={currentPage == 1 ? "page-link disabled" : "page-link"} aria-label="Previous" >
+              <span aria-hidden="true">&laquo;</span>
+            </button>
+          </li>
+          {pageNumbers.map((page) => {
+            return (
+              <li key={page} className="page-item">
+                <button onClick={() => setCurrentPage(page)} className={currentPage == page ? "page-link active" : "page-link"} >
+                  {page}
+                </button>
+              </li>
+            );
+          })}
+          <li className="page-item">
+            <button onClick={() => setCurrentPage(currentPage + 1)} className={currentPage == totalPages ? "page-link disabled" : "page-link"} aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </>
+  );
+};
+
+export default AdminPagination;

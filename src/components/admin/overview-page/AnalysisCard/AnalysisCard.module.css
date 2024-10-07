@@ -1,0 +1,56 @@
+.analysisCard {
+  border: 0.1px solid #cfcece;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  transition: all 0.1s;
+  padding: 10px;
+}
+
+.analysisCard:hover {
+  border-color: #0084fc;
+}
+
+.analysisLogo i {
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  background-color: #3c81f6;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.analysisTitle {
+  font-size: 1rem;
+  margin-top: 5px;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.analysisCompare {
+  margin-bottom: 0;
+}
+
+.analysisCompare i,
+.analysisCompare span {
+  margin-right: 3px;
+  color: green;
+}
+
+.faEqualsCustom {
+  color: #3c81f6 !important;
+}
+
+.equalCompare {
+  color: #3c81f6 !important;
+}
+
+.decreaseCompare {
+  color: red !important;
+}
+
+.faArrowDownShortWideCustom {
+  color: red !important;
+}

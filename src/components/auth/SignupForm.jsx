@@ -1,10 +1,10 @@
-import React from "react";
+import styles from "./AuthForm.module.css"
 import { Link } from "react-router-dom";
 
 const SignupForm = () => {
   return (
     <>
-      <form className="signin-form">
+      <form className={styles.signinForm}>
         <div className="mb-3">
           <label htmlFor="InputEmail1" className="form-label">
             Username
@@ -42,7 +42,7 @@ const SignupForm = () => {
           />
         </div>
 
-        <div className="signin-bottom">
+        <div className={styles.signinBottom}>
           <button type="submit" className="btn btn-primary">
             Submit
           </button>

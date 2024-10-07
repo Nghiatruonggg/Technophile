@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
-import FilterInfo from "./BodySection/FilterInfo";
-import ProductRow from "./BodySection/ProductRow";
-import Pagination from "../../common/UserPagination";
+import FilterInfo from "./BodySection/components/FilterInfo";
+import ProductRow from "./BodySection/components/ProductRow";
+import Pagination from "../UserPagination/UserPagination";
 import { mobile_categories } from "../../../untils/variable";
-
 import useCallAPI from "../../../hooks/useCallAPI";
+import styles from "../mobile-categories/BodySection.module.css"
 
 const BodySection = () => {
   const { data, isLoading } = useCallAPI(mobile_categories);
 
+  // search categories and filtered products
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
+  // Pagination
   const [currentPage, setCurrentPage] = useState(1);
   const [productPerPage, setProductPerPage] = useState(6);
 
@@ -42,18 +44,6 @@ const BodySection = () => {
 
     if (selectedCategories.length > 0) {
       filteredData = filteredData.filter(({ phone_type, price_range }) => {
-        const isSmartphonesSelected =
-          selectedCategories.includes("Smartphones");
-        const isFeaturePhonesSelected =
-          selectedCategories.includes("Feature Phones");
-
-        if (
-          isSmartphonesSelected === true &&
-          isFeaturePhonesSelected === true
-        ) {
-          return null;
-        }
-
         return (
           selectedCategories.includes(phone_type) ||
           selectedCategories.includes(price_range)
@@ -68,17 +58,21 @@ const BodySection = () => {
     <>
       <div className="body-section">
         <div className="container">
-
-            <FilterInfo handleCategoriesChecked={handleCategoriesChecked} />
+          <FilterInfo handleCategoriesChecked={handleCategoriesChecked} styles={styles} />
           <ProductRow
-            data={data}
             isLoading={isLoading}
             productSlice={productSlice}
+            styles={styles}
           />
         </div>
       </div>
 
-      <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} totalPage={filteredProducts.length} productPerPage={productPerPage} />
+      <Pagination
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+        totalProduct={filteredProducts.length}
+        productPerPage={productPerPage}
+      />
     </>
   );
 };

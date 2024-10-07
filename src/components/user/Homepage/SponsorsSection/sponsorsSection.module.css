@@ -1,0 +1,63 @@
+/* Sponsor Section */
+.sponsorSection {
+  margin-top: 70px;
+}
+
+.sponsorSection .sponsorTitle {
+  display: flex;
+  justify-content: center;
+}
+
+.wrapSponsorLogo .logoBox {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.logoBox img {
+  width: 200px;
+  object-fit: cover;
+}
+
+.asusLogo {
+  padding-top: 20px;
+}
+
+/* Categories Section */
+.categories-section {
+  margin-top: 100px;
+}
+
+.sub-categories-title {
+  font-size: 20px;
+}
+
+#wrap-categories .category-product {
+  margin-top: 50px;
+  padding-top: 20px;
+  height: 158px;
+  background-color: #fff;
+  border: 0.5px #cfcfcf solid;
+  border-radius: 10px;
+}
+
+.category-product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#wrap-categories a {
+  text-decoration: none;
+  color: #000;
+}
+
+.category-product .category-graphic {
+  font-size: 60px;
+}
+
+.category-product .category-product-title {
+  font-size: 20px;
+}
+

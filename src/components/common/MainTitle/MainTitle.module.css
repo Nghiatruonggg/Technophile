@@ -1,0 +1,46 @@
+/* Main Title Section */
+.mainTitleSection {
+  width: 100%;
+  height: 205px;
+  background-color: #f2f6f9;
+}
+
+.wrapMainTitle {
+  width: 100%;
+  height: 205px;
+  display: flex;
+}
+
+.mainSubTitle {
+  width: 50%;
+  height: 100%;
+}
+
+.mainSubTitle p,
+.mainSubTitle span {
+  display: inline-block;
+  margin-top: 45px;
+}
+
+.mainSubTitle span {
+  color: #0017e6;
+}
+.mainSubTitle p {
+  margin-right: 5px;
+}
+
+.mainSubTitle h1 {
+  font-weight: 600;
+}
+
+.titleImage {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.titleImage img {
+  width: 200px;
+  object-fit: cover;
+}

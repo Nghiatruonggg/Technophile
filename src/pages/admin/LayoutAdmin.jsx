@@ -1,9 +1,9 @@
 import React from "react";
-import "../../assets/admin/admin.css";
-import Subbanner from "../../components/common/Subbanner";
-import MainTitle from "../../components/common/MainTitle";
-import DashboardHeader from "../../components/admin/common/DashboardHeader";
-import DashboardNav from "../../components/admin/common/DashboardNav";
+import "../../assets/admin/adminGlobal.css";
+import Subbanner from "../../components/common/Subbanner/Subbanner";
+import MainTitle from "../../components/common/MainTitle/MainTitle";
+import DashboardHeader from "../../components/admin/common/DashboardHeader/DashboardHeader";
+import DashboardNav from "../../components/admin/common/DashboardNav/DashboardNav";
 import { Outlet } from "react-router-dom";
 import ToastifyContainer from "../../components/popups/ToastifyContainer"
 

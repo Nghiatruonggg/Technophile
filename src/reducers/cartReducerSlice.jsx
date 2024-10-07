@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import React from "react";
 
 const cartReducerSlice = createSlice({
   name: "cart",
@@ -27,7 +26,7 @@ const cartReducerSlice = createSlice({
 
       let newTotal = 0;
       state.productList.forEach(({ price, quantity }) => {
-        newTotal += parseInt(price) * quantity;
+        newTotal += price * quantity;
       });
 
       state.total = newTotal;
@@ -49,7 +48,7 @@ const cartReducerSlice = createSlice({
       // Recalculate total
       let newTotal = 0;
       state.productList.forEach(({ price, quantity }) => {
-        newTotal += parseInt(price) * quantity;
+        newTotal += price * quantity;
       });
 
       state.total = newTotal;
@@ -71,7 +70,7 @@ const cartReducerSlice = createSlice({
       // Recalculate total
       let newTotal = 0;
       state.productList.forEach(({ price, quantity }) => {
-        newTotal += parseInt(price) * quantity;
+        newTotal += price * quantity;
       });
 
       state.total = newTotal;
@@ -89,7 +88,7 @@ const cartReducerSlice = createSlice({
       // Recalculate total
       let newTotal = 0;
       state.productList.forEach(({ price, quantity }) => {
-        newTotal += parseInt(price) * quantity;
+        newTotal += price * quantity;
       });
 
       state.total = newTotal;
@@ -99,8 +98,8 @@ const cartReducerSlice = createSlice({
       localStorage.setItem("cartTotal", JSON.stringify(state.total));
     },
 
-    deleteAllProduct(state, action) {
-      state.productList.splice(0, state.productList.length)
+    deleteAllProduct(state) {
+      state.productList = []
       
       // Recalculate total
       let newTotal = 0;

@@ -15,7 +15,7 @@ const useCallAPI = (url) => {
         setData(response.data);
       } catch (error) {
         setIsLoading(false);
-        console.error(error);
+        throw new Error(error);
       }
     };
 

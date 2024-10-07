@@ -1,0 +1,40 @@
+.dashboard-main {
+  margin-top: 50px;
+}
+
+#dashboard-content {
+  margin-top: 30px;
+}
+
+/* Common Listing */
+.chart-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.common-listing {
+  border: 0.1px solid #777777;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.listing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-product {
+  border: none;
+  padding: 10px 15px;
+  background-color: #0084fc;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.add-product:hover {
+  transform: scale(1.05);
+}
+

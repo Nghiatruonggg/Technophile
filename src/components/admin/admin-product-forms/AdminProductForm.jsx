@@ -89,7 +89,7 @@ const AdminProductForm = ({ activeTab, oldData, isLoadingOldData }) => {
           <button
             disabled={isLoading ? true : false}
             type="submit"
-            className="btn btn-primary btn-block mb-4"
+            className="btn btn-primary btn-block mb-4 form-button"
           >
             Submit
           </button>

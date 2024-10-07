@@ -97,7 +97,7 @@ const SearchPopup = ({ searchBoxRef }) => {
                           </div>
                           <div className="search-text">
                             <p className="search-name">{product.name}</p>
-                            <p className="search-price">{product.price}</p>
+                            <p className="search-price">${product.price}</p>
                           </div>
                         </div>
                       </Link>

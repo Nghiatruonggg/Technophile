@@ -1,0 +1,10 @@
+/* Pagination */
+.paginationWrap {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination .active {
+    background-color: #f2953f;
+    font-weight: 600;
+  }

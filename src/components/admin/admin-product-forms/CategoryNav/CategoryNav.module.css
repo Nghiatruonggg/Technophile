@@ -1,0 +1,16 @@
+.categorySection {
+  display: flex;
+  justify-content: center;
+}
+
+.categorySection button {
+  margin-right: 20px;
+  border: none;
+  background-color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.categorySection button.active {
+  color: #0084fc;
+}

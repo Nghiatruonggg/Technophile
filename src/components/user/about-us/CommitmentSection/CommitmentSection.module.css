@@ -1,0 +1,47 @@
+/* Commitment Section */
+.commitmentSection {
+  margin-top: 100px;
+  width: 100%;
+}
+
+.infoImage {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.infoImage img {
+  width: 90%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.infoText {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.wrapInfoText {
+  width: 100%;
+}
+
+.infoDetail p {
+  margin-top: 1.3rem;
+  font-size: 1.1rem;
+  line-height: 2rem;
+}
+
+@media screen and (max-width: 767px) {
+  .commitmentSection {
+    margin-top: 70px;
+  }
+
+  .wrapInfoText {
+    margin-top: 30px;
+  }
+}
+
+
+
+

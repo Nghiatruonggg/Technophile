@@ -1,0 +1,193 @@
+/* Body Section */
+/* Filter Column */
+.filterInfo {
+  width: 25%;
+}
+
+.categoriesFilter {
+  width: 100%;
+}
+
+.filterTitle {
+  height: 40px;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #0487ff;
+}
+
+.filterTitle p {
+  margin-bottom: 0;
+}
+
+.filterTitle i {
+  display: flex;
+  align-items: center;
+}
+
+.categories-title {
+  margin-top: 10px;
+}
+.filterList {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+.filterList li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.filterInput {
+  margin-right: 7px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.priceFilter {
+  margin-top: 30px;
+  width: 100%;
+}
+
+.brandFilter {
+  margin-top: 30px;
+  width: 100%;
+}
+
+.brandList {
+  padding: 10px 6px;
+}
+
+.brandList img {
+  width: 20%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.xiaomiLogo  {
+  width: 12% !important;
+  object-fit: cover !important;
+  margin-left: 13px !important;
+}
+
+.huaweiLogo {
+  width: 25% !important;
+  object-fit: cover !important;
+}
+
+.oneplusLogo {
+  width: 15% !important;
+}
+
+/* Product Row */
+
+.productRow {
+  width: 72%;
+}
+
+.rowCustom {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wrapProduct {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.productImage {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.productImage img {
+  width: 80%;
+  
+}
+
+.productText {
+  margin-top: 1rem;
+}
+
+.productName {
+  margin-bottom: 10px;
+  color: #919191;
+}
+
+.productPrice {
+  color: #fcb675;
+}
+
+.productName, .productPrice {
+    font-size: 17px;
+}
+
+.productRow a {
+  text-decoration: none;
+  color: #000;
+}
+
+.columnRelative {
+  position: relative;
+}
+
+.cartProductButton {
+  position: absolute;
+  right: 0;
+  bottom: 11%;
+  opacity: 0;
+  transition: 0.2s all;
+}
+
+.cartProductButton button {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  background-color: #fe6d7d;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+}
+
+.columnRelative:hover .cartProductButton {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Below Buttons */
+.below-buttons {
+  margin-top: 50px;
+}
+
+.wrap-below-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrap-below-buttons .blank {
+  width: 100px;
+  height: 20px;
+  /* background-color:#919191 ; */
+}
+
+.show-more-buttons button {
+  padding: 8px 36px;
+  border: none;
+  border-radius: 5px;
+  background-color: #e7e9ef;
+  transition: all 0.3s;
+}
+
+.show-more-buttons button:hover {
+  transform: scale(1.1);
+}

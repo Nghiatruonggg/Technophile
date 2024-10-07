@@ -1,0 +1,71 @@
+/* Viewed Products Section */
+.ViewedProductSection {
+  margin-top: 50px;
+}
+
+.wrapViewedTitle {
+  padding-top: 20px;
+  margin-bottom: 40px;
+}
+
+.subViewedTitle p {
+  display: flex;
+  align-items: center;
+  color: #0487ff;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.subViewedTitle i {
+  margin-right: 8px;
+  width: 30px;
+  height: 30px;
+  background-color: #0487ff;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.subViewedTitle h2 {
+  font-weight: 600;
+}
+
+/* Viewed Products */
+.warpViewedProduct {
+  height: 400px;
+}
+
+.viewedProductImage {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.viewedProductImage img {
+  width: 80% !important;
+  object-fit: cover;
+}
+
+.wrapViewedProduct a {
+  text-decoration: none;
+}
+
+.productText {
+  margin-top: 1rem;
+}
+
+.productText .productName {
+  margin-bottom: 10px;
+  color: #919191;
+}
+
+.productText .productPrice {
+  color: #fcb675;
+}
+
+.productName,
+.productPrice {
+  font-size: 18px;
+}

@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
-import Header from "../../components/common/Header";
-import Footer from "../../components/common/Footer";
+import React, { useRef } from "react";
+import Header from "../../components/common/Header/Header";
+import Footer from "../../components/common/Footer/Footer";
 import SearchPopup from "../../components/common/SearchPopup";
 import ShoppingCart from "../../components/common/ShoppingCart";
 import { Outlet } from "react-router-dom";
@@ -9,29 +9,6 @@ import useSearchClicked from "../../hooks/useSearchClicked";
 import useCartClicked from "../../hooks/useCartClicked";
 
 const LayoutUser = () => {
-  // const [isSearchClicked, setIsSearchClicked] = useState(false);
-  // const searchBoxRef = useRef()
-  // const handleSearchClicked = () => {
-  //   if (isSearchClicked == false) {
-  //     setIsSearchClicked(true);
-  //   } else {
-  //     setIsSearchClicked(false);
-  //   }
-  // };
-
-  // const handleClickedOutside = (e) => {
-  //   if (!searchBoxRef.current.contains(e.target)) {
-  //     setIsSearchClicked(false);
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   document.addEventListener("mousedown", handleClickedOutside);
-  //   return () => {
-  //     document.removeEventListener("mousedown", handleClickedOutside);
-  //   }
-  // }, [])
-
   const searchBoxRef = useRef();
 
   const {

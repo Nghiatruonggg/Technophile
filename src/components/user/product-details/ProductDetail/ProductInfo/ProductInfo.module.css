@@ -1,0 +1,120 @@
+/* Product Info */
+/* Top Info */
+.wrapProductInfo {
+  height: 100%;
+}
+
+.wrapTopInfo {
+  padding: 15px;
+  border-bottom: 1px solid #dcd5d5;
+}
+
+.productName {
+  margin-bottom: 1.8rem;
+  font-weight: 600;
+}
+
+.productPrice {
+  font-size: 1.5rem;
+  margin-bottom: 1.8rem;
+}
+.productRating {
+  margin-top: 1.8rem;
+  display: flex;
+}
+
+.starIcon i {
+  color: #ffdc60;
+}
+
+.ratingNumber {
+  margin-left: 0.5rem;
+}
+
+
+/* --- */
+.wrapBottomInfo {
+  padding: 15px;
+}
+
+.productStatus p {
+  margin-bottom: 0;
+  color: #0487ff;
+}
+
+.productStatus {
+  margin-bottom: 2.3rem;
+}
+
+.productStatus i {
+  margin-right: 0.5rem;
+}
+
+.productBriefIntro {
+  color: #9f9e9e;
+}
+
+/* Product Button */
+.productButton {
+    margin-top: 2.3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+.productQuantity {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.productQuantity span {
+  font-size: 1.5rem;
+}
+
+.productQuantity button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f2f6f9;
+  border: none;
+  transition: all 0.2s;
+}
+
+.productQuantity button i {
+  font-size: 0.8rem;
+}
+
+.productQuantity button:hover {
+  transform: scale(1.2);
+}
+
+.addToCartButton button {
+  padding: 1rem 5.5rem;
+  border-radius: 10px;
+  background-color: #0487ff;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.addToCartButton button:hover {
+  transform: scale(1.1);
+}
+
+.wishlistButton button {
+  padding: 7px 15px;
+  font-size: 1.5rem;
+  background-color: #fff;
+  color: #cfcfcf;
+  transition: all 0.2s;
+  border-radius: 10px;
+  border: 1px solid #dcd5d5;
+}
+
+.wishlistButton button:hover {
+  transform: scale(1.1);
+  background-color: #0487ff;
+  color: #fff;
+}

@@ -1,0 +1,15 @@
+.signinForm input {
+    height: 50px;
+}
+
+.signinBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px
+}
+
+.signinBottom button {
+    padding: 15px 40px;
+    font-weight: 600;
+}

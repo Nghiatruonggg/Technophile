@@ -1,0 +1,42 @@
+/* User Review */
+.userReview {
+  margin-top: 70px;
+  background-color: #fff7ea;
+}
+
+.subUserReviewTitle {
+  padding-top: 30px;
+  font-size: 20px;
+}
+
+/* User Review Main */
+.wrapMainReview {
+  background-color: #fff7ea;
+  padding-top: 10px;
+}
+
+.userReviewMain {
+  margin: auto;
+  margin-top: 50px;
+  padding-bottom: 50px;
+}
+
+.wrapUserReview {
+  width: 100%;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+
+.reviewImage {
+  width: 80px;
+  object-fit: cover;
+  border-radius: 10%;
+  margin-right: 20px;
+}
+
+.userReviewName {
+  padding-top: 10px;
+}
+
+
