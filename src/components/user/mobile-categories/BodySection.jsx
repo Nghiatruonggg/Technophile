@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import FilterInfo from "./BodySection/components/FilterInfo";
 import ProductRow from "./BodySection/components/ProductRow";
-import Pagination from "../UserPagination/UserPagination";
+import UserPagination from "../UserPagination/UserPagination";
 import { mobile_categories } from "../../../untils/variable";
 import useCallAPI from "../../../hooks/useCallAPI";
-import styles from "../mobile-categories/BodySection.module.css"
+import styles from "../mobile-categories/BodySection.module.css";
+import { Col, Container, Row } from "react-bootstrap";
 
 const BodySection = () => {
   const { data, isLoading } = useCallAPI(mobile_categories);
@@ -57,17 +58,28 @@ const BodySection = () => {
   return (
     <>
       <div className="body-section">
-        <div className="container">
-          <FilterInfo handleCategoriesChecked={handleCategoriesChecked} styles={styles} />
-          <ProductRow
-            isLoading={isLoading}
-            productSlice={productSlice}
-            styles={styles}
-          />
-        </div>
+        <Container>
+          <Row>
+            <Col xs={12} sm={4} md={3}>
+              <FilterInfo
+                handleCategoriesChecked={handleCategoriesChecked}
+                styles={styles}
+              />
+            </Col>
+
+            <Col xs={12} sm={8} md={9}>
+              <ProductRow
+                isLoading={isLoading}
+                productSlice={productSlice}
+                styles={styles}
+              />
+            </Col>
+
+          </Row>
+        </Container>
       </div>
 
-      <Pagination
+      <UserPagination
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
         totalProduct={filteredProducts.length}

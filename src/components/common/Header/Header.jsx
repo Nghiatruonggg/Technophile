@@ -1,18 +1,19 @@
 import { Link, NavLink } from "react-router-dom";
 import HeaderNav from "./HeaderNav/HeaderNav";
+import { Col, Container, Row } from "react-bootstrap";
 
 const Header = () => {
   return (
     <>
       {/* Header Top */}
       <div className="header-top">
-        <div className="container">
-          <div className="row">
-            <div className="col-12 col-sm-12 col-md-12">
+        <Container>
+          <Row>
+            <Col>
               <p>Welcome to the world's most friendliest store!</p>
-            </div>
-          </div>
-        </div>
+            </Col>
+          </Row>
+        </Container>
       </div>
       <HeaderNav/>
     </>

@@ -3,6 +3,7 @@ import useCallAPI from "../../../../hooks/useCallAPI";
 import { core_staffs } from "../../../../untils/variable";
 import StaffSection from "./StaffSection/StaffSection";
 import styles from "./CoreStaff.module.css"
+import { Col, Container, Row } from "react-bootstrap";
 
 const CoreStaff = () => {
   const { data, isLoading } = useCallAPI(core_staffs);
@@ -10,9 +11,9 @@ const CoreStaff = () => {
     <>
       {/* Core Staff  */}
       <div className={styles.coreStaffSection}>
-        <div className="container">
-          <div className="row">
-            <div className="col-12 col-sm-12 col-md-12">
+        <Container>
+          <Row>
+            <Col >
               <div className={styles.wrapStaffTitle}>
                 <div className={styles.subStaffTitle}>
                   <p>
@@ -22,11 +23,11 @@ const CoreStaff = () => {
                   <h2>Our Team</h2>
                 </div>
               </div>
-            </div>
-          </div>
+            </Col>
+          </Row>
 
-          <StaffSection data={data} styles={styles} />
-        </div>
+          <StaffSection data={data} styles={styles} isLoading={isLoading} />
+        </Container>
       </div>
     </>
   );

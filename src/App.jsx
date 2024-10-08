@@ -1,7 +1,7 @@
-import React from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Homepage from "./pages/user/Homepage";
 import { Route, Routes } from "react-router-dom";
-import LayoutUser from "./pages/user/LayoutUser";
+import LayoutApp from "./pages/user/LayoutApp";
 import MobileCategories from "./pages/user/MobileCategories";
 import ProductDetails from "./pages/user/ProductDetails";
 import AboutUs from "./pages/user/AboutUs";
@@ -22,7 +22,7 @@ const App = () => {
   return (
     <GlobalStyles>
       <Routes>
-        <Route path="/" element={<LayoutUser />}>
+        <Route path="/" element={<LayoutApp />}>
           <Route index element={<Homepage />} />
           <Route path="/mobile-categories" element={<MobileCategories />} />
           <Route path="/mobile-categories/:id" element={<ProductDetails />} />

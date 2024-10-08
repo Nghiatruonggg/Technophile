@@ -1,13 +1,14 @@
 import styles from "./ServiceSection.module.css";
 import { serviceGraphic } from "../../../../structures/UserStructure";
+import { Col, Container, Row } from "react-bootstrap";
 
 const ServiceSection = () => {
   return (
     <>
       {/* Service Section */}
       <div className={styles.serviceSection}>
-        <div className="container">
-          <div className="row">
+        <Container >
+          <Row>
             {serviceGraphic.map((service) => {
               const { addedClassname } = service;
 
@@ -16,9 +17,9 @@ const ServiceSection = () => {
                 .map((name) => styles[name])
                 .join(" ");
               return (
-                <div
+                <Col xs={12} sm={6} md={3}
                   key={service.graphic}
-                  className="col-12 col-sm-6 col-md-3 mb-3"
+                  className="mb-3"
                 >
                   <div className={dynamicClassNames}>
                     <div className={styles.serviceImage}>
@@ -29,11 +30,11 @@ const ServiceSection = () => {
                       <p className={styles.bottomText}>{service.subText}</p>
                     </div>
                   </div>
-                </div>
+                </Col>
               );
             })}
-          </div>
-        </div>
+          </Row>
+        </Container>
       </div>
     </>
   );

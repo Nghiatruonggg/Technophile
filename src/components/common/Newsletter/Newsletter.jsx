@@ -1,14 +1,15 @@
 import React from "react";
 import newsletterImg from "../../../assets/common/images/Newsletter section/Adjusted bgimg.png"
 import styles from "../Newsletter/Newsletter.module.css"
+import { Col, Container, Row } from "react-bootstrap";
 const Newsletter = () => {
   return (
     <>
       {/* Newsletter Section */}
       <div className={styles.newsletterSection}>
-        <div className="container">
-          <div className="row">
-            <div className="col-12 col-sm-12 col-md-12">
+        <Container >
+          <Row >
+            <Col >
               <div className={styles.newsletterBg }>
                 <img className={styles.newsImg}
                   src={newsletterImg}
@@ -28,9 +29,9 @@ const Newsletter = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
+            </Col>
+          </Row>
+        </Container>
       </div>
     </>
   );

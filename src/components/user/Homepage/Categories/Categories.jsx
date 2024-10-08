@@ -1,17 +1,17 @@
 import { Link } from "react-router-dom";
 import { categoryLogo } from "../../../../structures/UserStructure";
-import styles from "./Categories.module.css"
+import styles from "./Categories.module.css";
+import { Col, Container, Row } from "react-bootstrap";
 
 const Categories = () => {
-  
   return (
     <>
       {/* Categories */}
       <div className={styles.categoriesSection}>
-        <div className="container">
+        <Container>
           {/* Categories Title */}
-          <div className="row">
-            <div className="col-12 col-sm-12 col-md-12">
+          <Row>
+            <Col>
               <div className={`${styles.subCategoriesTitle} sub-title`}>
                 <p>
                   <i className="fa-solid fa-tag" />
@@ -19,28 +19,33 @@ const Categories = () => {
                 </p>
                 <h1>Browse by Category</h1>
               </div>
-            </div>
-          </div>
+            </Col>
+          </Row>
+
           {/* Categories Main */}
-          <div className="row" id="wrap-categories">
+          <Row>
             {categoryLogo.map((category) => {
               return (
-                  <div key={category.id} className="col-6 col-sm-4 col-md-2">
-                    <Link className={styles.linkCategory} to={category.redirectPath}>
-                      <div className={styles.categoryProduct}>
-                        <div className={styles.categoryGraphic}>
-                          <img src={category.imageSrc} alt="MobileLogo" />
-                        </div>
-                        <div className={styles.categoryProductTitle}>
-                          <p>{category.name}</p>
-                        </div>
+                <Col key={category.id} xs={6} sm={4} md={2}>
+                  <Link 
+                    className={styles.linkCategory}
+                    to={category.redirectPath}
+                  >
+                    <div className={styles.categoryProduct}>
+                      <div className={styles.categoryGraphic}>
+                        <img src={category.imageSrc} alt="MobileLogo" />
                       </div>
-                    </Link>
-                  </div>
+                      <div className={styles.categoryProductTitle}>
+                        <p>{category.name}</p>
+                      </div>
+                    </div>
+                  </Link>
+                </Col>
               );
             })}
-          </div>
-        </div>
+
+          </Row>
+        </Container>
       </div>
     </>
   );

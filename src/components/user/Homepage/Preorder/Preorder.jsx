@@ -1,3 +1,4 @@
+import { Col, Container, Row } from "react-bootstrap";
 import { orderImage } from "../../../../structures/UserStructure";
 import styles from "../Preorder/Preorder.module.css";
 
@@ -5,9 +6,9 @@ const Preorder = () => {
   return (
     <>
       <div className={styles.preorderSection}>
-        <div className="container">
-          <div className={`row ${styles.wrapPreorder}`}>
-            <div className="col-12 col-sm-12 col-md-6">
+        <Container>
+          <Row className={`${styles.wrapPreorder}`}>
+            <Col xs={12} sm={12} md={6}>
               <div className={styles.preorderText}>
                 <div className={styles.preorderSubtitle}>
                   <i
@@ -25,9 +26,10 @@ const Preorder = () => {
                 </div>
                 <button className={styles.preorderButton}>Check Now!</button>
               </div>
-            </div>
-            <div
-              className={`col-12 col-sm-12 col-md-6 ${styles.wrapPreorderImage}`}
+            </Col>
+
+            <Col xs={12} sm={12} md={6}
+              className={`${styles.wrapPreorderImage}`}
             >
               <div className={styles.preorderImageSection}>
                 <img
@@ -36,9 +38,9 @@ const Preorder = () => {
                   alt="Order Now!"
                 />
               </div>
-            </div>
-          </div>
-        </div>
+            </Col>
+          </Row>
+        </Container>
       </div>
     </>
   );

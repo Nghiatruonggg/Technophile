@@ -6,23 +6,20 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 import useCallAPI from "../../../../hooks/useCallAPI";
 import { options } from "../../../../untils/third-lib";
 import { Link } from "react-router-dom";
-import styles from "../ProductSection/ProductSection.module.css"
+import styles from "../ProductSection/ProductSection.module.css";
+import { Col, Container, Row } from "react-bootstrap";
 
 const ProductSection = () => {
   const { data, isLoading } = useCallAPI(mobile_categories);
-
-  if (isLoading) {
-    return <p>Data Loading</p>;
-  }
 
   return (
     <>
       {/* Products Section */}
       <div className={styles.productSection}>
-        <div className="container">
+        <Container>
           {/* Product Title */}
-          <div className="row">
-            <div className="col-12 col-sm-12 col-md-12">
+          <Row>
+            <Col>
               <div className={`${styles.subProductTitle} sub-title`}>
                 <p>
                   <i className="fa-solid fa-fire-flame-curved" />
@@ -30,8 +27,8 @@ const ProductSection = () => {
                 </p>
                 <h1>Explore Our Products</h1>
               </div>
-            </div>
-          </div>
+            </Col>
+          </Row>
 
           {/* Product Main */}
           <div className={`${styles.productMain} product-main`}>
@@ -42,30 +39,37 @@ const ProductSection = () => {
               items={4}
               {...options}
             >
-              {data.map((product) => {
-                return (
-                  <div key={product.id} className="item">
-                    <div className={styles.productItem}>
-                      <Link className={styles.productLink} to={`/mobile-categories/${product.id}`}>
-                        <div className={styles.productImage}>
-                          <img src={product.mainImage} alt="Iphone 15" />
-                        </div>
-                        <div className={styles.productText}>
-                          <div className={styles.productName}>
-                            <p>{product.name}</p>
+              {isLoading ? (
+                <p>Data is Loading</p>
+              ) : (
+                data.map((product) => {
+                  return (
+                    <div key={product.id} className="item">
+                      <div className={styles.productItem}>
+                        <Link
+                          className={styles.productLink}
+                          to={`/mobile-categories/${product.id}`}
+                        >
+                          <div className={styles.productImage}>
+                            <img src={product.mainImage} alt="Iphone 15" />
                           </div>
-                          <div className={styles.productPrice}>
-                            <p>${product.price}</p>
+                          <div className={styles.productText}>
+                            <div className={styles.productName}>
+                              <p>{product.name}</p>
+                            </div>
+                            <div className={styles.productPrice}>
+                              <p>${product.price}</p>
+                            </div>
                           </div>
-                        </div>
-                      </Link>
+                        </Link>
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })
+              )}
             </OwlCarousel>
           </div>
-        </div>
+        </Container>
       </div>
     </>
   );

@@ -1,13 +1,14 @@
-import AboutUs2 from "../../../../assets/common/images/About Us Section/AU-2.jpg"
-import styles from "./MissionSection.module.css"
+import { Col, Container, Row } from "react-bootstrap";
+import AboutUs2 from "../../../../assets/common/images/About Us Section/AU-2.jpg";
+import styles from "./MissionSection.module.css";
 const MissonSection = () => {
   return (
     <>
       {/* Mission Section */}
       <div className={styles.missionSection}>
-        <div className="container">
-          <div className="row" id="wrap-info-section">
-            <div className="col-12 col-sm-12 col-md-7">
+        <Container>
+          <Row id="wrap-info-section">
+            <Col xs={12} sm={12} md={7}>
               <div className={styles.infoText}>
                 <div className={styles.wrapInfoText}>
                   <div className="sub-info-title">
@@ -28,14 +29,15 @@ const MissonSection = () => {
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="col-12 col-sm-12 col-md-5">
+            </Col>
+
+            <Col xs={12} sm={12} md={5}>
               <div className={styles.infoImage}>
                 <img src={AboutUs2} alt="Technophile Mission" />
               </div>
-            </div>
-          </div>
-        </div>
+            </Col>
+          </Row>
+        </Container>
       </div>
     </>
   );

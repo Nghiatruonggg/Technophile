@@ -1,14 +1,15 @@
 import React from "react";
 import titleImage from "../../../assets/common/images/Title Image/Samsung-Galaxy-S24-Ultra-Violet-PNG.png";
 import styles from "../MainTitle/MainTitle.module.css"
+import { Col, Container, Row } from "react-bootstrap";
 
 const MainTitle = ({pageSubName, pageName}) => {
   return (
     <>
       <div className={styles.mainTitleSection}>
-        <div className="container">
-          <div className="row">
-            <div className="col-12 col-sm-12 col-md-12">
+        <Container>
+          <Row>
+            <Col>
               <div className={styles.wrapMainTitle}>
                 <div className={styles.mainSubTitle}>
                   <p>Home |</p>
@@ -19,9 +20,9 @@ const MainTitle = ({pageSubName, pageName}) => {
                   <img src={titleImage} alt="title-image" />
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
+            </Col>
+          </Row>
+        </Container>
       </div>
     </>
   );

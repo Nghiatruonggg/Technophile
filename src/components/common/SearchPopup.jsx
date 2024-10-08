@@ -5,6 +5,7 @@ import { mobile_categories } from "../../untils/variable";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../reducers/cartReducerSlice";
+import { Col, Container, Row } from "react-bootstrap";
 
 const SearchPopup = ({ searchBoxRef }) => {
   const searchFunction = useContext(searchContext);
@@ -16,12 +17,14 @@ const SearchPopup = ({ searchBoxRef }) => {
 
   const dispatch = useDispatch();
   const handleAdded = (product) => {
-    dispatch(addToCart({
-      ...product,
-      quantity: 1
-    }));
-  }
-  
+    dispatch(
+      addToCart({
+        ...product,
+        quantity: 1,
+      })
+    );
+  };
+
   useEffect(() => {
     if (!data) return;
 
@@ -33,13 +36,14 @@ const SearchPopup = ({ searchBoxRef }) => {
 
     const filteredData = data.filter((product) => {
       return product.name.toLowerCase().includes(searchTerm);
-    })
+    });
 
-    setSearchData(filteredData)
+    // Debounce
+    setTimeout(() => {
+      setSearchData(filteredData);
+    }, 1000);
 
-
-  }, [valueInput, data])
-
+  }, [valueInput, data]);
 
   return (
     <>
@@ -48,7 +52,7 @@ const SearchPopup = ({ searchBoxRef }) => {
         ref={searchBoxRef}
         className={isSearchClicked == true ? "search-box active" : "search-box"}
       >
-        <div className="container">
+        <Container>
           <div className="wrap-overflow">
             <div
               className={
@@ -60,8 +64,8 @@ const SearchPopup = ({ searchBoxRef }) => {
             >
               <i className="fa-solid fa-xmark" />
             </div>
-            <div className="row" id="search-input">
-              <div className="col-12 col-sm-12 col-md-12">
+            <Row id="search-input">
+              <Col >
                 <div className="form-floating mb-3">
                   <input
                     type="text"
@@ -72,28 +76,27 @@ const SearchPopup = ({ searchBoxRef }) => {
                   />
                   <label htmlFor="floatingInput">Search here!</label>
                 </div>
-              </div>
-            </div>
-            <div className="row" id="search-status">
-              <div className="col-12 col-sm-12 col-md-12">
+              </Col>
+            </Row>
+
+            <Row id="search-status">
+              <Col>
                 <div className="wrap-search-status">
                   <p className="result-number">{`${searchData.length} result found`}</p>
                   <Link to="/mobile-categories">View All</Link>
                 </div>
-              </div>
-            </div>
-            <div className="row" id="search-product">
-              <div className="col-12 col-sm-12 col-md-12">
+              </Col>
+            </Row>
+
+            <Row id="search-product">
+              <Col>
                 {searchData.map((product) => {
                   return (
                     <div key={product.id} className="wrap-search-product">
                       <Link to={`/mobile-categories/${product.id}`}>
                         <div className="search-product-info">
                           <div className="search-image">
-                            <img
-                              src={product.mainImage}
-                              alt={product.name}
-                            />
+                            <img src={product.mainImage} alt={product.name} />
                           </div>
                           <div className="search-text">
                             <p className="search-name">{product.name}</p>
@@ -102,15 +105,20 @@ const SearchPopup = ({ searchBoxRef }) => {
                         </div>
                       </Link>
                       <div className="add-to-cart-button-shopping">
-                        <button onClick={() => handleAdded(product)} type="button">Add To Cart</button>
+                        <button
+                          onClick={() => handleAdded(product)}
+                          type="button"
+                        >
+                          Add To Cart
+                        </button>
                       </div>
                     </div>
                   );
                 })}
-              </div>
-            </div>
+              </Col>
+            </Row>
           </div>
-        </div>
+        </Container>
       </div>
     </>
   );

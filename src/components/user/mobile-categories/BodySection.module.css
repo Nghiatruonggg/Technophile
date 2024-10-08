@@ -1,9 +1,4 @@
 /* Body Section */
-/* Filter Column */
-.filterInfo {
-  width: 25%;
-}
-
 .categoriesFilter {
   width: 100%;
 }
@@ -84,15 +79,6 @@
 
 /* Product Row */
 
-.productRow {
-  width: 72%;
-}
-
-.rowCustom {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .wrapProduct {
   width: 100%;
   margin-bottom: 2rem;
@@ -107,8 +93,8 @@
 }
 
 .productImage img {
-  width: 80%;
-  
+  width: 250px;
+  object-fit: cover;
 }
 
 .productText {
@@ -128,13 +114,14 @@
     font-size: 17px;
 }
 
-.productRow a {
-  text-decoration: none;
-  color: #000;
-}
 
 .columnRelative {
   position: relative;
+}
+
+.columnRelative a {
+  text-decoration: none;
+  color: #000;
 }
 
 .cartProductButton {
@@ -190,4 +177,11 @@
 
 .show-more-buttons button:hover {
   transform: scale(1.1);
+}
+
+@media screen and (max-width: 925px) {
+  .productImage img {
+    width: 200px;
+    object-fit: cover;
+  }
 }

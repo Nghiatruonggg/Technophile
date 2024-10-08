@@ -23,9 +23,9 @@ const CenterNav = ({ TechnophileLogo, isMenuClicked, setIsMenuClicked, menuBoxRe
             </NavLink>
           </li>
           <li className="product-menu">
-            <a href="#">
+            <Link>
               Product <i className="fa-solid fa-chevron-down" />
-            </a>
+            </Link>
             <div className="sub-menu sub-menu-1 sub-menu-mobile">
               <ul>
                 <li className="sub-item">

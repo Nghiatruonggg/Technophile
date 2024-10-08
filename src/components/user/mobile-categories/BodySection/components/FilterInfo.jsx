@@ -85,7 +85,7 @@ const FilterInfo = ({ handleCategoriesChecked, styles }) => {
           </div>
           <div className={styles.brandList}>
             {brandFiltering.map(({newClassName, ...brand}) => {
-              return <img key={brand.index} src={brand.brand} alt={brand.alt} className={styles[newClassName]} />;
+              return <img key={brand.brand} src={brand.brand} alt={brand.alt} className={styles[newClassName]} />;
             })}
           </div>
         </div>

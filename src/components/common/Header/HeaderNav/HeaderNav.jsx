@@ -3,6 +3,7 @@ import TechnophileLogo from "../../../../assets/common/images/Technophile Logo/T
 import TopLeftNav from "./TopLeftNav";
 import CenterNav from "./CenterNav";
 import TopRightNav from "./TopRightNav";
+import { Col, Container, Row } from "react-bootstrap";
 
 const HeaderNav = () => {
   const [isMenuClicked, setIsMenuClicked] = useState(false);
@@ -25,9 +26,9 @@ const HeaderNav = () => {
     <>
       {/* Main Menu */}
       <div className="main-menu">
-        <div className="container">
-          <div className="row">
-            <div className="col-12 col-md-12 col-md-12">
+        <Container>
+          <Row>
+            <Col>
               <div className="wrap-menu">
                 <TopLeftNav
                   TechnophileLogo={TechnophileLogo}
@@ -44,9 +45,9 @@ const HeaderNav = () => {
 
                 <TopRightNav />
               </div>
-            </div>
-          </div>
-        </div>
+            </Col>
+          </Row>
+        </Container>
       </div>
     </>
   );

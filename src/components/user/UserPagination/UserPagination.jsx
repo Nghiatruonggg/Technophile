@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../UserPagination/UserPagination.module.css";
+import { Button } from "react-bootstrap";
 
 const UserPagination = ({
   currentPage,
@@ -16,23 +17,18 @@ const UserPagination = ({
     <>
       <div className={styles.paginationWrap}>
         <div className={styles.pagination}>
-          <div className="btn-group" role="group">
-            {pageNumbers.map((page) => {
-              return (
-                <button
-                  key={page}
-                  onClick={() => setCurrentPage(page)}
-                  className={
-                    currentPage == page
-                      ? `btn btn-primary ${styles.active}`
-                      : "btn btn-primary"
-                  }
-                >
-                  {page}
-                </button>
-              );
-            })}
-          </div>
+          {pageNumbers.map((page) => {
+            return (
+              <Button
+                variant="primary"
+                key={page}
+                onClick={() => setCurrentPage(page)}
+                className={currentPage == page ? `${styles.active}` : ""}
+              >
+                {page}
+              </Button>
+            );
+          })}
         </div>
       </div>
     </>

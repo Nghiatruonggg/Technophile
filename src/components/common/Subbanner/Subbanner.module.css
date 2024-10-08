@@ -2,7 +2,8 @@
 .subBannerSection {
   width: 100%;
 }
-.container {
+
+.customContainer {
   max-width: 100%;
   padding: 0;
   overflow: hidden;
@@ -18,9 +19,9 @@
 }
 
 .wrapSubBanner p {
-  font-family: "Switzer Light";
   font-size: 1.5rem;
   margin-bottom: 0;
+  font-weight: 600;
   color: #fff;
 }
 

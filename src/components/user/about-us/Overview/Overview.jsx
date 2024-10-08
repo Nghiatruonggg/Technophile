@@ -1,4 +1,4 @@
-import React from "react";
+import { Col, Container, Row } from "react-bootstrap";
 import AboutUs1 from "../../../../assets/common/images/About Us Section/AU-1.webp"
 
 const Overview = () => {
@@ -6,14 +6,14 @@ const Overview = () => {
     <>
       {/* Overview Section */}
       <div className="overview-section">
-        <div className="container">
-          <div className="row" id="wrap-info-section">
-            <div className="col-12 col-sm-12 col-md-5">
+        <Container>
+          <Row id="wrap-info-section">
+            <Col xs={12} sm={12} md={5}>
               <div className="info-image">
                 <img src={AboutUs1} alt="Customer having a good time" />
               </div>
-            </div>
-            <div className="col-12 col-sm-12 col-md-7">
+            </Col>
+            <Col xs={12} sm={12} md={7}>
               <div className="info-text">
                 <div className="wrap-info-text">
                   <div className="sub-info-title">
@@ -35,9 +35,9 @@ const Overview = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
+            </Col>
+          </Row>
+        </Container>
       </div>
     </>
   );

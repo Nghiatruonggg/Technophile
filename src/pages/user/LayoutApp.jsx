@@ -8,7 +8,7 @@ import { searchContext, cartContext } from "../../contexts/Contexts";
 import useSearchClicked from "../../hooks/useSearchClicked";
 import useCartClicked from "../../hooks/useCartClicked";
 
-const LayoutUser = () => {
+const LayoutApp = () => {
   const searchBoxRef = useRef();
 
   const {
@@ -54,4 +54,4 @@ const LayoutUser = () => {
   );
 };
 
-export default LayoutUser;
+export default LayoutApp;

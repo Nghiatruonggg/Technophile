@@ -1,13 +1,14 @@
-import styles from "./ContactSection.module.css"
+import { Col, Container, Row } from "react-bootstrap";
+import styles from "./ContactSection.module.css";
 
 const ContactSection = () => {
   return (
     <>
       {/* Contact Section */}
       <div className={styles.contactSection}>
-        <div className="container">
-          <div className="row">
-            <div className="col-12 col-sm-12 col-md-8">
+        <Container>
+          <Row>
+            <Col xs={12} sm={12} md={8}>
               <div className={styles.wrapContactInput}>
                 <div className={styles.contactTitle}>
                   <h3>We would love to hear from you</h3>
@@ -17,7 +18,9 @@ const ContactSection = () => {
                   </p>
                 </div>
                 <div className={styles.contactInput}>
-                  <div className={`${styles.customFormFloating} form-floating mb-3`}>
+                  <div
+                    className={`${styles.customFormFloating} form-floating mb-3`}
+                  >
                     <input
                       type="text"
                       className="form-control"
@@ -28,7 +31,9 @@ const ContactSection = () => {
                       Name<span>*</span>
                     </label>
                   </div>
-                  <div className={`${styles.customFormFloating} form-floating mb-3`}>
+                  <div
+                    className={`${styles.customFormFloating} form-floating mb-3`}
+                  >
                     <input
                       type="email"
                       className="form-control"
@@ -39,7 +44,9 @@ const ContactSection = () => {
                       Email Address<span>*</span>
                     </label>
                   </div>
-                  <div className={`${styles.customFormFloating} form-floating mb-3`}>
+                  <div
+                    className={`${styles.customFormFloating} form-floating mb-3`}
+                  >
                     <input
                       type="text"
                       className="form-control"
@@ -65,11 +72,11 @@ const ContactSection = () => {
                   <button type="submit">Send Message</button>
                 </div>
               </div>
-            </div>
+            </Col>
 
-            <div className="col-12 col-sm-12 col-md-4">
+            <Col xs={12} sm={12} md={4}>
               <div className={styles.wrapContactInfo}>
-                <div >
+                <div>
                   <h3>Our Store</h3>
                   <p className={styles.subContactTitle}>
                     Alley 53 Nguyen Ngoc Vu Street, Ha Noi
@@ -98,9 +105,9 @@ const ContactSection = () => {
                   </p>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
+            </Col>
+          </Row>
+        </Container>
       </div>
     </>
   );

@@ -1,13 +1,14 @@
 import React from "react";
+import { Col, Container, Row } from "react-bootstrap";
 
 const Footer = () => {
   return (
     <>
       {/* Footer */}
       <div className="footer">
-        <div className="container">
-          <div className="row">
-            <div className="col-12 col-sm-12 col-md-4">
+        <Container>
+          <Row >
+            <Col xs={12} sm={12} md={4}>
               <div className="wrap-footer">
                 <div className="footer-sub-title">
                   <p>Support</p>
@@ -32,8 +33,9 @@ const Footer = () => {
                   </p>
                 </div>
               </div>
-            </div>
-            <div className="col-12 col-sm-12 col-md-4">
+            </Col>
+
+            <Col xs={12} sm={12} md={4} >
               <div className="wrap-footer">
                 <div className="footer-sub-title">
                   <p>Account</p>
@@ -55,8 +57,9 @@ const Footer = () => {
                   </ul>
                 </div>
               </div>
-            </div>
-            <div className="col-12 col-sm-12 col-md-4">
+            </Col>
+
+            <Col xs={12} sm={12} md={4} >
               <div className="wrap-footer">
                 <div className="footer-sub-title">
                   <p>Quick Link</p>
@@ -78,9 +81,9 @@ const Footer = () => {
                   </ul>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
+            </Col>
+          </Row>
+        </Container>
       </div>
       {/* Footer Bottom */}
       <div className="footer-bottom">
