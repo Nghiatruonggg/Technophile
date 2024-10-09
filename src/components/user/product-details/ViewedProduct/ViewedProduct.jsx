@@ -1,13 +1,14 @@
 import ViewedRecently from "./ViewedRecently/ViewedRecently";
 import styles from "./ViewedProduct.module.css"
+import { Col, Container, Row } from "react-bootstrap";
 const ViewedProduct = () => {
 
   return (
     <>
       <div className={styles.ViewedProductSection}>
-        <div className="container">
-          <div className="row">
-            <div className="col-12 col-sm-12 col-md-12">
+        <Container >
+          <Row >
+            <Col >
               <div className={styles.wrapViewedTitle}>
                 <div className={styles.subViewedTitle}>
                   <p>
@@ -17,11 +18,11 @@ const ViewedProduct = () => {
                   <h2>Viewed Products</h2>
                 </div>
               </div>
-            </div>
-          </div>
+            </Col>
+          </Row>
 
           <ViewedRecently styles={styles} />
-        </div>
+        </Container>
       </div>
     </>
   );

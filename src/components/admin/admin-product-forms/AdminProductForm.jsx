@@ -8,6 +8,7 @@ import ToastPopup from "../../popups/ToastPopup";
 import { useNavigate } from "react-router-dom";
 import { productFormDefaultValue } from "../../../structures/productFormDefaultValue";
 import { useEffect } from "react";
+import { Form } from "react-bootstrap";
 
 const AdminProductForm = ({ activeTab, oldData, isLoadingOldData }) => {
   const {
@@ -75,7 +76,7 @@ const AdminProductForm = ({ activeTab, oldData, isLoadingOldData }) => {
       {isLoadingOldData ? (
         <p>Data is Loading</p>
       ) : (
-        <form className="mt-4" onSubmit={handleSubmit(onSubmit)}>
+        <Form className="mt-4" onSubmit={handleSubmit(onSubmit)}>
           {activeTab == "basicInfo" && (
             <BasicInfoForm register={register} errors={errors} />
           )}
@@ -93,7 +94,7 @@ const AdminProductForm = ({ activeTab, oldData, isLoadingOldData }) => {
           >
             Submit
           </button>
-        </form>
+        </Form>
       )}
     </>
   );

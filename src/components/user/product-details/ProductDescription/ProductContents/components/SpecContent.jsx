@@ -1,16 +1,17 @@
 import React from "react";
+import { Col, Row } from "react-bootstrap";
 
 const SpecContent = ({data, styles}) => {
   return (
     <>
-      <div className="row">
-            <div class="col-12 col-sm-12 col-md-12">
+      <Row>
+            <Col xs={12} sm={12} md={12}>
               <div class={styles.specificationTitle}>
                 <h2 class={styles.sectionTitle}>Technical Specification</h2>
               </div>
-            </div>
+            </Col>
 
-            <div class="col-12 col-sm-12 col-md-12" id="product-spec">
+            <Col xs={12} sm={12} md={12} id="product-spec">
               <div class={styles.specTable}>
                 <table class="table table-striped">
                   <thead>
@@ -71,8 +72,8 @@ const SpecContent = ({data, styles}) => {
                   </tbody>
                 </table>
               </div>
-            </div>
-      </div>
+            </Col>
+      </Row>
     </>
   );
 };

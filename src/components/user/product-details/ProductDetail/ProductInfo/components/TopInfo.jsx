@@ -1,6 +1,7 @@
 import React from "react";
 
 const TopInfo = ({data, styles}) => {
+  console.log(data)
   return (
     <>
       <div className={styles.wrapTopInfo}>
@@ -14,7 +15,7 @@ const TopInfo = ({data, styles}) => {
             <i className="fa-regular fa-star"></i>
             <i className="fa-regular fa-star"></i>
           </div>
-          <p className={styles.ratingNumber}>(2000+ reviews)</p>
+          <p className={styles.ratingNumber}>{`(${data.rating_numbers} reviews)`}</p>
         </div>
       </div>
     </>

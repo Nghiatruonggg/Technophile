@@ -75,7 +75,7 @@ const ShoppingCart = ({ cartBoxRef }) => {
                         </div>
                         <div className="product-cart-text">
                           <p className="product-name">{product.name}</p>
-                          <p className="product-price">{product.price}</p>
+                          <p className="product-price">${product.price}</p>
                         </div>
                       </div>
                       <div className="product-quantity">

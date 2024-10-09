@@ -1,19 +1,20 @@
 import React from "react";
+import { Col, Row } from "react-bootstrap";
 
 const DescriptionContent = ({ data, styles }) => {
   return (
     <>
-      <div className={`row ${styles.wrapProductDescription}`}>
-        <div className="col-12 col-sm-12 col-md-12">
+      <Row className={styles.wrapProductDescription}>
+        <Col xs={12} sm={12} md={12}>
           <div className={styles.wrapDescriptionSection}>
             <h2 className={styles.descriptionTitle}>
               {data.description_title_1}
             </h2>
             <p className="description-text">{data.description_text_1}</p>
           </div>
-        </div>
+        </Col>
 
-        <div className="col-12 col-sm-12 col-md-12">
+        <Col xs={12} sm={12} md={12}>
           <div className={styles.wrapDescriptionSection}>
             <h2 className={styles.descriptionTitle}>{data.description_title_2}</h2>
             <p className="description-text">{data.description_text_2}</p>
@@ -26,9 +27,9 @@ const DescriptionContent = ({ data, styles }) => {
             </div>
             <p className="description-text">{data.description_text_4}</p>
           </div>
-        </div>
+        </Col>
 
-        <div className="col-12 col-sm-12 col-md-12">
+        <Col xs={12} sm={12} md={12}>
           <div className={styles.wrapDescriptionSection}>
             <h5 className={styles.descriptionSubtitle}>
               {data.description_sub_title_2}
@@ -39,8 +40,8 @@ const DescriptionContent = ({ data, styles }) => {
             </div>
             <p className="description-text">{data.description_text_6}</p>
           </div>
-        </div>
-      </div>
+        </Col>
+      </Row>
     </>
   );
 };

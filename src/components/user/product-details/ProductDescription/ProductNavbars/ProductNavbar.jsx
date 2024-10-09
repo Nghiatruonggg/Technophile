@@ -1,9 +1,10 @@
+import { Col, Row } from "react-bootstrap";
 import styles from "../ProductNavbars/ProductNavbars.module.css";
 const ProductNavbar = ({ activeTab, handleActive }) => {
   return (
     <>
-      <div className="row">
-        <div className="col-12 col-sm-12 col-md-12">
+      <Row >
+        <Col >
           <div className={styles.wrapProductNavbar}>
             <ul>
               <li
@@ -27,8 +28,8 @@ const ProductNavbar = ({ activeTab, handleActive }) => {
               </li>
             </ul>
           </div>
-        </div>
-      </div>
+        </Col>
+      </Row>
     </>
   );
 };

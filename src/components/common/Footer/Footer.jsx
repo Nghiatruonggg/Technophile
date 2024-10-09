@@ -1,5 +1,6 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -43,16 +44,16 @@ const Footer = () => {
                 <div className="footer-content">
                   <ul>
                     <li>
-                      <a href="#">My Account</a>
+                      <Link href="#">My Account</Link>
                     </li>
                     <li>
-                      <a href="#">Login</a>
+                      <Link href="#">Login</Link>
                     </li>
                     <li>
-                      <a href="#">My Cart</a>
+                      <Link href="#">My Cart</Link>
                     </li>
                     <li>
-                      <a href="#">Products</a>
+                      <Link href="#">Products</Link>
                     </li>
                   </ul>
                 </div>
@@ -67,16 +68,16 @@ const Footer = () => {
                 <div className="footer-content">
                   <ul>
                     <li>
-                      <a href="#">About Us</a>
+                      <Link href="#">About Us</Link>
                     </li>
                     <li>
-                      <a href="#">News</a>
+                      <Link href="#">News</Link>
                     </li>
                     <li>
-                      <a href="#">Privacy Policy</a>
+                      <Link href="#">Privacy Policy</Link>
                     </li>
                     <li>
-                      <a href="#">Contact</a>
+                      <Link to="/contact-us">Contact</Link>
                     </li>
                   </ul>
                 </div>

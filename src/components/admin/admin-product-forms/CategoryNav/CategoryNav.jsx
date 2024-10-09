@@ -4,19 +4,19 @@ const CategoryNav = ({ handleActive, activeTab }) => {
     <div className={styles.categorySection}>
       <button
         onClick={() => handleActive("basicInfo")}
-        className={activeTab == "basicInfo" ? "active" : ""}
+        className={activeTab == "basicInfo" ? `${styles.active}` : ""}
       >
         Basic Info
       </button>
       <button
         onClick={() => handleActive("detailInfo")}
-        className={activeTab == "detailInfo" ? "active" : ""}
+        className={activeTab == "detailInfo" ? `${styles.active}` : ""}
       >
         Detail Info
       </button>
       <button
         onClick={() => handleActive("productSpecs")}
-        className={activeTab == "productSpecs" ? "active" : ""}
+        className={activeTab == "productSpecs" ? `${styles.active}` : ""}
       >
         Specifications
       </button>

@@ -6,6 +6,7 @@ import DashboardHeader from "../../components/admin/common/DashboardHeader/Dashb
 import DashboardNav from "../../components/admin/common/DashboardNav/DashboardNav";
 import { Outlet } from "react-router-dom";
 import ToastifyContainer from "../../components/popups/ToastifyContainer"
+import { Col, Container, Row } from "react-bootstrap";
 
 const LayoutAdmin = () => {
   return (
@@ -13,20 +14,20 @@ const LayoutAdmin = () => {
       <Subbanner />
       <MainTitle pageSubName={"My Account"} pageName={"Dashboard"} />
       <div className="dashboard-main">
-        <div className="container">
+        <Container>
           <DashboardHeader />
 
-          <div className="row" id="dashboard-content">
+          <Row className="mt-4">
             <DashboardNav />
 
-            <div className="col-12 col-sm-8 col-md-9">
+            <Col xs={12} sm={8} md={9}>
               <div className="dashboard-detail">
                 <Outlet/>
 
               </div>
-            </div>
-          </div>
-        </div>
+            </Col>
+          </Row>
+        </Container>
       </div>
 
       <ToastifyContainer/>

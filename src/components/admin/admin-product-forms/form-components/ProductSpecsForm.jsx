@@ -1,13 +1,14 @@
 import React from "react";
 import ProductLabel from "./ProductLabel";
 import ErrorsRequired from "./ErrorsRequired";
+import { Col, Row } from "react-bootstrap";
 
 const ProductSpecsForm = ({register, errors}) => {
   return (
     <div className="product-specs-form">
       <>
-        <div className="row mb-4">
-          <div className="col">
+        <Row className="mb-4">
+          <Col>
             <div data-mdb-input-init="" className="form-outline">
               <ProductLabel
                 name="Monitor Size"
@@ -22,8 +23,8 @@ const ProductSpecsForm = ({register, errors}) => {
               />
               <ErrorsRequired errors={errors} field="monitor_size" />
             </div>
-          </div>
-          <div className="col">
+          </Col>
+          <Col>
             <div data-mdb-input-init="" className="form-outline">
               <ProductLabel
                 name="Display Technology"
@@ -38,11 +39,11 @@ const ProductSpecsForm = ({register, errors}) => {
               />
               <ErrorsRequired errors={errors} field="display_technology" />
             </div>
-          </div>
-        </div>
+          </Col>
+        </Row>
 
-        <div className="row mb-4">
-          <div className="col">
+        <Row className="mb-4">
+          <Col>
             <div data-mdb-input-init="" className="form-outline">
               <ProductLabel
                 name="Back Camera"
@@ -57,8 +58,8 @@ const ProductSpecsForm = ({register, errors}) => {
               />
               <ErrorsRequired errors={errors} field="back_camera" />
             </div>
-          </div>
-          <div className="col">
+          </Col>
+          <Col>
             <div data-mdb-input-init="" className="form-outline">
               <ProductLabel
                 name="Front Camera"
@@ -73,11 +74,11 @@ const ProductSpecsForm = ({register, errors}) => {
               />
               <ErrorsRequired errors={errors} field="front_camera" />
             </div>
-          </div>
-        </div>
+          </Col>
+        </Row>
 
-        <div className="row mb-4">
-          <div className="col">
+        <Row className="mb-4">
+          <Col>
             <div data-mdb-input-init="" className="form-outline">
               <ProductLabel
                 name="Ram Size"
@@ -92,8 +93,8 @@ const ProductSpecsForm = ({register, errors}) => {
               />
               <ErrorsRequired errors={errors} field="ram_size" />
             </div>
-          </div>
-          <div className="col">
+          </Col>
+          <Col>
             <div data-mdb-input-init="" className="form-outline">
               <ProductLabel
                 name="Memory Capacity"
@@ -108,11 +109,11 @@ const ProductSpecsForm = ({register, errors}) => {
               />
               <ErrorsRequired errors={errors} field="memory_capacity" />
             </div>
-          </div>
-        </div>
+          </Col>
+        </Row>
 
-        <div className="row mb-4">
-          <div className="col">
+        <Row className="mb-4">
+          <Col>
             <div data-mdb-input-init="" className="form-outline">
               <ProductLabel
                 name="Simcard Slots"
@@ -127,8 +128,8 @@ const ProductSpecsForm = ({register, errors}) => {
               />
               <ErrorsRequired errors={errors} field="simcard_number" />
             </div>
-          </div>
-          <div className="col">
+          </Col>
+          <Col>
             <div data-mdb-input-init="" className="form-outline">
               <ProductLabel
                 name="Operating System"
@@ -143,8 +144,8 @@ const ProductSpecsForm = ({register, errors}) => {
               />
               <ErrorsRequired errors={errors} field="operating_system" />
             </div>
-          </div>
-          <div className="col">
+          </Col>
+          <Col>
             <div data-mdb-input-init="" className="form-outline">
               <ProductLabel
                 name="Aspect Ratio"
@@ -159,11 +160,11 @@ const ProductSpecsForm = ({register, errors}) => {
               />
               <ErrorsRequired errors={errors} field="aspect_ratio" />
             </div>
-          </div>
-        </div>
+          </Col>
+        </Row>
 
-        <div className="row mb-4">
-          <div className="col">
+        <Row className="mb-4">
+          <Col>
             <div data-mdb-input-init="" className="form-outline">
               <ProductLabel
                 name="Chipset CPU"
@@ -178,8 +179,8 @@ const ProductSpecsForm = ({register, errors}) => {
               />
               <ErrorsRequired errors={errors} field="chipset_cpu" />
             </div>
-          </div>
-          <div className="col">
+          </Col>
+          <Col>
             <div data-mdb-input-init="" className="form-outline">
               <ProductLabel
                 name="Battery Size"
@@ -194,8 +195,8 @@ const ProductSpecsForm = ({register, errors}) => {
               />
               <ErrorsRequired errors={errors} field="battery_size" />
             </div>
-          </div>
-        </div>
+          </Col>
+        </Row>
       </>
     </div>
   );

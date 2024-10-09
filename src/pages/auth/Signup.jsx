@@ -4,6 +4,7 @@ import AuthHeader from "../../components/auth/common/AuthHeader/AuthHeader";
 import AuthTitle from "../../components/auth/common/AuthTitle/AuthTitle";
 import { authStructure } from "../../structures/AuthStructure";
 import SignupForm from "../../components/auth/SignupForm";
+import { Col, Container, Row } from "react-bootstrap";
 
 const Signup = () => {
   const signupInfo = authStructure[1];
@@ -13,18 +14,18 @@ const Signup = () => {
         <AuthImage loginImage={signupInfo.AuthImage} />
 
         <div className="auth-section">
-          <div className="container">
-            <div className="row">
-              <div className="col-12 col-sm-12 col-md-12">
+          <Container>
+            <Row >
+              <Col>
                 <AuthHeader
                   authSub1={signupInfo.authSub1}
                   authButton={signupInfo.authButton}
                 />
-              </div>
-            </div>
+              </Col>
+            </Row>
 
-            <div className="row">
-              <div className="col-12 col-sm-12 col-md-12">
+            <Row >
+              <Col>
                 <div className="auth-main">
                   <div className="auth-form">
                     <AuthTitle
@@ -35,9 +36,9 @@ const Signup = () => {
                     <SignupForm/>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
+              </Col>
+            </Row>
+          </Container>
         </div>
       </div>
     </>

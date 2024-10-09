@@ -6,6 +6,7 @@ import { removeProduct, removeProductRender } from "../../../../reducers/product
 import ToastPopup from "../../../popups/ToastPopup";
 import { Link } from "react-router-dom";
 import styles from "./ProductTable.module.css"
+import { Table } from "react-bootstrap";
 
 const ProductTable = ({ isLoading, data, setCurrentPage }) => {
   const dispatch = useDispatch();
@@ -33,8 +34,8 @@ const ProductTable = ({ isLoading, data, setCurrentPage }) => {
 
   return (
     <>
-      <div className="table-responsive">
-        <table className={`table table-striped table-hover ${styles.tableCustom}`}>
+
+        <Table striped hover responsive className={styles.tableCustom}>
           <thead>
             <tr>
               <th scope="col">#</th>
@@ -79,8 +80,7 @@ const ProductTable = ({ isLoading, data, setCurrentPage }) => {
               })
             )}
           </tbody>
-        </table>
-      </div>
+        </Table>
     </>
   );
 };

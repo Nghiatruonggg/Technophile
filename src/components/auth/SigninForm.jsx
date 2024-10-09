@@ -5,6 +5,7 @@ import { submitLogin } from "../../reducers/authReducerSlice";
 import "react-toastify/dist/ReactToastify.css";
 import ToastPopup from "../popups/ToastPopup";
 import styles from "./AuthForm.module.css"
+import { Form } from "react-bootstrap";
 
 const SigninForm = () => {
   const authFunction = useSelector((state) => state.auth);
@@ -60,7 +61,7 @@ const SigninForm = () => {
 
   return (
     <>
-      <form className={styles.signinForm} onSubmit={handleLogin}>
+      <Form className={styles.signinForm} onSubmit={handleLogin}>
         <div className="mb-3">
           <label htmlFor="InputEmail1" className="form-label">
             Email address
@@ -101,7 +102,7 @@ const SigninForm = () => {
 
           <Link>Forget your password?</Link>
         </div>
-      </form>
+      </Form>
     </>
   );
 };

@@ -8,17 +8,18 @@ import {
   lineChartOptions,
   series,
 } from "../../../../untils/third-lib";
+import { Col, Row } from "react-bootstrap";
 
 const ChartSection = () => {
   return (
     <>
-      <div className="row">
-        <div className="col-12 col-sm-12 col-md-12">
+      <Row >
+        <Col >
           <div className={styles.totalRevenueSection}>
             <p className={styles.chartTitle}>Total Revenue Sale</p>
             <div className="charts-section">
-              <div className="row">
-                <div className="col-12 col-sm-12 col-md-6">
+              <Row >
+                <Col md={6} >
                   <div id="chart">
                     <ReactApexChart
                       options={donutChartOptions}
@@ -26,9 +27,9 @@ const ChartSection = () => {
                       type="donut"
                     />
                   </div>
-                </div>
+                </Col>
 
-                <div className="col-12 col-sm-12 col-md-6">
+                <Col md={6}>
                   <div id="chart">
                     <ReactApexChart
                       options={pieChartOptions}
@@ -36,23 +37,23 @@ const ChartSection = () => {
                       type="pie"
                     />
                   </div>
-                </div>
-              </div>
+                </Col>
+              </Row>
             </div>
           </div>
-        </div>
-      </div>
+        </Col>
+      </Row>
 
-      <div className="row">
-        <div className="col-12 col-sm-12 col-md-12">
-          <div className="total-revenue-section">
+      <Row >
+        <Col>
+          <div className={styles.totalRevenueSection}>
             <p className="chart-title">Revenue sale per month</p>
             <div className="chart-section">
               <ReactApexChart options={lineChartOptions} series={series} />
             </div>
           </div>
-        </div>
-      </div>
+        </Col>
+      </Row>
     </>
   );
 };

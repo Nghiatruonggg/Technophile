@@ -1,17 +1,18 @@
 import React from "react";
 import reviewImg from "../../../../../../assets/common/images/Product Detail/uifaces-popular-image.jpg";
+import { Col, Form, Row } from "react-bootstrap";
 
 const ReviewContent = ({ styles }) => {
   return (
     <>
-      <div className="row">
-        <div className="col-12 col-sm-12 col-md-12">
+      <Row>
+        <Col xs={12} sm={12} md={12}>
           <div className={styles.reviewTitle}>
             <h2 className={styles.sectionTitle}>Reviews</h2>
           </div>
-        </div>
+        </Col>
 
-        <div className="col-12 col-sm-12 col-md-5">
+        <Col xs={12} sm={12} md={5}>
           <div className={styles.showReviewSection}>
             <h5 className={styles.sectionTitle}>1 Review for this Product</h5>
             <div className={styles.showUserReview}>
@@ -21,7 +22,7 @@ const ReviewContent = ({ styles }) => {
               <div className="review-detail">
                 <div className={styles.userInfo}>
                   <p className={styles.sectionTitle}>Nick Cannon</p>
-                  <div className="star-icon">
+                  <div className={styles.starIcon}>
                     <i className="fa-regular fa-star" />
                     <i className="fa-regular fa-star" />
                     <i className="fa-regular fa-star" />
@@ -38,15 +39,17 @@ const ReviewContent = ({ styles }) => {
               </div>
             </div>
           </div>
-        </div>
-        <div className="col-12 col-sm-12 col-md-7">
+        </Col>
+
+        <Col xs={12} sm={12} md={7} className="col-12 col-sm-12 col-md-7">
           <div className={styles.fillReviewSection}>
             <h5 className={styles.sectionTitle}>Add a Review</h5>
             <p>
               Please fill all the information required to submit this review.
               Thank you for your time!
             </p>
-            <div className={styles.inputReviewInfo}>
+
+            <Form className={styles.inputReviewInfo}>
               <div className="review-input">
                 <textarea
                   className="form-control"
@@ -84,10 +87,10 @@ const ReviewContent = ({ styles }) => {
               <div className={styles.submitButton}>
                 <button type="submit">Submit Comment</button>
               </div>
-            </div>
+            </Form>
           </div>
-        </div>
-      </div>
+        </Col>
+      </Row>
     </>
   );
 };

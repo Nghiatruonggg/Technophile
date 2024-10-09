@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { logout } from "../../../../reducers/authReducerSlice";
 import styles from "./DashboardNav.module.css"
+import { Col } from "react-bootstrap";
 
 const DashboardNav = () => {
   const location = useLocation();
@@ -20,7 +21,7 @@ const DashboardNav = () => {
 
   return (
     <>
-      <div className="col-12 col-sm-4 col-md-3">
+      <Col xs={12} sm={4} md={3}>
         <div className={styles.dashboardNav}>
           <ul className={styles.navList}>
             <li>
@@ -61,7 +62,7 @@ const DashboardNav = () => {
             </li>
           </ul>
         </div>
-      </div>
+      </Col>
     </>
   );
 };

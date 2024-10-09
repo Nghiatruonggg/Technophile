@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./CartBottom.module.css"
+import { Col, Row } from "react-bootstrap";
 
 const CartBottom = ({ total }) => {
   const [newTotal, setNewTotal] = useState(total);
@@ -26,8 +27,8 @@ const CartBottom = ({ total }) => {
 
   return (
     <>
-      <div className="row">
-        <div className="col-12 col-sm-12 col-md-12">
+      <Row >
+        <Col >
           <div className={styles.cartBottom}>
             <div className={styles.orderSummary}>
               <p className={styles.orderTitle}>Order Summary</p>
@@ -87,8 +88,8 @@ const CartBottom = ({ total }) => {
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </Col>
+      </Row>
     </>
   );
 };

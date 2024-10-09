@@ -1,4 +1,5 @@
-import styles from "./AdminPagination.module.css"
+import { Pagination } from "react-bootstrap";
+import styles from "./AdminPagination.module.css";
 
 const AdminPagination = ({ totalPages, currentPage, setCurrentPage }) => {
   let pageNumbers = [];
@@ -6,31 +7,28 @@ const AdminPagination = ({ totalPages, currentPage, setCurrentPage }) => {
     pageNumbers.push(i);
   }
 
-
   return (
     <>
       <div className={styles.adminPagination}>
-        <ul className="pagination">
-          <li className="page-item">
-            <button onClick={() => setCurrentPage(currentPage - 1)} className={currentPage == 1 ? "page-link disabled" : "page-link"} aria-label="Previous" >
-              <span aria-hidden="true">&laquo;</span>
-            </button>
-          </li>
-          {pageNumbers.map((page) => {
-            return (
-              <li key={page} className="page-item">
-                <button onClick={() => setCurrentPage(page)} className={currentPage == page ? "page-link active" : "page-link"} >
-                  {page}
-                </button>
-              </li>
-            );
-          })}
-          <li className="page-item">
-            <button onClick={() => setCurrentPage(currentPage + 1)} className={currentPage == totalPages ? "page-link disabled" : "page-link"} aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-            </button>
-          </li>
-        </ul>
+        <Pagination>
+          <Pagination.Prev
+            onClick={() => setCurrentPage(currentPage - 1)}
+            disabled={currentPage === 1}
+          />
+          {pageNumbers.map((page) => (
+            <Pagination.Item
+              key={page}
+              active={currentPage === page}
+              onClick={() => setCurrentPage(page)}
+            >
+              {page}
+            </Pagination.Item>
+          ))}
+          <Pagination.Next
+            onClick={() => setCurrentPage(currentPage + 1)}
+            disabled={currentPage === totalPages}
+          />
+        </Pagination>
       </div>
     </>
   );

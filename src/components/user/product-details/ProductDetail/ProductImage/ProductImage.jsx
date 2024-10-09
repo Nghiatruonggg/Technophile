@@ -10,12 +10,13 @@ import "swiper/css/thumbs";
 
 // import required modules
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+import { Col } from "react-bootstrap";
 
 const ProductImage = ({ data }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   return (
     <>
-      <div className="col-12 col-sm-12 col-md-6">
+      <Col xs={12} sm={12} md={6}>
         <div className="wrap-product-image">
           <Swiper
             style={{
@@ -68,7 +69,7 @@ const ProductImage = ({ data }) => {
             </SwiperSlide>
           </Swiper>
         </div>
-      </div>
+      </Col>
     </>
   );
 };

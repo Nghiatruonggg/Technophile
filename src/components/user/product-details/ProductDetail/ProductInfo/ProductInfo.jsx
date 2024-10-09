@@ -9,6 +9,7 @@ import {
   minusQuantity,
 } from "../../../../../reducers/cartReducerSlice";
 import styles from "./ProductInfo.module.css";
+import { Col } from "react-bootstrap";
 
 const ProductInfo = ({ data }) => {
   // Redux Function
@@ -25,7 +26,7 @@ const ProductInfo = ({ data }) => {
 
   return (
     <>
-      <div className="col-12 col-sm-12 col-md-6">
+      <Col xs={12} sm={12} md={6}>
         <div className={styles.wrapProductInfo}>
           <TopInfo data={data} styles={styles} />
 
@@ -39,7 +40,7 @@ const ProductInfo = ({ data }) => {
             <ProductButton product={data} handleAddToCart={handleAddToCart} styles={styles} />
           </div>
         </div>
-      </div>
+      </Col>
     </>
   );
 };

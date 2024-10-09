@@ -1,13 +1,14 @@
 import React from "react";
 import ProductLabel from "./ProductLabel";
 import ErrorsRequired from "./ErrorsRequired";
+import { Col, Row } from "react-bootstrap";
 
 const DetailInfoForm = ({register, errors}) => {
   return (
     <div className="detail-info-form">
       <>
-        <div className="row mb-4">
-          <div className="col">
+        <Row className=" mb-4">
+          <Col>
             <div data-mdb-input-init="" className="form-outline">
               <ProductLabel
                 name="Description Title 1"
@@ -22,8 +23,8 @@ const DetailInfoForm = ({register, errors}) => {
               />
               <ErrorsRequired errors={errors} field="description-title-1" />
             </div>
-          </div>
-        </div>
+          </Col>
+        </Row>
 
         <div data-mdb-input-init="" className="form-outline mb-4">
           <ProductLabel

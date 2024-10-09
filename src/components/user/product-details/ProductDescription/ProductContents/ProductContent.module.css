@@ -74,6 +74,10 @@
   margin-bottom: 0;
 }
 
+.starIcon i {
+  color: #ffe234;
+}
+
 .reviewText p {
   color: #8d8c8c;
 }

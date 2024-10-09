@@ -30,3 +30,10 @@
 .authButton button:hover {
     transform: scale(1.05);
 }
+
+@media screen and (max-width: 1074px) {
+    .authHeader {
+        justify-content: center;
+        padding: 0 70px;
+    }
+}

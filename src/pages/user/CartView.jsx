@@ -4,6 +4,7 @@ import CartTop from "../../components/user/cart-page/CartTop/CartTop";
 import CartCenter from "../../components/user/cart-page/CartCenter/CartCenter";
 import CartBottom from "../../components/user/cart-page/CartBottom/CartBottom";
 import { useSelector } from "react-redux";
+import { Col, Container, Row } from "react-bootstrap";
 
 const CartView = () => {
   const cartState = useSelector((state) => state.cart);
@@ -14,19 +15,19 @@ const CartView = () => {
     <>
       <Subbanner />
       <div className="main-cartpage">
-        <div className="container">
-          <div className="row">
+        <Container>
+          <Row>
             <div className="cart-view">
-              <div className="col-12 col-sm-12 col-md-12">
+              <Col>
                 <CartTop />
 
                 <CartCenter productList={productList} />
 
                 <CartBottom total={total} />
-              </div>
+              </Col>
             </div>
-          </div>
-        </div>
+          </Row>
+        </Container>
       </div>
     </>
   );

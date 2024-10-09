@@ -1,13 +1,14 @@
 import React from "react";
 import ProductLabel from "./ProductLabel";
 import ErrorsRequired from "./ErrorsRequired";
+import { Col, Row } from "react-bootstrap";
 
 const BasicInfoForm = ({ register, errors }) => {
   return (
     <div className="basic-info-form">
       <>
-        <div className="row mb-4">
-          <div className="col">
+        <Row className=" mb-4">
+          <Col>
             <div className="form-outline">
               <ProductLabel
                 name="Product Name"
@@ -22,9 +23,9 @@ const BasicInfoForm = ({ register, errors }) => {
               />
               <ErrorsRequired errors={errors} field="name" />
             </div>
-          </div>
+          </Col>
 
-          <div className="col">
+          <Col>
             <div className="form-outline">
               <ProductLabel
                 name="Product Price"
@@ -39,11 +40,11 @@ const BasicInfoForm = ({ register, errors }) => {
               />
               <ErrorsRequired errors={errors} field="price" />
             </div>
-          </div>
-        </div>
+          </Col>
+        </Row>
 
-        <div className="row mb-4">
-          <div className="col">
+        <Row className=" mb-4">
+          <Col>
             <div className="form-outline">
               <ProductLabel
                 name="Phone Type"
@@ -58,8 +59,8 @@ const BasicInfoForm = ({ register, errors }) => {
               />
               <ErrorsRequired errors={errors} field="phone_type" />
             </div>
-          </div>
-          <div className="col">
+          </Col>
+          <Col>
             <div className="form-outline">
               <ProductLabel
                 name="Price Range"
@@ -74,8 +75,8 @@ const BasicInfoForm = ({ register, errors }) => {
               />
               <ErrorsRequired errors={errors} field="price_range" />
             </div>
-          </div>
-        </div>
+          </Col>
+        </Row>
 
         <div className="form-outline mb-4">
           <ProductLabel
@@ -92,8 +93,8 @@ const BasicInfoForm = ({ register, errors }) => {
           <ErrorsRequired errors={errors} field="mainImage" />
         </div>
 
-        <div className="row mb-4">
-          <div className="col">
+        <Row className="mb-4">
+          <Col>
             <div className="form-outline">
               <ProductLabel
                 name="Thumbnail 1 URL"
@@ -108,8 +109,8 @@ const BasicInfoForm = ({ register, errors }) => {
               />
               <ErrorsRequired errors={errors} field="thumbnail_1" />
             </div>
-          </div>
-          <div className="col">
+          </Col>
+          <Col>
             <div className="form-outline">
               <ProductLabel
                 name="Thumbnail 2 URL"
@@ -124,8 +125,8 @@ const BasicInfoForm = ({ register, errors }) => {
               />
               <ErrorsRequired errors={errors} field="thumbnail_2" />
             </div>
-          </div>
-          <div className="col">
+          </Col>
+          <Col>
             <div className="form-outline">
               <ProductLabel
                 name="Thumbnail 3 URL"
@@ -140,8 +141,8 @@ const BasicInfoForm = ({ register, errors }) => {
               />
               <ErrorsRequired errors={errors} field="thumbnail_3" />
             </div>
-          </div>
-        </div>
+          </Col>
+        </Row>
 
         <div className="form-outline mb-4">
           <ProductLabel

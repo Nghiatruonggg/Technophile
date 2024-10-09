@@ -25,3 +25,11 @@
 }
 
 
+@media screen and (max-width: 593px) {
+  .wrapProductNavbar ul {
+    gap: 2rem;
+  }
+  .wrapProductNavbar ul li {
+    font-size: 18px;
+  }
+}

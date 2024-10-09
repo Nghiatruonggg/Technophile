@@ -6,6 +6,7 @@ import AdminPagination from "../../components/admin/common/AdminPagination/Admin
 import { useDispatch } from "react-redux";
 import { getProduct } from "../../reducers/productCRUDSlice";
 import { Link } from "react-router-dom";
+import { Col, Row } from "react-bootstrap";
 
 const DashboardProducts = () => {
   const { data, isLoading, totalPages, currentPage, setCurrentPage } =
@@ -21,8 +22,8 @@ const DashboardProducts = () => {
 
   return (
     <>
-      <div className="row">
-        <div className="col-12 col-sm-12 col-md-12">
+      <Row>
+        <Col>
           <div className="common-listing">
             <div className="listing-header">
               <p className="chart-title">Product Listing</p>
@@ -41,8 +42,8 @@ const DashboardProducts = () => {
               setCurrentPage={setCurrentPage}
             />
           </div>
-        </div>
-      </div>
+        </Col>
+      </Row>
     </>
   );
 };

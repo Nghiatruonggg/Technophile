@@ -1,10 +1,11 @@
 import styles from "./AnalysisCard.module.css"
 import { analysisCard } from "../../../../structures/AdminStructure";
+import { Col, Row } from "react-bootstrap";
 
 const AnalysisCard = () => {
   return (
     <>
-      <div className="row">
+      <Row>
         {analysisCard.map((card) => {
           const compareClass = card.compareClass
           const styledCompareClass = compareClass.split(" ").map((compare) => styles[compare])
@@ -13,7 +14,7 @@ const AnalysisCard = () => {
           const splittedCardCompare = cardCompare.split(" ")
 
           return (
-            <div key={card.cardTitle} className="col-12 col-sm-6 col-md-4">
+            <Col xs={12} sm={6} md={4} key={card.cardTitle}>
               <div className={styles.analysisCard}>
                 <div className={styles.analysisLogo}>
                   <i className={card.cardLogo}></i>
@@ -28,10 +29,10 @@ const AnalysisCard = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </Col>
           );
         })}
-      </div>
+      </Row>
     </>
   );
 };

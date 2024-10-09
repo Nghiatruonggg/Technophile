@@ -36,7 +36,7 @@ const CartCenter = ({ productList }) => {
                 <p>Cart is empty</p>
               ) : (
                 productList.map((product) => {
-                  let productSubtotal = parseInt(product.price) * product.quantity
+                  let productSubtotal = product.price * product.quantity
 
                   return (
                     <tr key={product.id}>
@@ -56,7 +56,7 @@ const CartCenter = ({ productList }) => {
                         </div>
                       </td>
                       <td>
-                        <p className="fw-normal mb-1">{product.price}</p>
+                        <p className="fw-normal mb-1">${product.price}</p>
                       </td>
                       <td className="quantity-view">
                         <button type="button" className={styles.cartMinus} onClick={() => handleMinusQuantity(product.id)} >
@@ -67,7 +67,7 @@ const CartCenter = ({ productList }) => {
                           <i className="fa-solid fa-plus"></i>
                         </button>
                       </td>
-                      <td>{productSubtotal}$</td>
+                      <td>${productSubtotal}</td>
                     </tr>
                   );
                 })
