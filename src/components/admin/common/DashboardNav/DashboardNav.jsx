@@ -43,7 +43,7 @@ const DashboardNav = () => {
               </Link>
             </li>
             <li>
-              <Link>
+              <Link to="/dashboard/orders" className={changeActive("/dashboard/orders")}>
                 <i className={`fa-solid fa-shop ${styles.faShopCustom}`} />
                 Orders
               </Link>

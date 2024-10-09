@@ -17,6 +17,7 @@ import IsAuth from "./components/auth/IsAuth";
 import CreateProduct from "./pages/admin/CreateProduct";
 import EditProduct from "./pages/admin/EditProduct";
 import GlobalStyles from "./components/global-styles/GlobalStyles";
+import OrderManage from './pages/admin/OrderManage';
 
 const App = () => {
   return (
@@ -43,6 +44,7 @@ const App = () => {
               path="/dashboard/products/edit/:id"
               element={<EditProduct />}
             />
+            <Route path="/dashboard/orders" element={<OrderManage/>}/>
           </Route>
         </Route>
 
