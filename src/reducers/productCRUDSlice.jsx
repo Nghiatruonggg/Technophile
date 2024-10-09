@@ -81,9 +81,6 @@ const productCRUDSlice = createSlice({
       })
       .addCase(removeProduct.fulfilled, (state, action) => {
         state.isLoading = false;
-        // state.productAdmin = state.productAdmin.filter((product) => {
-        //   return product.id !== action.payload;
-        // });
       })
       .addCase(removeProduct.rejected, (state, action) => {
         state.isLoading = false;
