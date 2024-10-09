@@ -7,6 +7,7 @@ import { Outlet } from "react-router-dom";
 import { searchContext, cartContext } from "../../contexts/Contexts";
 import useSearchClicked from "../../hooks/useSearchClicked";
 import useCartClicked from "../../hooks/useCartClicked";
+import ToastifyContainer from "../../components/popups/ToastifyContainer";
 
 const LayoutApp = () => {
   const searchBoxRef = useRef();
@@ -48,8 +49,12 @@ const LayoutApp = () => {
           <Footer />
           <SearchPopup searchBoxRef={searchBoxRef} />
           <ShoppingCart cartBoxRef={cartBoxRef} />
+
         </searchContext.Provider>
       </cartContext.Provider>
+
+      
+      <ToastifyContainer/>
     </>
   );
 };

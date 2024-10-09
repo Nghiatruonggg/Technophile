@@ -8,7 +8,6 @@ import { Col, Container, Row } from "react-bootstrap";
 
 const CartView = () => {
   const cartState = useSelector((state) => state.cart);
-
   const { productList, total } = cartState;
 
   return (
@@ -23,7 +22,7 @@ const CartView = () => {
 
                 <CartCenter productList={productList} />
 
-                <CartBottom total={total} />
+                <CartBottom total={total} productList={productList} />
               </Col>
             </div>
           </Row>

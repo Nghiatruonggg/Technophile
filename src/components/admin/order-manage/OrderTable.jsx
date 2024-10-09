@@ -21,6 +21,7 @@ const OrderTable = () => {
           <th>Status</th>
           <th>Items</th>
           <th>Delivery</th>
+          <th>Total</th>
           <th>Purchased Date</th>
         </tr>
       </thead>
@@ -33,10 +34,11 @@ const OrderTable = () => {
           purchasedOrders.map((order) => {
             return (
               <tr>
-                <td>{order.id}</td>
+                <td>#<b>{order.id}</b></td>
                 <td>{order.customer_name}</td>
                 <td>{order.status}</td>
                 <td>{order.item_numbers}</td>
+                <td>{order.delivery}</td>
                 <td>${order.total}</td>
                 <td>{order.purchased_date}</td>
               </tr>

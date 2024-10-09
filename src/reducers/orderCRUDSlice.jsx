@@ -14,6 +14,18 @@ const getOrder = createAsyncThunk(
     }
 )
 
+const purchaseOrder = createAsyncThunk(
+    "purchaseOrder",
+    async (orderInfo, {rejectWithValue}) => {
+        try {
+            const res = await axios.post(order_manage, orderInfo)
+            return res.data
+        } catch (error) {
+            return rejectWithValue(error)
+        }
+    }
+)
+
 const orderCRUDSlice = createSlice({
     name: "orderCRUD",
     initialState: {
@@ -38,8 +50,19 @@ const orderCRUDSlice = createSlice({
             state.isLoading = false
             state.error = action.payload
         })
+        .addCase(purchaseOrder.pending, (state) => {
+            state.isLoading = true
+            state.error = null
+        })
+        .addCase(purchaseOrder.fulfilled, (state) => {
+            state.isLoading = false
+        })
+        .addCase(purchaseOrder.rejected, (state, action) => {
+            state.isLoading = false
+            state.error = action.payload
+        })
     }
 })
 
 export default orderCRUDSlice.reducer
-export {getOrder}
+export {getOrder, purchaseOrder}
