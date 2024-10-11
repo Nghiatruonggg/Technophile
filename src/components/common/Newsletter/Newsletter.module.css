@@ -31,8 +31,10 @@
   margin-bottom: 2.5rem;
 }
 
-.subNewsletterTitle i {
+.subNewsletterTitle .customIcon {
   background-color: #0487ff !important;
+  width: 15px !important;
+  height: 15px !important;
 }
 
 .newsletterInput {

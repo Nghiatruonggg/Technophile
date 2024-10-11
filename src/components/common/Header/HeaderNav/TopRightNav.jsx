@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import { cartContext, searchContext } from "../../../../contexts/Contexts";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass, faUser, faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 const TopRightNav = () => {
   const searchFunction = useContext(searchContext);
@@ -22,19 +24,26 @@ const TopRightNav = () => {
     <>
       <div className="user-logo">
         <div className="wrap-user-logo">
-          <i
-            className="fa-solid fa-magnifying-glass search-desktop"
+          <FontAwesomeIcon
+            icon={faMagnifyingGlass}
+            className="search-desktop nav-icon"
             onClick={handleSearchClicked}
           />
-          <i
-            className="fa-solid fa-cart-shopping cart-ic"
-            onClick={handleCartClicked}
-          >
+
+          <div className="cart-wrapper">
+            <FontAwesomeIcon
+              icon={faCartShopping}
+              className="cart-ic nav-icon"
+              onClick={handleCartClicked}
+            ></FontAwesomeIcon>
             <span>{totalQuantity}</span>
-          </i>
+          </div>
 
           <Link to="/login">
-            <i className="fa-solid fa-user user-desktop"></i>
+            <FontAwesomeIcon
+              icon={faUser}
+              className="user-desktop nav-icon"
+            ></FontAwesomeIcon>
           </Link>
         </div>
       </div>

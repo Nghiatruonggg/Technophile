@@ -2,6 +2,8 @@ import React from "react";
 import newsletterImg from "../../../assets/common/images/Newsletter section/Adjusted bgimg.png"
 import styles from "../Newsletter/Newsletter.module.css"
 import { Col, Container, Row } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 const Newsletter = () => {
   return (
     <>
@@ -18,7 +20,7 @@ const Newsletter = () => {
                 <div className={styles.newsletterText}>
                   <div className={`${styles.subNewsletterTitle} sub-title`}>
                     <p>
-                      <i className="fa-regular fa-envelope" />
+                      <FontAwesomeIcon icon={faEnvelope} className={`icon ${styles.customIcon}`}  />
                       Newsletter
                     </p>
                     <h2>Get Weekly Update</h2>

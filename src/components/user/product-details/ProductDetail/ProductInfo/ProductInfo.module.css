@@ -23,7 +23,7 @@
   display: flex;
 }
 
-.starIcon i {
+.wrapStar .starIcon {
   color: #ffdc60;
 }
 
@@ -46,7 +46,7 @@
   margin-bottom: 2.3rem;
 }
 
-.productStatus i {
+.productStatus .checkIcon {
   margin-right: 0.5rem;
 }
 
@@ -79,10 +79,6 @@
   background-color: #f2f6f9;
   border: none;
   transition: all 0.2s;
-}
-
-.productQuantity button i {
-  font-size: 0.8rem;
 }
 
 .productQuantity button:hover {

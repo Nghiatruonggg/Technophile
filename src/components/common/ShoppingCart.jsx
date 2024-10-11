@@ -8,6 +8,8 @@ import {
 } from "../../reducers/cartReducerSlice";
 import { Link } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMinus, faPlus, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const ShoppingCart = ({ cartBoxRef }) => {
   const [totalCalculate, setTotalCalculate] = useState(0);
@@ -52,7 +54,7 @@ const ShoppingCart = ({ cartBoxRef }) => {
             <Col>
               <div className="cart-review">
                 <h2>Cart Review</h2>
-                <i className="fa-solid fa-xmark" onClick={handleCartClicked} />
+                <FontAwesomeIcon icon={faXmark} className="close-icon" onClick={handleCartClicked} />
               </div>
             </Col>
           </Row>
@@ -67,11 +69,11 @@ const ShoppingCart = ({ cartBoxRef }) => {
                       <div className="product-cart">
                         <div className="product-cart-image">
                           <img src={product.mainImage} alt={product.name} />
-                          <i
-                            id="remove-btn"
-                            className="fa-solid fa-xmark"
+                          <FontAwesomeIcon icon={faXmark}
+                            
+                            className="remove-btn"
                             onClick={() => removeProduct(product.id)}
-                          ></i>
+                          ></FontAwesomeIcon>
                         </div>
                         <div className="product-cart-text">
                           <p className="product-name">{product.name}</p>
@@ -84,7 +86,7 @@ const ShoppingCart = ({ cartBoxRef }) => {
                           className="minus-button"
                           type="button"
                         >
-                          <i className="fa-solid fa-minus"></i>
+                          <FontAwesomeIcon icon={faMinus}></FontAwesomeIcon>
                         </button>
                         <span>{product.quantity}</span>
                         <button
@@ -92,7 +94,7 @@ const ShoppingCart = ({ cartBoxRef }) => {
                           className="plus-button"
                           type="button"
                         >
-                          <i className="fa-solid fa-plus"></i>
+                          <FontAwesomeIcon icon={faPlus}></FontAwesomeIcon>
                         </button>
                       </div>
                     </div>

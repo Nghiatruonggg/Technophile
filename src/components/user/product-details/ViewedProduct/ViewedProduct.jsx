@@ -1,6 +1,8 @@
 import ViewedRecently from "./ViewedRecently/ViewedRecently";
 import styles from "./ViewedProduct.module.css"
 import { Col, Container, Row } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 const ViewedProduct = () => {
 
   return (
@@ -12,7 +14,7 @@ const ViewedProduct = () => {
               <div className={styles.wrapViewedTitle}>
                 <div className={styles.subViewedTitle}>
                   <p>
-                    <i className="fa-solid fa-bag-shopping" />
+                    <FontAwesomeIcon className={styles.bagIcon} icon={faBagShopping} />
                     Recently
                   </p>
                   <h2>Viewed Products</h2>

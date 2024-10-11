@@ -2,6 +2,8 @@ import React from "react";
 import AboutUs3 from "../../../../assets/common/images/About Us Section/AU-3.jpg"
 import styles from "../CommitmentSection/CommitmentSection.module.css"
 import { Col, Container, Row } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCodeCommit } from "@fortawesome/free-solid-svg-icons";
 
 const CommitmentSection = () => {
   return (
@@ -21,7 +23,7 @@ const CommitmentSection = () => {
                 <div className={styles.wrapInfoText}>
                   <div className="sub-info-title">
                     <p>
-                      <i className="fa-solid fa-code-commit" />
+                      <FontAwesomeIcon icon={faCodeCommit} className="sub-icon" />
                       Our Commitment
                     </p>
                     <h2>Committed to Excellence in Customer Service</h2>

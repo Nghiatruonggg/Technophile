@@ -1,6 +1,8 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { orderImage } from "../../../../structures/UserStructure";
 import styles from "../Preorder/Preorder.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 
 const Preorder = () => {
   return (
@@ -11,8 +13,8 @@ const Preorder = () => {
             <Col xs={12} sm={12} md={6}>
               <div className={styles.preorderText}>
                 <div className={styles.preorderSubtitle}>
-                  <i
-                    className={`fa-solid fa-bookmark ${styles.preorderLogo}`}
+                  <FontAwesomeIcon icon={faBookmark}
+                    className={`${styles.preorderLogo}`}
                   />
                   <p className={styles.smallTitle}>Hot Preorder</p>
                 </div>

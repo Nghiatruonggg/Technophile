@@ -1,3 +1,5 @@
+import { faInbox, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -25,11 +27,11 @@ const Footer = () => {
                 </div>
                 <div className="footer-detail">
                   <p>
-                    <i className="fa-solid fa-phone" />
+                    <FontAwesomeIcon className="footer-icon" icon={faPhone} />
                     098 378 6808
                   </p>
                   <p>
-                    <i className="fa-solid fa-inbox" />
+                    <FontAwesomeIcon icon={faInbox} className="footer-icon" />
                     nghiatruong110700@gmail.com
                   </p>
                 </div>

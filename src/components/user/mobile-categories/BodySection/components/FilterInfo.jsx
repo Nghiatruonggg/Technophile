@@ -1,4 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { brandFiltering } from "../../../../../structures/UserStructure";
+import { faMinus } from "@fortawesome/free-solid-svg-icons";
 
 const FilterInfo = ({ handleCategoriesChecked, styles }) => {
   return (
@@ -7,7 +9,7 @@ const FilterInfo = ({ handleCategoriesChecked, styles }) => {
         <div className={styles.categoriesFilter}>
           <div className={styles.filterTitle}>
             <p>CATEGORIES</p>
-            <i className="fa-solid fa-minus" />
+            <FontAwesomeIcon className="icon" icon={faMinus} />
           </div>
           <div className="categories-list">
             <ul className={styles.filterList}>
@@ -35,7 +37,7 @@ const FilterInfo = ({ handleCategoriesChecked, styles }) => {
         <div className={styles.priceFilter}>
           <div className={styles.filterTitle}>
             <p>PRICE</p>
-            <i className="fa-solid fa-minus" />
+            <FontAwesomeIcon icon={faMinus} className="icon" />
           </div>
           <div className="price-list">
             <ul className={styles.filterList}>
@@ -81,7 +83,7 @@ const FilterInfo = ({ handleCategoriesChecked, styles }) => {
         <div className={styles.brandFilter}>
           <div className={styles.filterTitle}>
             <p>BRAND</p>
-            <i className="fa-solid fa-minus" />
+            <FontAwesomeIcon icon={faMinus} />
           </div>
           <div className={styles.brandList}>
             {brandFiltering.map(({newClassName, ...brand}) => {

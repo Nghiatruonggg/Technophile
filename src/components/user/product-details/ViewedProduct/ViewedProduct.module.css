@@ -16,10 +16,11 @@
   margin-bottom: 10px;
 }
 
-.subViewedTitle i {
+.subViewedTitle .bagIcon {
   margin-right: 8px;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
   background-color: #0487ff;
   color: #fff;
   display: flex;

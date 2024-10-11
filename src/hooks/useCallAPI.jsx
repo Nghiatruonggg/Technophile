@@ -11,7 +11,7 @@ const useCallAPI = (url) => {
         setIsLoading(true);
         const response = await axios.get(url);
 
-        setIsLoading(false);
+        setIsLoading(false)
         setData(response.data);
       } catch (error) {
         setIsLoading(false);

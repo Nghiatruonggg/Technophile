@@ -1,26 +1,31 @@
+import { faArrowDownShortWide, faArrowUpRightDots, faEquals, faMoneyBill, faTrophy, faTruckFast } from "@fortawesome/free-solid-svg-icons";
+
 // Analysis Card
 export const analysisCard = [
     {
-        cardLogo: "fa-solid fa-money-bill",
+        cardLogo: faMoneyBill,
         cardTitle: "Total Sales Revenue",
         totalRevenue: 300,
-        cardCompare: "fa-solid fa-arrow-up-right-dots",
+        cardCompare: faArrowUpRightDots,
+        compareCustom: "increaseCompare",
         compareNumber: 32,
         compareClass: ""
     },
     {
-        cardLogo: "fa-solid fa-trophy",
+        cardLogo: faTrophy,
         cardTitle: "Total Campaign",
         totalRevenue: 1329,
-        cardCompare: "fa-solid fa-equals faEqualsCustom",
+        cardCompare: faEquals,
+        compareCustom: "faEqualsCustom",
         compareNumber: 0,
         compareClass: "equalCompare"
     },
     {
-        cardLogo: "fa-solid fa-truck-fast",
+        cardLogo: faTruckFast,
         cardTitle: "Total Shipping Count",
         totalRevenue: 766,
-        cardCompare: "fa-solid fa-arrow-down-short-wide faArrowDownShortWideCustom",
+        cardCompare: faArrowDownShortWide,
+        compareCustom: "faArrowDownShortWideCustom",
         compareNumber: -20,
         compareClass: "decreaseCompare"
     }

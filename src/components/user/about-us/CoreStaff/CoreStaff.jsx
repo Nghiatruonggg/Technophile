@@ -4,6 +4,8 @@ import { core_staffs } from "../../../../untils/variable";
 import StaffSection from "./StaffSection/StaffSection";
 import styles from "./CoreStaff.module.css"
 import { Col, Container, Row } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPeopleGroup } from "@fortawesome/free-solid-svg-icons";
 
 const CoreStaff = () => {
   const { data, isLoading } = useCallAPI(core_staffs);
@@ -17,7 +19,7 @@ const CoreStaff = () => {
               <div className={styles.wrapStaffTitle}>
                 <div className={styles.subStaffTitle}>
                   <p>
-                    <i className="fa-solid fa-people-group" />
+                    <FontAwesomeIcon icon={faPeopleGroup} className={styles.subIcon} />
                     Core Staff
                   </p>
                   <h2>Our Team</h2>

@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../../../../reducers/cartReducerSlice";
 import { Col, Row } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 const ProductRow = ({ isLoading, productSlice, styles }) => {
   if (isLoading) return <p>Data is Loading</p>;
@@ -41,7 +43,7 @@ const ProductRow = ({ isLoading, productSlice, styles }) => {
                   </Link>
                   <div className={styles.cartProductButton}>
                     <button onClick={() => handleAddToCart(product)}>
-                      <i className="fa-solid fa-plus"></i>
+                      <FontAwesomeIcon icon={faPlus}></FontAwesomeIcon>
                     </button>
                   </div>
                 </Col>

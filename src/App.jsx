@@ -19,6 +19,9 @@ import EditProduct from "./pages/admin/EditProduct";
 import GlobalStyles from "./components/global-styles/GlobalStyles";
 import OrderManage from './pages/admin/OrderManage';
 
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel/dist/assets/owl.theme.default.css";
+
 const App = () => {
   return (
     <GlobalStyles>

@@ -1,3 +1,5 @@
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
 const ProductStatus = ({styles}) => {
@@ -5,13 +7,13 @@ const ProductStatus = ({styles}) => {
     <>
       <div className={styles.productStatus}>
         <p>
-          <i className="fa-solid fa-check"></i>In Stock
+          <FontAwesomeIcon icon={faCheck} className={styles.checkIcon} ></FontAwesomeIcon>In Stock
         </p>
         <p>
-          <i className="fa-solid fa-check"></i>Free Delivery Available
+          <FontAwesomeIcon icon={faCheck} className={styles.checkIcon} ></FontAwesomeIcon>Free Delivery Available
         </p>
         <p>
-          <i className="fa-solid fa-check"></i>Sale 50% for first-time customer
+          <FontAwesomeIcon icon={faCheck} className={styles.checkIcon} ></FontAwesomeIcon>Sale 50% for first-time customer
         </p>
       </div>
     </>

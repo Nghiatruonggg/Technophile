@@ -25,8 +25,8 @@
   width: 50%;
 }
 
-.customFormFloating label, .thoughtInput::placeholder {
-  font-size: 12px;
+.customFormFloating label, .thoughtInput textarea::placeholder {
+  font-size: 14px;
 }
 
 .customFormFloating label span {
@@ -50,4 +50,10 @@
 .contactForHire {
   margin-top: 30px;
   margin-bottom: 30px;
+}
+
+@media screen and (max-width: 811px) {
+  .customFormFloating label, .thoughtInput textarea::placeholder {
+    font-size: 12px;
+  }
 }

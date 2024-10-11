@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { categoryLogo } from "../../../../structures/UserStructure";
 import styles from "./Categories.module.css";
 import { Col, Container, Row } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTag } from "@fortawesome/free-solid-svg-icons";
 
 const Categories = () => {
   return (
@@ -14,7 +16,7 @@ const Categories = () => {
             <Col>
               <div className={`${styles.subCategoriesTitle} sub-title`}>
                 <p>
-                  <i className="fa-solid fa-tag" />
+                  <FontAwesomeIcon icon={faTag} className="icon" />
                   Categories
                 </p>
                 <h1>Browse by Category</h1>

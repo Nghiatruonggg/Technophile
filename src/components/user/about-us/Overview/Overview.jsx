@@ -1,5 +1,7 @@
 import { Col, Container, Row } from "react-bootstrap";
 import AboutUs1 from "../../../../assets/common/images/About Us Section/AU-1.webp"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBasketShopping } from "@fortawesome/free-solid-svg-icons";
 
 const Overview = () => {
   return (
@@ -18,7 +20,7 @@ const Overview = () => {
                 <div className="wrap-info-text">
                   <div className="sub-info-title">
                     <p>
-                      <i className="fa-solid fa-basket-shopping" />
+                      <FontAwesomeIcon icon={faBasketShopping} className="sub-icon" />
                       About Us
                     </p>
                     <h2>Your Ultimate Online Tech Retail Destination</h2>

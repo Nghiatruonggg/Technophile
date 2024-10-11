@@ -1,6 +1,8 @@
 import styles from "./CartCenter.module.css"
 import { useDispatch } from "react-redux";
 import { addQuantity, deleteProduct, minusQuantity } from "../../../../reducers/cartReducerSlice";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark, faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 
 const CartCenter = ({ productList }) => {
   const dispatch = useDispatch();
@@ -41,7 +43,7 @@ const CartCenter = ({ productList }) => {
                   return (
                     <tr key={product.id}>
                       <td className="cart-review">
-                        <i onClick={() => removeProduct(product.id)} className="fa-solid fa-xmark"></i>
+                        <FontAwesomeIcon className={styles.removeCart} icon={faXmark} onClick={() => removeProduct(product.id)}></FontAwesomeIcon>
                       </td>
                       <td>
                         <div className="d-flex align-items-center">
@@ -60,11 +62,11 @@ const CartCenter = ({ productList }) => {
                       </td>
                       <td className="quantity-view">
                         <button type="button" className={styles.cartMinus} onClick={() => handleMinusQuantity(product.id)} >
-                          <i className="fa-solid fa-minus"></i>
+                          <FontAwesomeIcon icon={faMinus} className="fa-solid fa-minus"></FontAwesomeIcon>
                         </button>
                         <span className={styles.cartViewQuantity}>{product.quantity}</span>
                         <button type="button" className={styles.cartPlus} onClick={()=> handleAddQuantity(product.id)}>
-                          <i className="fa-solid fa-plus"></i>
+                          <FontAwesomeIcon icon={faPlus} className="fa-solid fa-plus"></FontAwesomeIcon>
                         </button>
                       </td>
                       <td>${productSubtotal}</td>

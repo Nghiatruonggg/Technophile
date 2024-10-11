@@ -1,6 +1,8 @@
 import { Col, Container, Row } from "react-bootstrap";
 import AboutUs2 from "../../../../assets/common/images/About Us Section/AU-2.jpg";
 import styles from "./MissionSection.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUsersLine } from "@fortawesome/free-solid-svg-icons";
 const MissonSection = () => {
   return (
     <>
@@ -13,7 +15,7 @@ const MissonSection = () => {
                 <div className={styles.wrapInfoText}>
                   <div className="sub-info-title">
                     <p>
-                      <i className="fa-solid fa-users-line" />
+                      <FontAwesomeIcon icon={faUsersLine} className="sub-icon" />
                       Our Mission
                     </p>
                     <h2>Connecting People Through Technology</h2>

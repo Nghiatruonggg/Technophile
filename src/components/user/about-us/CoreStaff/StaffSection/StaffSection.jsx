@@ -5,6 +5,10 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 import { options } from "../../../../../untils/third-lib";
 
 const StaffSection = ({ data, styles, isLoading }) => {
+  if (isLoading) return (
+    <p>Data is Loading</p>
+  )
+
   return (
     <>
       <OwlCarousel
@@ -14,25 +18,21 @@ const StaffSection = ({ data, styles, isLoading }) => {
         items={4}
         {...options}
       >
-        {isLoading ? (
-          <p>Data is Loading</p>
-        ) : (
-          data.map((staff) => {
-            return (
-              <div key={staff.id} className="item">
-                <div className={styles.wrapStaffInfo}>
-                  <div className={styles.staffImage}>
-                    <img src={staff.staff_image} alt={staff.staff_name} />
-                  </div>
-                  <div className={styles.staffInfo}>
-                    <p className={styles.staffRole}>{staff.staff_role}</p>
-                    <p className={styles.staffName}>{staff.staff_name}</p>
-                  </div>
+        {data.map((staff) => {
+          return (
+            <div key={staff.id} className="item">
+              <div className={styles.wrapStaffInfo}>
+                <div className={styles.staffImage}>
+                  <img src={staff.staff_image} alt={staff.staff_name} />
+                </div>
+                <div className={styles.staffInfo}>
+                  <p className={styles.staffRole}>{staff.staff_role}</p>
+                  <p className={styles.staffName}>{staff.staff_name}</p>
                 </div>
               </div>
-            );
-          })
-        )}
+            </div>
+          );
+        })}
       </OwlCarousel>
     </>
   );

@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../reducers/cartReducerSlice";
 import { Col, Container, Row } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const SearchPopup = ({ searchBoxRef }) => {
   const searchFunction = useContext(searchContext);
@@ -62,7 +64,7 @@ const SearchPopup = ({ searchBoxRef }) => {
               }
               onClick={handleSearchClicked}
             >
-              <i className="fa-solid fa-xmark" />
+              <FontAwesomeIcon className="close-icon" icon={faXmark} />
             </div>
             <Row id="search-input">
               <Col >

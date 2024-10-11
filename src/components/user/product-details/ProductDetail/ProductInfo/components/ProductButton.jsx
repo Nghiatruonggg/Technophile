@@ -1,3 +1,5 @@
+import { faHeart, faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 
 const ProductButton = ({ product, handleAddToCart, styles }) => {
@@ -22,11 +24,11 @@ const ProductButton = ({ product, handleAddToCart, styles }) => {
             className="minus-button"
             type="button"
           >
-            <i className="fa-solid fa-minus" />
+            <FontAwesomeIcon icon={faMinus} className="fa-solid fa-minus" />
           </button>
           <span>{quantityDetail}</span>
           <button onClick={addQuantity} className="plus-button" type="button">
-            <i className="fa-solid fa-plus" />
+            <FontAwesomeIcon icon={faPlus} className="fa-solid fa-plus" />
           </button>
         </div>
         <div className={styles.addToCartButton}>
@@ -36,7 +38,7 @@ const ProductButton = ({ product, handleAddToCart, styles }) => {
         </div>
         <div className={styles.wishlistButton}>
           <button type="button">
-            <i className="fa-regular fa-heart" />
+            <FontAwesomeIcon icon={faHeart} className="fa-regular fa-heart" />
           </button>
         </div>
       </div>

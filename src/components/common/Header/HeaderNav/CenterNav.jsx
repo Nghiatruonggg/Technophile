@@ -1,3 +1,5 @@
+import { faChevronDown, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 
@@ -9,7 +11,7 @@ const CenterNav = ({ TechnophileLogo, isMenuClicked, setIsMenuClicked, menuBoxRe
         <div className="top-menu-mobile">
           <img src={TechnophileLogo} alt="LogoImg" />
           <span>
-            <i onClick={() => setIsMenuClicked(false)} className="fa-solid fa-xmark" />
+            <FontAwesomeIcon className="close-mobile-menu" onClick={() => setIsMenuClicked(false)} icon={faXmark} />
           </span>
         </div>
 
@@ -24,7 +26,7 @@ const CenterNav = ({ TechnophileLogo, isMenuClicked, setIsMenuClicked, menuBoxRe
           </li>
           <li className="product-menu">
             <Link>
-              Product <i className="fa-solid fa-chevron-down" />
+              Product <FontAwesomeIcon icon={faChevronDown} />
             </Link>
             <div className="sub-menu sub-menu-1 sub-menu-mobile">
               <ul>

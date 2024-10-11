@@ -4,6 +4,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { logout } from "../../../../reducers/authReducerSlice";
 import styles from "./DashboardNav.module.css"
 import { Col } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBagShopping, faGears, faGrip, faRightFromBracket, faShop } from "@fortawesome/free-solid-svg-icons";
 
 const DashboardNav = () => {
   const location = useLocation();
@@ -29,7 +31,7 @@ const DashboardNav = () => {
                 to="/dashboard"
                 className={changeActive("/dashboard")}
               >
-                <i className="fa-solid fa-grip" />
+                <FontAwesomeIcon className={styles.navIcon} icon={faGrip} />
                 Overview
               </Link>
             </li>
@@ -38,25 +40,25 @@ const DashboardNav = () => {
                 to="/dashboard/products"
                 className={changeActive("/dashboard/products")}
               >
-                <i className="fa-solid fa-bag-shopping" />
+                <FontAwesomeIcon className={styles.navIcon} icon={faBagShopping} />
                 Products
               </Link>
             </li>
             <li>
               <Link to="/dashboard/orders" className={changeActive("/dashboard/orders")}>
-                <i className={`fa-solid fa-shop ${styles.faShopCustom}`} />
+                <FontAwesomeIcon icon={faShop} className={styles.faShopCustom} />
                 Orders
               </Link>
             </li>
             <li>
               <Link>
-                <i className={`fa-solid fa-gears ${styles.faGearsCustom}`} />
+                <FontAwesomeIcon icon={faGears} className={styles.faGearsCustom} />
                 Settings
               </Link>
             </li>
             <li>
               <div className={styles.logOut} onClick={handleLogout}>
-                <i className="fa-solid fa-right-from-bracket" />
+                <FontAwesomeIcon className={styles.navIcon} icon={faRightFromBracket} />
                 Logout
               </div>
             </li>
