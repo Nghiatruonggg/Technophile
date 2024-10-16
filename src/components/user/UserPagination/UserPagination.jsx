@@ -23,7 +23,7 @@ const UserPagination = ({
                 variant="primary"
                 key={page}
                 onClick={() => setCurrentPage(page)}
-                className={currentPage == page ? `${styles.active}` : ""}
+                className={currentPage == page ? `${styles.active} ${styles.paginationButton}` : `${styles.paginationButton}`}
               >
                 {page}
               </Button>

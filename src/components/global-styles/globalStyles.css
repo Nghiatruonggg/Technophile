@@ -201,7 +201,6 @@ body.darken-2::before {
 }
 
 .LinkHover:hover::after,
-.LinkHover:focus::after,
 .LinkHover.active::after {
   opacity: 1;
   transform: translate3d(0, 0.2em, 0);
