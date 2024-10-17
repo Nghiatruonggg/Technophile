@@ -10,7 +10,7 @@ const MainNews = () => {
         <Row className={styles.customRow}>
           <NewsDisplay styles={styles} />
 
-          <NewsFilter styles={styles} />
+          <NewsFilter />
         </Row>
       </Container>
     </>

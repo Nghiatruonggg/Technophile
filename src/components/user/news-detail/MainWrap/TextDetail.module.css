@@ -1,0 +1,18 @@
+.titleWrap {
+    padding-bottom: 13px;
+    border-bottom: .2px solid ;
+}
+
+.titleWrap h1 {
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.titleWrap p {
+    font-size: 18px;
+}
+
+.mainWrap {
+    margin-top: 20px;
+}
+

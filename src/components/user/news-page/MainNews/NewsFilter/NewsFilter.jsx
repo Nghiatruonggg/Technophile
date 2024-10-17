@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import styles from "../NewsFilter/NewsFilter.module.css"
 
-const NewsFilter = ({ styles }) => {
+const NewsFilter = () => {
   const [viewedProduct, setViewedProduct] = useState(() => {
     const viewedProduct =
       JSON.parse(localStorage.getItem("viewedProducts")) || [];
