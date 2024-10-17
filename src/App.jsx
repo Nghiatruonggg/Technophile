@@ -22,6 +22,7 @@ import OrderManage from "./pages/admin/OrderManage";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import NewsPage from "./pages/user/NewsPage";
+import NewsDetail from "./pages/user/NewsDetail";
 
 const App = () => {
   return (
@@ -34,6 +35,7 @@ const App = () => {
           <Route path="/desktop-categories" element={<DesktopCategories />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/news" element={<NewsPage />} />
+          <Route path="/news/:slug" element={<NewsDetail/>}/>
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/cart-view" element={<CartView />} />
 
