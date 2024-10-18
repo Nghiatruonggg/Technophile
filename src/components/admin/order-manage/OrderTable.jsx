@@ -28,7 +28,7 @@ const OrderTable = () => {
       <tbody>
         {isLoading ? (
           <tr>
-            <td>Loading</td>
+            <td colSpan="7">Loading</td>
           </tr>
         ) : (
           purchasedOrders.map((order) => {

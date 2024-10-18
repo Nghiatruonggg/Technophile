@@ -55,7 +55,7 @@ const ProductTable = ({ isLoading }) => {
         <tbody>
           {isLoading ? (
             <tr>
-              <td>Data is Loading</td>
+              <td colSpan="6">Data is Loading</td>
             </tr>
           ) : (
             productAdmin.map((product) => {
