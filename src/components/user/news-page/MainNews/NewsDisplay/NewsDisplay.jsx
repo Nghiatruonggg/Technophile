@@ -27,7 +27,7 @@ const NewsDisplay = ({ styles }) => {
                     <p>{post.post_description}</p>
                     <Button>Read More</Button>
                   </div>
-                </Link>
+                </Link>u
               </div>
             </>
           );
