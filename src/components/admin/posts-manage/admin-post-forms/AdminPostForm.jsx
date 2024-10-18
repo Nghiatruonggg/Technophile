@@ -83,7 +83,8 @@ const AdminPostForm = ({ setPostData, oldData, oldIsLoading }) => {
           }, 2000);
         }
         if (createPost.rejected.match(result)) {
-          const errorMessage = result.payload.message || "Please Try again later";
+          const errorMessage =
+            result.payload.message || "Please Try again later";
 
           ToastPopup({ message: `${errorMessage}`, type: "error" });
         }
@@ -92,16 +93,18 @@ const AdminPostForm = ({ setPostData, oldData, oldIsLoading }) => {
       if (oldData) {
         let editData = { id: oldData.id, data };
         const result = await dispatch(editPost(editData));
-        console.log(result.payload)
+
         if (editPost.fulfilled.match(result)) {
           ToastPopup({ message: "Edit Success!", type: "success" });
+
           reset();
           setTimeout(() => {
             redirect("/dashboard/posts");
           }, 2000);
         }
         if (editPost.rejected.match(result)) {
-          const errorMessage = result.payload.message || "Please Try again later";
+          const errorMessage =
+            result.payload.message || "Please Try again later";
           ToastPopup({ message: `${errorMessage}`, type: "error" });
         }
       }
