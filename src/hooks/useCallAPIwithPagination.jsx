@@ -15,6 +15,9 @@ const useCallAPIwithPagination = (url, itemsPerPage = 6) => {
     const getApi = async () => {
       try {
         setIsLoading(true);
+
+        let param = `?_page=${currentPage}&_limit=${itemsPerPage}`
+
         const response = await axios.get(url + param);
 
         setIsLoading(false);
@@ -30,7 +33,7 @@ const useCallAPIwithPagination = (url, itemsPerPage = 6) => {
     };
 
     getApi();
-  }, [currentPage]);
+  }, [currentPage, itemsPerPage, url]);
 
 
   return { data, isLoading, totalPages, currentPage, setCurrentPage };

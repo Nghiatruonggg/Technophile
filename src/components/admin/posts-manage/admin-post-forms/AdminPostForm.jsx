@@ -6,11 +6,12 @@ import "react-quill-new/dist/quill.snow.css";
 import { useForm } from "react-hook-form";
 import slugify from "slugify";
 import { useDispatch, useSelector } from "react-redux";
-import { createPost } from "../../../../reducers/postsCRUDSlice";
+import { createPost, editPost } from "../../../../reducers/postsCRUDSlice";
 import ToastPopup from "../../../popups/ToastPopup";
 import { useNavigate } from "react-router-dom";
+import { postFormDefaultValue } from "../../../../structures/postFormDefaultValue";
 
-const AdminPostForm = ({ setPostData }) => {
+const AdminPostForm = ({ setPostData, oldData, oldIsLoading }) => {
   const [isSlugEdited, setIsSlugEdited] = useState(false);
 
   const {
@@ -20,7 +21,9 @@ const AdminPostForm = ({ setPostData }) => {
     watch,
     reset,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    defaultValues: postFormDefaultValue(),
+  });
 
   const dispatch = useDispatch();
   const redirect = useNavigate();
@@ -46,6 +49,12 @@ const AdminPostForm = ({ setPostData }) => {
   };
 
   useEffect(() => {
+    if (oldData) {
+      reset(postFormDefaultValue(oldData));
+    }
+  }, [oldData]);
+
+  useEffect(() => {
     setPostData(postData);
   }, [contentText, titleText, slugText, descriptionText, thumbnail]);
 
@@ -62,21 +71,39 @@ const AdminPostForm = ({ setPostData }) => {
   };
 
   const onSubmit = async (data) => {
-    console.log(data);
     try {
-      const result = await dispatch(createPost(data));
-      if (createPost.fulfilled.match(result)) {
-        ToastPopup({ message: "Created Success!", type: "success" });
+      if (!oldData) {
+        const result = await dispatch(createPost(data));
+        if (createPost.fulfilled.match(result)) {
+          ToastPopup({ message: "Created Success!", type: "success" });
 
-        reset();
-        setTimeout(() => {
-          redirect("/dashboard/posts");
-        }, 2000);
+          reset();
+          setTimeout(() => {
+            redirect("/dashboard/posts");
+          }, 2000);
+        }
+        if (createPost.rejected.match(result)) {
+          const errorMessage = result.payload.message || "Please Try again later";
+
+          ToastPopup({ message: `${errorMessage}`, type: "error" });
+        }
       }
-      if (createPost.rejected.match(result)) {
-        const errorMessage = error.data?.error || "Please Try again later";
 
-        ToastPopup({ message: `${errorMessage}`, type: "error" });
+      if (oldData) {
+        let editData = { id: oldData.id, data };
+        const result = await dispatch(editPost(editData));
+        console.log(result.payload)
+        if (editPost.fulfilled.match(result)) {
+          ToastPopup({ message: "Edit Success!", type: "success" });
+          reset();
+          setTimeout(() => {
+            redirect("/dashboard/posts");
+          }, 2000);
+        }
+        if (editPost.rejected.match(result)) {
+          const errorMessage = result.payload.message || "Please Try again later";
+          ToastPopup({ message: `${errorMessage}`, type: "error" });
+        }
       }
     } catch (error) {
       console.log("error occured", error.message);

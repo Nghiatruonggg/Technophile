@@ -56,7 +56,7 @@ const ModifyPostView = ({ postData }) => {
             htmlFor="post-thumbnail"
             required={true}
           />
-          <p className={styles.viewedDisplay}>{postData.thumbnail}</p>
+          <img src={postData.thumbnail} className={`${styles.viewedDisplay} ${styles.thumbnailView}`}/>
         </div>
       </Col>
     </Row>

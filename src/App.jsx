@@ -27,6 +27,7 @@ import PostManage from "./pages/admin/PostManage";
 import CreatePost from "./pages/admin/CreatePost";
 import ToastifyContainer from "./components/popups/ToastifyContainer";
 import "react-toastify/dist/ReactToastify.css";
+import EditPost from "./pages/admin/EditPost";
 
 const App = () => {
   return (
@@ -58,6 +59,7 @@ const App = () => {
             <Route path="/dashboard/orders" element={<OrderManage />} />
             <Route path="/dashboard/posts" element={<PostManage />} />
             <Route path="/dashboard/posts/add" element={<CreatePost />} />
+            <Route path="/dashboard/posts/edit/:slug" element={<EditPost />} />
           </Route>
         </Route>
 

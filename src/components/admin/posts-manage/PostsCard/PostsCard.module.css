@@ -20,9 +20,24 @@
   white-space: nowrap;
 }
 
-.editButton {
+.wrapButton {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 10px;
-  margin-left: 15px;
-  width: 30%;
+}
+
+
+.editButton, .deleteButton {
+  padding: 5px 25px;
   font-weight: 600;
+}
+
+.editButton {
+  margin-left: 10px;
+
+}
+
+.deleteButton {
+  margin-right: 10px;
+  background-color: #D1001F;
 }

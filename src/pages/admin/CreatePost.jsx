@@ -6,7 +6,7 @@ import { useState } from "react";
 import ModifyPostView from "../../components/admin/posts-manage/ModifyPostView/ModifyPostView";
 
 const CreatePost = () => {
-    const [postData, setPostData] = useState({});
+  const [postData, setPostData] = useState({});
   return (
     <>
       <Col xs={12} sm={12} md={6}>
@@ -28,7 +28,7 @@ const CreatePost = () => {
             </Link>
           </div>
 
-          <ModifyPostView postData={postData}/>
+          <ModifyPostView postData={postData} />
         </div>
       </Col>
     </>

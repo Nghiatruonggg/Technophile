@@ -9,3 +9,7 @@
 .mainWrap {
     margin-top: 50px;
 }
+
+.mainWrap img {
+    width: 100%;
+}
