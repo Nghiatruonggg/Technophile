@@ -1,5 +1,5 @@
 import React from "react";
-import EditButton from "./EditButton";
+import EditButton from "../EditButton/EditButton";
 import DeleteButton from "./DeleteButton";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 import styles from "./ProductTable.module.css";
 import { Table } from "react-bootstrap";
 
-const ProductTable = ({ isLoading, data, setCurrentPage }) => {
+const ProductTable = ({ isLoading }) => {
   const dispatch = useDispatch();
   const productCRUD = useSelector((state) => state.productCRUD);
 

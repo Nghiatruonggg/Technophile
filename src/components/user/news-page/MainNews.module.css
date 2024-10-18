@@ -1,0 +1,47 @@
+/* News Display */
+.customRow {
+  margin-top: 70px;
+}
+
+.newsDisplay {
+  margin-bottom: 80px;
+}
+
+.newsCard {
+  text-decoration: none;
+  color: #000;
+}
+.newsCard img {
+  width: 100%;
+}
+
+.newsText {
+  margin-top: 20px;
+}
+
+.newsText h2,
+.newsText p {
+  margin-bottom: 24px;
+}
+
+.newsText h2 {
+  font-weight: 600;
+}
+
+.newsText p {
+    font-size: 18px;
+}
+
+.newsText button {
+  padding: 15px 30px;
+  font-weight: 600;
+  font-size: 18px;
+  transition: all 0.1s;
+}
+
+.newsText button:hover {
+  transform: scale(1.05);
+  background-color: #0c6efc;
+}
+
+

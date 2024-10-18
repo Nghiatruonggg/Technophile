@@ -5,7 +5,6 @@ import SigninForm from "../../components/auth/SigninForm";
 import AuthHeader from "../../components/auth/common/AuthHeader/AuthHeader";
 import AuthTitle from "../../components/auth/common/AuthTitle/AuthTitle";
 import { authStructure } from "../../structures/AuthStructure";
-import ToastifyContainer from "../../components/popups/ToastifyContainer";
 import { Col, Container, Row } from "react-bootstrap";
 
 const Login = () => {
@@ -44,7 +43,6 @@ const Login = () => {
         </div>
       </div>
 
-      <ToastifyContainer />
     </>
   );
 };

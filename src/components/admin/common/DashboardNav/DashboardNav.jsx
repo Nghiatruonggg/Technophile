@@ -51,9 +51,9 @@ const DashboardNav = () => {
               </Link>
             </li>
             <li>
-              <Link>
+              <Link to="/dashboard/posts" className={changeActive("/dashboard/posts")}>
                 <FontAwesomeIcon icon={faGears} className={styles.faGearsCustom} />
-                Settings
+                Posts
               </Link>
             </li>
             <li>

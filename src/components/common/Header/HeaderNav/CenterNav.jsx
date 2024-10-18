@@ -93,7 +93,7 @@ const CenterNav = ({ TechnophileLogo, isMenuClicked, setIsMenuClicked, menuBoxRe
             </NavLink>
           </li>
           <li>
-            <Link className="LinkHover" to="#">News</Link>
+            <NavLink className="LinkHover" activeclassname="active" to='/news'>News</NavLink>
           </li>
           <li>
             <NavLink

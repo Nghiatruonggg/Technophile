@@ -26,7 +26,7 @@ const AdminPagination = ({ totalPages, currentPage, setCurrentPage }) => {
           ))}
           <Pagination.Next
             onClick={() => setCurrentPage(currentPage + 1)}
-            disabled={currentPage === totalPages}
+            disabled={currentPage === totalPages || totalPages === 0}
           />
         </Pagination>
       </div>
