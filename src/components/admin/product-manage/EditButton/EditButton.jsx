@@ -1,6 +1,6 @@
-import React from 'react'
+import styles from "./EditButton.module.css"
 
-const EditButton = ({styles}) => {
+const EditButton = () => {
   return (
     <button className={styles.editButton}>
         Edit

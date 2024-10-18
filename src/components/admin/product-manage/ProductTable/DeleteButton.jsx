@@ -1,5 +1,3 @@
-import React from 'react'
-
 const DeleteButton = ({deleteProduct, id, styles}) => {
   return (
     <button onClick={() => deleteProduct(id)} className={styles.deleteButton}>

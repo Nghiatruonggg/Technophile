@@ -16,11 +16,11 @@ const NewsDisplay = ({ styles }) => {
           return (
             <div className={styles.newsDisplay}>
               <Link to={post.slug} className={styles.newsCard}>
-                <img src={post.blog_thumbnail} alt={post.blog_description} />
+                <img src={post.post_thumbnail} alt={post.post_description} />
 
                 <div className={styles.newsText}>
                   <h2>{post.title}</h2>
-                  <p>{post.blog_description}</p>
+                  <p>{post.post_description}</p>
                   <Button>Read More</Button>
                 </div>
               </Link>

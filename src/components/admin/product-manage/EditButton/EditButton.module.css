@@ -1,0 +1,10 @@
+.editButton {
+  padding: 0 15px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: all 0.1s;
+  background-color: #0084fc;
+}
+

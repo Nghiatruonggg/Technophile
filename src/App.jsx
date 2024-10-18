@@ -23,6 +23,10 @@ import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import NewsPage from "./pages/user/NewsPage";
 import NewsDetail from "./pages/user/NewsDetail";
+import PostManage from "./pages/admin/PostManage";
+import CreatePost from "./pages/admin/CreatePost";
+import ToastifyContainer from "./components/popups/ToastifyContainer";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   return (
@@ -35,7 +39,7 @@ const App = () => {
           <Route path="/desktop-categories" element={<DesktopCategories />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/news" element={<NewsPage />} />
-          <Route path="/news/:slug" element={<NewsDetail/>}/>
+          <Route path="/news/:slug" element={<NewsDetail />} />
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/cart-view" element={<CartView />} />
 
@@ -52,12 +56,15 @@ const App = () => {
               element={<EditProduct />}
             />
             <Route path="/dashboard/orders" element={<OrderManage />} />
+            <Route path="/dashboard/posts" element={<PostManage />} />
+            <Route path="/dashboard/posts/add" element={<CreatePost />} />
           </Route>
         </Route>
 
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Signup />} />
       </Routes>
+      <ToastifyContainer />
     </GlobalStyles>
   );
 };

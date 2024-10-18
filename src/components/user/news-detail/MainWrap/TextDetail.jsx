@@ -1,10 +1,18 @@
 import styles from "./TextDetail.module.css";
 import { Col } from "react-bootstrap";
-import parse from 'html-react-parser';
-
+import parse from "html-react-parser";
 
 const TextDetail = ({ detailData }) => {
-  console.log(detailData);
+  const postContent = detailData?.post_content || "";
+  if (!detailData) {
+    return (
+      <Col xs={12} sm={12} md={8}>
+        <div className={styles.textWrap}>
+          <h1>Data is Loading</h1> 
+        </div>
+      </Col>
+    );
+  }
   return (
     <Col xs={12} sm={12} md={8}>
       <div className={styles.textWrap}>
@@ -14,7 +22,7 @@ const TextDetail = ({ detailData }) => {
         </div>
 
         <div className={styles.mainWrap}>
-            {parse(`${detailData.blog_content}`)}
+          {parse(postContent)}
         </div>
       </div>
     </Col>
